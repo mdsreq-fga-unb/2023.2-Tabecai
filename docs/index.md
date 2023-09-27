@@ -25,7 +25,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 ** Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
 
 **Requisitos:**
-![Alt text](./assets/gupta1.png)
+![Alt text](/assets/gupta1.png)
 
 <center>
 
@@ -43,7 +43,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 ##### Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
 
 **Equipe de Desenvolvimento:**
-![Alt text](./assets/gupta2.png)
+![Alt text](/assets/gupta2.png)
 
 <center>
  
@@ -62,7 +62,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 **Usuários:**
 
-![Alt text](./assets/gupta3.png)
+![Alt text](/assets/gupta3.png)
 
 <center>
 
@@ -81,7 +81,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 **Tipo de Projeto e Risco Associado:**
 
-![Alt text](./assets/gupta4.png)
+![Alt text](/assets/gupta4.png)
 
 <center>
 
