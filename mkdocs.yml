@@ -1,1 +1,9 @@
-site_name: My Docs
+site_name: Tabeçaí
+
+site_description: Este repositório é dedicado ao projeto da Turma 4 da disciplina de Requisitos de Software, ministrada pelo professor George Marsicano, no segundo semestre de 2023 na Universidade de Brasília. Nosso grupo, chamado 'Tabeça Team', foca na resolução do problema de Gestão do Fluxo de Caixa em lojas de uma empresa de açaí. Atualmente, esse processo é manual, realizado no Excel pelo departamento financeiro. Nosso objetivo é eliminar essa dependência de processos manuais e desenvolver uma solução eficaz para o registro de pagamentos a prazo. Neste repositório, você encontrará nossa documentação e progresso no desenvolvimento dessa solução.
+
+nav:
+    - Home: index.md
+    - Documentação:
+      - Visão de Produto e Projeto: "visao-produto-projeto.md"
+      
