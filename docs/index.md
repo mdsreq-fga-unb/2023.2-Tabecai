@@ -146,3 +146,22 @@ Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o 
 | [GitHub](https://github.com/)            | Repositório de código                  |
 | [VSCode](https://code.visualstudio.com/) | Editor de código                       |
 | [Whimsical](https://whimsical.com/)      | Fluxograma                             |
+
+### 3.7 Processos e Procedimentos
+####  Escolhas do Processo de Engenharia de Requisitos
+![Alt text](/assets/er_facetas.png)
+<center>
+
+**Figura 8 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)**
+
+</center>
+
+Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requisitos (IREB, 2022), estabeleceu-se que se no presente projeto trataremos de um procedimento voltado para o cliente, haja vista que:
+
+1. Prooduto com enfâse aoo cliente
+2. Propósito exploratório;
+3. Tempo interativo.
+
+####  Atividades do Processo de Engenharia de Requisitos
+
+####  Descoberta e Elicitação de Requisitos
