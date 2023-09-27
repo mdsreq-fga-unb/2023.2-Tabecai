@@ -20,11 +20,12 @@ O problema em questão envolve a gestão do fluxo de caixa nas lojas da empresa.
 
 O objetivo do desenvolvimento deste produto é automatizar a administração do fluxo de caixa de todas as lojas, a fim de gerar resultados confiáveis, sem ter a necessidade do setor financeiro perder tempo checando transação por transação se os valores estão corretos ou não. O atual processo manual de registro de transações em planilhas, que demonstrou ser propenso a erros, será substituído por um sistema automatizado, fornecendo uma solução de software que otimize o gerenciamento do fluxo de caixa, minimizando erros, economizando tempo e recursos e proporcionando maior segurança nas operações financeiras das lojas em questão.
 
-### Metodologia de Desenvolvimento
+## 3.0 Metodologia de Desenvolvimento
 
-** Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
+**Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
 
-**Requisitos:**
+**3.1 Requisitos:**
+
 ![Alt text](/assets/gupta1.png)
 
 <center>
@@ -42,7 +43,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 ##### Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
 
-**Equipe de Desenvolvimento:**
+**3.2 Equipe de Desenvolvimento:**
 ![Alt text](/assets/gupta2.png)
 
 <center>
@@ -60,7 +61,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 ##### Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.
 
-**Usuários:**
+**3.3 Usuários:**
 
 ![Alt text](/assets/gupta3.png)
 
@@ -79,7 +80,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 ##### Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.
 
-**Tipo de Projeto e Risco Associado:**
+**3.4 Tipo de Projeto e Risco Associado:**
 
 ![Alt text](/assets/gupta4.png)
 
@@ -100,9 +101,9 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 ##### Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.
 
-### Escolha do Modelo do Processo de Desenvolvimento
+### 3.5 Escolha do Modelo do Processo de Desenvolvimento
 
-![Alt text](./assets/rad.png)
+![Alt text](/assets/rad.png)
 
 <center>
 
@@ -112,7 +113,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 Considerando todas as características do projeto, a equipe optou por utilizar o modelo RAD (Rapid Application Development), pois o projeto é de médio porte, com um prazo de entrega curto, a equipe tem experiência em projetos similares, e o projeto é uma melhoria de um sistema existente, o que facilita o desenvolvimento.A abordagem será hibrida com o modelo cascata para garantir a parte de levamento de requisitos e nas partes seguintes do desenvolvimento, o modelo RAD será utilizado.
 
-### Ferramentas
+### 3.6 Ferramentas
 
 Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o desenvolvimento do projeto.
 
