@@ -163,5 +163,14 @@ Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requi
 3. Tempo interativo.
 
 ####  Atividades do Processo de Engenharia de Requisitos
+Começamos com a avaliação da utilidade do sistema para a empresa (conhecida como estudo de viabilidade), seguida pela descoberta e análise dos requisitos, a transformação deles em uma forma padronizada (especificação) e, finalmente, a verificação para garantir que os requisitos definidos realmente atendem às necessidades do cliente (validação). No entanto, na prática, a engenharia de requisitos é um processo iterativo, onde essas atividades se entrelaçam ao longo do tempo.
+
+<center>
+
+![Alt text](/assets/requisitos_engenhariadeprocesso.jpeg)
+Fonte da imagem: "T.I em foco: Engenharia de Requisitos" por Washington Almeida, obtida em [Gran Cursos](https://blog.grancursosonline.com.br/t-i-em-foco-engenharia-de-requisitos/).
+
+</center>
+
 
 ####  Descoberta e Elicitação de Requisitos
