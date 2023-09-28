@@ -1,0 +1,1248 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Este repositório é dedicado ao projeto da Turma 4 da disciplina de Requisitos de Software, ministrada pelo professor George Marsicano, no segundo semestre de 2023 na Universidade de Brasília. Nosso grupo, chamado 'Tabeça Team', foca na resolução do problema de Gestão do Fluxo de Caixa em lojas de uma empresa de açaí. Atualmente, esse processo é manual, realizado no Excel pelo departamento financeiro. Nosso objetivo é eliminar essa dependência de processos manuais e desenvolver uma solução eficaz para o registro de pagamentos a prazo. Neste repositório, você encontrará nossa documentação e progresso no desenvolvimento dessa solução.">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Visão de Produto e Projeto - Tabeçaí</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visao-do-produto-e-projeto" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tabeçaí" class="md-header__button md-logo" aria-label="Tabeçaí" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tabeçaí
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão de Produto e Projeto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mdsreq-fga-unb/2023.2-Tabecai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.2-Tabecai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tabeçaí" class="md-nav__button md-logo" aria-label="Tabeçaí" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Tabeçaí
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mdsreq-fga-unb/2023.2-Tabecai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.2-Tabecai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Visão de Produto e Projeto
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Visão de Produto e Projeto
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-visao-geral-do-produto" class="md-nav__link">
+    1. VISÃO GERAL DO PRODUTO
+  </a>
+  
+    <nav class="md-nav" aria-label="1. VISÃO GERAL DO PRODUTO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-problema" class="md-nav__link">
+    1.1 Problema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-declaracao-de-posicao-do-produto" class="md-nav__link">
+    1.2 Declaração de Posição do Produto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-objetivos-do-produto" class="md-nav__link">
+    1.3 Objetivos do Produto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visao-geral-do-projeto" class="md-nav__link">
+    2. VISÃO GERAL DO PROJETO
+  </a>
+  
+    <nav class="md-nav" aria-label="2. VISÃO GERAL DO PROJETO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-organizacao-do-projeto" class="md-nav__link">
+    2.1 Organização do Projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-matriz-de-comunicacao" class="md-nav__link">
+    2.2 Matriz de Comunicação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metodologia-de-desenvolvimento" class="md-nav__link">
+    3. Metodologia de Desenvolvimento
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metodologia de Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-requisitos" class="md-nav__link">
+    3.1 Requisitos:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Requisitos:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-primeiro-modelo-de-gupta-baseado-nos-requisitos-podemos-perceber-que-o-nosso-projeto-e-complexo-porem-os-requisitos-sao-faceis-de-entender-e-definir-e-podemos-definir-os-requisitos-ao-inicio-de-cada-ciclo" class="md-nav__link">
+    Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-equipe-de-desenvolvimento" class="md-nav__link">
+    3.2 Equipe de Desenvolvimento:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Equipe de Desenvolvimento:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-segundo-modelo-de-gupta-baseado-na-equipe-de-desenvolvimento-podemos-perceber-que-temos-uma-boa-experiencia-em-projetos-similares-porem-temos-pouca-experiencia-em-tecnologias-similares-mas-temos-disponibilidade-para-treinamento-se-necessario" class="md-nav__link">
+    Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-usuarios" class="md-nav__link">
+    3.3 Usuários:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Usuários:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-terceiro-modelo-de-gupta-baseado-nos-usuarios-podemos-perceber-que-temos-um-bom-envolvimento-dos-usuarios-e-que-os-usuarios-sao-especialistas-no-dominio-do-problema" class="md-nav__link">
+    Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-tipo-de-projeto-e-risco-associado" class="md-nav__link">
+    3.4 Tipo de Projeto e Risco Associado:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Tipo de Projeto e Risco Associado:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-quarto-modelo-de-gupta-baseado-no-tipo-de-projeto-e-risco-associado-podemos-perceber-que-o-projeto-e-melhoria-de-um-sistema-existente-o-financiamento-esta-estavel-para-o-projeto-o-cronograma-do-projeto-e-apertado-e-o-uso-de-componentes-reutilizaveis" class="md-nav__link">
+    Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-escolha-do-modelo-do-processo-de-desenvolvimento" class="md-nav__link">
+    3.5 Escolha do Modelo do Processo de Desenvolvimento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-ferramentas" class="md-nav__link">
+    3.6 Ferramentas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-processos-e-procedimentos" class="md-nav__link">
+    3.7 Processos e Procedimentos
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Processos e Procedimentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escolhas-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    Escolhas do Processo de Engenharia de Requisitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atividades-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    Atividades do Processo de Engenharia de Requisitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-e-planejamento" class="md-nav__link">
+    Requisitos e Planejamento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    Histórico de Versão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-visao-geral-do-produto" class="md-nav__link">
+    1. VISÃO GERAL DO PRODUTO
+  </a>
+  
+    <nav class="md-nav" aria-label="1. VISÃO GERAL DO PRODUTO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-problema" class="md-nav__link">
+    1.1 Problema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-declaracao-de-posicao-do-produto" class="md-nav__link">
+    1.2 Declaração de Posição do Produto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-objetivos-do-produto" class="md-nav__link">
+    1.3 Objetivos do Produto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visao-geral-do-projeto" class="md-nav__link">
+    2. VISÃO GERAL DO PROJETO
+  </a>
+  
+    <nav class="md-nav" aria-label="2. VISÃO GERAL DO PROJETO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-organizacao-do-projeto" class="md-nav__link">
+    2.1 Organização do Projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-matriz-de-comunicacao" class="md-nav__link">
+    2.2 Matriz de Comunicação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metodologia-de-desenvolvimento" class="md-nav__link">
+    3. Metodologia de Desenvolvimento
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metodologia de Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-requisitos" class="md-nav__link">
+    3.1 Requisitos:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Requisitos:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-primeiro-modelo-de-gupta-baseado-nos-requisitos-podemos-perceber-que-o-nosso-projeto-e-complexo-porem-os-requisitos-sao-faceis-de-entender-e-definir-e-podemos-definir-os-requisitos-ao-inicio-de-cada-ciclo" class="md-nav__link">
+    Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-equipe-de-desenvolvimento" class="md-nav__link">
+    3.2 Equipe de Desenvolvimento:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Equipe de Desenvolvimento:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-segundo-modelo-de-gupta-baseado-na-equipe-de-desenvolvimento-podemos-perceber-que-temos-uma-boa-experiencia-em-projetos-similares-porem-temos-pouca-experiencia-em-tecnologias-similares-mas-temos-disponibilidade-para-treinamento-se-necessario" class="md-nav__link">
+    Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-usuarios" class="md-nav__link">
+    3.3 Usuários:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Usuários:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-terceiro-modelo-de-gupta-baseado-nos-usuarios-podemos-perceber-que-temos-um-bom-envolvimento-dos-usuarios-e-que-os-usuarios-sao-especialistas-no-dominio-do-problema" class="md-nav__link">
+    Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-tipo-de-projeto-e-risco-associado" class="md-nav__link">
+    3.4 Tipo de Projeto e Risco Associado:
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Tipo de Projeto e Risco Associado:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#na-conclusao-do-quarto-modelo-de-gupta-baseado-no-tipo-de-projeto-e-risco-associado-podemos-perceber-que-o-projeto-e-melhoria-de-um-sistema-existente-o-financiamento-esta-estavel-para-o-projeto-o-cronograma-do-projeto-e-apertado-e-o-uso-de-componentes-reutilizaveis" class="md-nav__link">
+    Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-escolha-do-modelo-do-processo-de-desenvolvimento" class="md-nav__link">
+    3.5 Escolha do Modelo do Processo de Desenvolvimento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-ferramentas" class="md-nav__link">
+    3.6 Ferramentas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-processos-e-procedimentos" class="md-nav__link">
+    3.7 Processos e Procedimentos
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Processos e Procedimentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escolhas-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    Escolhas do Processo de Engenharia de Requisitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atividades-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    Atividades do Processo de Engenharia de Requisitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-e-planejamento" class="md-nav__link">
+    Requisitos e Planejamento
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    Histórico de Versão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="visao-do-produto-e-projeto">VISÃO DO PRODUTO E PROJETO</h1>
+<h2 id="1-visao-geral-do-produto">1. VISÃO GERAL DO PRODUTO</h2>
+<h3 id="11-problema">1.1 Problema</h3>
+<p>O problema em questão envolve a gestão do fluxo de caixa nas lojas da empresa. Atualmente, o sistema utilizado é chamado de Gladium, que é usado para fazer emissão de notas fiscais, mas que não faz o controle dos pagamentos a prazo. O controle das vendas a prazo é feito no excel pelo setor financeiro da empresa, ficando como responsabilidade dos caixas informar quais vendas foram a prazo ao setor. Todo esse processo exige uma mão de obra que necessita de um treinamento adequado dos funcionários para identificar e registrar tais pagamentos no Excel, além de ser suscetível a erros de comunicação, resultando em informações imprecisas. Além disso, há a falta de um sistema automatizado para importar informações de pix/transferências bancárias de maneira integrada ao sistema utilizado atualmente pela empresa, o que pode incorrer em erros de transcrição. Tais erros foram, inclusive, notados pela cliente durante o processo de explicação do problema ao consultar algumas das planilhas. Diante disso, vemos uma clara dependência excessiva de processos manuais para registrar os pagamentos a prazo às vendas/cobranças. Toda essa falta de uma estrutura organizacional eficiente para armazenar os extratos bancários e documentos relacionados aos pagamentos, aliado a erros que possam ser provenientes do ambiente de trabalho, tal como distrações durante o processo, além da falta de sistemas de verificação de erros para garantir a precisão desses dados registrados no Excel, tornam todo o trabalho suscetível a erros, como os relatados pela cliente.</p>
+<p><img alt="Diagrama de Ishikawa" src="/assets/ishikawa.png" />
+<center></p>
+<p>Figura 1 - Diagrama de Ishikawa</p>
+<p></center></p>
+<h3 id="12-declaracao-de-posicao-do-produto">1.2 Declaração de Posição do Produto</h3>
+<table>
+<thead>
+<tr>
+<th>Para</th>
+<th>comerciantes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quem</td>
+<td>que precisam de uma forma de gerenciar o fluxo dos caixas das lojas de diversos meios de pagamento</td>
+</tr>
+<tr>
+<td>O Tabeçai</td>
+<td>é uma aplicação web de dashboard que serve como organizador e agregador de transações</td>
+</tr>
+<tr>
+<td>Que</td>
+<td>faz o controle de vendas tanto a vista quanto a prazo de maneira integrada com os caixas, a fim de melhorar a comunicação com o setor financeiro da empresa, assim produzindo resultados confiáveis e de maneira eficiente</td>
+</tr>
+<tr>
+<td>Ao contrário</td>
+<td>do sistema atualmente usado na empresa, chamado Gladium, que é uma plataforma para fazer as vendas (emissão de notas fiscais)</td>
+</tr>
+<tr>
+<td>Nosso produto</td>
+<td>Consegue fazer o controle de pagamentos feitos a prazo, além de tirar o processo manual de transcrever as informações de pix e de transferências recebidas dos extratos bancários. Podendo também atrelar determinado pix à venda/cobrança informado pelo caixa, e produzir informações úteis sobre os resultados financeiros do dia ou de algum intervalo de tempo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-objetivos-do-produto">1.3 Objetivos do Produto</h3>
+<p>O objetivo do desenvolvimento deste produto é automatizar a administração do fluxo de caixa de todas as lojas, a fim de gerar resultados confiáveis, sem ter a necessidade do setor financeiro perder tempo checando transação por transação se os valores estão corretos ou não. O atual processo manual de registro de transações em planilhas, que demonstrou ser propenso a erros, será substituído por um sistema automatizado, fornecendo uma solução de software que otimize o gerenciamento do fluxo de caixa, minimizando erros, economizando tempo e recursos e proporcionando maior segurança nas operações financeiras das lojas em questão.</p>
+<h2 id="2-visao-geral-do-projeto">2. VISÃO GERAL DO PROJETO</h2>
+<h3 id="21-organizacao-do-projeto">2.1 Organização do Projeto</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Papel</strong></th>
+<th style="text-align: left;"><strong>Atribuições</strong></th>
+<th style="text-align: left;"><strong>Responsável</strong></th>
+<th style="text-align: left;"><strong>Participantes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pessoa Desenvolvedora</td>
+<td style="text-align: left;">Codificar o produto, realizar refatoração, testar, configurar, versionar, evoluir, integrar, documentar, ata das reuniões, estratégia de código</td>
+<td style="text-align: left;">Gustavo Kenzo</td>
+<td style="text-align: left;">Breno, Bruno, Gustavo Henrique, Maicon, Maria Luisa</td>
+</tr>
+<tr>
+<td style="text-align: left;">Líder do Time</td>
+<td style="text-align: left;">Delegar tarefas, duração do Ciclo, organização das atividades, one-to-one com os membros, estratégia de produto</td>
+<td style="text-align: left;">Maria Luísa</td>
+<td style="text-align: left;">Gustavo Kenzo, Gustavo Henrique</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pessoa Engenheira de Requisitos</td>
+<td style="text-align: left;">Descobrir, elicitar, analisar, consensuar, declarar, representar, organizar e atualizar requisitos</td>
+<td style="text-align: left;">Maria Luísa</td>
+<td style="text-align: left;">Breno, Bruno, Gustavo Kenzo, Maicon, Maria Luisa</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cliente</td>
+<td style="text-align: left;">Fornecer insumos para requisitos, fornecer feedbacks sobre os produtos, priorizar requisitos</td>
+<td style="text-align: left;">Gustavo Kenzo</td>
+<td style="text-align: left;">Elizabete</td>
+</tr>
+<tr>
+<td style="text-align: left;">Monitora</td>
+<td style="text-align: left;">Verificar requisitos, fornecer feedbacks sobre o processo de ER, auxiliar em dúvidas da equipe acerca da disciplina de requisitos, articular os interesses do professor</td>
+<td style="text-align: left;">Bruno</td>
+<td style="text-align: left;">Sabrina</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-matriz-de-comunicacao">2.2 Matriz de Comunicação</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Área/Envolvidos</th>
+<th style="text-align: left;">Periodicidade</th>
+<th style="text-align: left;">Produtos Gerados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Acompanhamento Diário</td>
+<td style="text-align: left;">Equipe do Projeto</td>
+<td style="text-align: left;">Diário</td>
+<td style="text-align: left;">Relato por parte dos membros da equipe no WhatsApp sobre o andamento individual das partes do projeto</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acompanhamento de Ciclo</td>
+<td style="text-align: left;">Equipe do Projeto e Monitor</td>
+<td style="text-align: left;">Semanal</td>
+<td style="text-align: left;">Ata da Reunião, Relação de Feedbacks sobre as entregas do produto</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comunicar a situação do projeto</td>
+<td style="text-align: left;">Equipe do Projeto e Professor</td>
+<td style="text-align: left;">Mensalmente</td>
+<td style="text-align: left;">Artefatos solicitados, Relação de Feedbacks do Professor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-metodologia-de-desenvolvimento">3. Metodologia de Desenvolvimento</h2>
+<p><strong>Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.</strong></p>
+<h3 id="31-requisitos">3.1 Requisitos:</h3>
+<p><img alt="Alt text" src="/assets/gupta1.png" />
+<center></p>
+<p>Figura 3 - Modelo Gupta para requisitos (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Os requisitos são fáceis de entender e definir?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Nós mudamos os requisitos com bastante frequência?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Nós podemos definir os requisitos ao início de cada ciclo?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Os requisitos estão indicando um sistema complexo para se construir?</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<h5 id="na-conclusao-do-primeiro-modelo-de-gupta-baseado-nos-requisitos-podemos-perceber-que-o-nosso-projeto-e-complexo-porem-os-requisitos-sao-faceis-de-entender-e-definir-e-podemos-definir-os-requisitos-ao-inicio-de-cada-ciclo">Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.</h5>
+<h3 id="32-equipe-de-desenvolvimento">3.2 Equipe de Desenvolvimento:</h3>
+<p><img alt="Alt text" src="/assets/gupta2.png" />
+<center></p>
+<p>Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pouca experienca em projetos similares</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Pouca experiência em tecnologias similares</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Pouca experiência com as ferramentas que serão usadas?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Disponibilidade para treinamento, se necessário</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<h5 id="na-conclusao-do-segundo-modelo-de-gupta-baseado-na-equipe-de-desenvolvimento-podemos-perceber-que-temos-uma-boa-experiencia-em-projetos-similares-porem-temos-pouca-experiencia-em-tecnologias-similares-mas-temos-disponibilidade-para-treinamento-se-necessario">Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.</h5>
+<h3 id="33-usuarios">3.3 Usuários:</h3>
+<p><img alt="Alt text" src="/assets/gupta3.png" />
+<center></p>
+<p>Figura 5 - Modelo Gupta para usuários (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Envolvimento dos usuários</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Participação limitada dos usuários</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Usuário não tem experiência anterior em participação em projetos similares?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Usuário são especialistas no domínio do problema?</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<h5 id="na-conclusao-do-terceiro-modelo-de-gupta-baseado-nos-usuarios-podemos-perceber-que-temos-um-bom-envolvimento-dos-usuarios-e-que-os-usuarios-sao-especialistas-no-dominio-do-problema">Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.</h5>
+<h3 id="34-tipo-de-projeto-e-risco-associado">3.4 Tipo de Projeto e Risco Associado:</h3>
+<p><img alt="Alt text" src="/assets/gupta4.png" />
+<center></p>
+<p>Figura 6 - Modelo Gupta para tipo de projeto e risco associado (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O projeto é melhoria de um sistema existente?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>O financiamento está estável para o projeto?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Requisitos de alta confiabilidade?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Cronograma do projeto é apertado?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Uso de componentes reutilizáveis?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Os recursos (Tempo, dinheiro, pessoas etc) estão escassos?</td>
+<td>Não</td>
+</tr>
+</tbody>
+</table>
+<h5 id="na-conclusao-do-quarto-modelo-de-gupta-baseado-no-tipo-de-projeto-e-risco-associado-podemos-perceber-que-o-projeto-e-melhoria-de-um-sistema-existente-o-financiamento-esta-estavel-para-o-projeto-o-cronograma-do-projeto-e-apertado-e-o-uso-de-componentes-reutilizaveis">Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.</h5>
+<h3 id="35-escolha-do-modelo-do-processo-de-desenvolvimento">3.5 Escolha do Modelo do Processo de Desenvolvimento</h3>
+<p><img alt="Alt text" src="/assets/rad.png" />
+<center></p>
+<p>Figura 7 - Procedimento do RAD ( Fonte: George Marsicano, 2023 )</p>
+<p></center></p>
+<p>Considerando todas as características do projeto, a equipe optou por utilizar o modelo RAD (Rapid Application Development), pois o projeto é de médio porte, com um prazo de entrega curto, a equipe tem experiência em projetos similares, e o projeto é uma melhoria de um sistema existente, o que facilita o desenvolvimento.A abordagem será hibrida com o modelo cascata para garantir a parte de levamento de requisitos e nas partes seguintes do desenvolvimento, o modelo RAD será utilizado.</p>
+<h3 id="36-ferramentas">3.6 Ferramentas</h3>
+<p>Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o desenvolvimento do projeto.</p>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Finalidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://discord.com/">Discord</a></td>
+<td>Comunicação entre os membros da equipe</td>
+</tr>
+<tr>
+<td><a href="https://www.figma.com/">Figma</a></td>
+<td>Prototipação</td>
+</tr>
+<tr>
+<td><a href="https://github.com/">GitHub</a></td>
+<td>Repositório de código</td>
+</tr>
+<tr>
+<td><a href="https://code.visualstudio.com/">VSCode</a></td>
+<td>Editor de código</td>
+</tr>
+<tr>
+<td><a href="https://whimsical.com/">Whimsical</a></td>
+<td>Fluxograma</td>
+</tr>
+</tbody>
+</table>
+<h3 id="37-processos-e-procedimentos">3.7 Processos e Procedimentos</h3>
+<h4 id="escolhas-do-processo-de-engenharia-de-requisitos">Escolhas do Processo de Engenharia de Requisitos</h4>
+<p><img alt="Alt text" src="/assets/er_facetas.png" />
+<center></p>
+<p>Figura 8 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)</p>
+<p></center></p>
+<p>Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requisitos (IREB, 2022), estabeleceu-se que se no presente projeto trataremos de um procedimento voltado para o cliente, haja vista que:</p>
+<ol>
+<li>Prooduto com enfâse ao cliente</li>
+<li>Processo exploratório ;</li>
+<li>Tempo interativo.</li>
+</ol>
+<h4 id="atividades-do-processo-de-engenharia-de-requisitos">Atividades do Processo de Engenharia de Requisitos</h4>
+<p>Planejamos começar com a avaliação da utilidade do sistema para a empresa (conhecida como estudo de viabilidade), seguida pela descoberta e análise dos requisitos, a transformação deles em uma forma padronizada (especificação) e, finalmente, a verificação para garantir que os requisitos definidos realmente atendem às necessidades do cliente (validação). No entanto, na prática, a engenharia de requisitos é um processo iterativo, onde essas atividades se entrelaçam ao longo do tempo.</p>
+<p><img alt="Alt text" src="/assets/requisitos_engenhariadeprocesso.jpeg" />
+<center></p>
+<p>Figura 9 - Atividades do Processo (Fonte da imagem: "T.I em foco: Engenharia de Requisitos" por Washington Almeida, obtida em <a href="https://blog.grancursosonline.com.br/t-i-em-foco-engenharia-de-requisitos/">Gran Cursos</a>).</p>
+<p></center></p>
+<h4 id="requisitos-e-planejamento">Requisitos e Planejamento</h4>
+<p>No processo de seleção de um ciclo de vida híbrido, foi fundamental identificar os processos específicos a serem utilizados em cada fase do projeto. Neste caso, consideramos a combinação de elementos do modelo em cascata com o modelo de desenvolvimento rápido (RAD) para maximizar a eficiência e a adaptabilidade.</p>
+<p>A Engenharia de Requisitos desempenha um papel crucial nesse contexto, pois a compreensão completa e precisa dos requisitos do projeto é fundamental para guiar as decisões de desenvolvimento. A seguir, apresentamos uma tabela que descreve as fases e atividades de um modelo híbrido que começa com o ciclo de vida em cascata e transita para o modelo RAD:</p>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Abordagem</th>
+<th>Atividades Principais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Planejamento Inicial</td>
+<td>Cascata</td>
+<td>- Definição de objetivos do projeto  <br /> - Coleta de requisitos <br /> - Estabelecimento de plano de projeto</td>
+</tr>
+<tr>
+<td>2. Análise</td>
+<td>Cascata</td>
+<td>- Análise detalhada de requisitos <br />- Especificação de requisitos funcionais e não funcionais<br /> - Documentação completa de requisitos</td>
+</tr>
+<tr>
+<td>3. Design</td>
+<td>Cascata</td>
+<td>- Criação de documentação de design  <br /> - Projeto de arquitetura do sistema <br />- Projeto de interface do usuário (baixa fidelidade) <br /> - Especificação de componentes de software</td>
+</tr>
+<tr>
+<td>4. Desenvolvimento Iterativo</td>
+<td>RAD</td>
+<td>- Desenvolvimento rápido de protótipos ou versões iniciais do software <br /> - Feedback constante dos stakeholders para refinamento  <br /> - Iterações frequentes de desenvolvimento e teste</td>
+</tr>
+<tr>
+<td>5. Integração</td>
+<td>RAD</td>
+<td>- Integração dos componentes desenvolvidos nas iterações anteriores <br /> - Testes de integração contínuos <br />- Garantia de que as partes do sistema funcionem bem juntas</td>
+</tr>
+<tr>
+<td>6. Teste e Qualidade</td>
+<td>Cascata e RAD</td>
+<td>- Teste de unidade, teste de integração e teste do sistema (Cascata)<br /> - Testes adicionais de aceitação do usuário e teste de desempenho (RAD) <br /> - Correção de bugs (RAD)</td>
+</tr>
+<tr>
+<td>7. Implantação</td>
+<td>Cascata</td>
+<td>- Preparação para a implantação do sistema  <br /> - Treinamento de usuários finais  <br /> - Implantação final do sistema em ambiente de produção</td>
+</tr>
+</tbody>
+</table>
+<h2 id="referencias">Referências</h2>
+<p>LAPLANTE, Phillip A. Requirements Engineering for Software and Systems. 3ª edição. Auerbach Publications, 2017.</p>
+<p>MARSICANO, George. Centro de Estudos, Desenvolvimento e Inovação em Software (CEDI). Disponível em: https://www.cedis.unb.br. </p>
+<h2 id="historico-de-versao">Histórico de Versão</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Versão</th>
+<th style="text-align: left;">Modificação</th>
+<th style="text-align: left;">Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">26/09/2023</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">Criação do documento</td>
+<td style="text-align: left;">Breno, Bruno, Gustavo Kenzo, Gustavo Henrique, Maicon, Maria Luisa</td>
+</tr>
+<tr>
+<td style="text-align: left;">26/09/2023</td>
+<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">Adição da visão geral do produto, desenvolvimento do projeto e assets</td>
+<td style="text-align: left;">Gustavo Kenzo, Gustavo Henrique, Bruno</td>
+</tr>
+<tr>
+<td style="text-align: left;">27/09/2023</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: left;">Inicialização do tópico de Processos e Procedimentos</td>
+<td style="text-align: left;">Breno Yuri, Maria Luisa</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
+</html>

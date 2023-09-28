@@ -6,7 +6,7 @@
 
 O problema em questão envolve a gestão do fluxo de caixa nas lojas da empresa. Atualmente, o sistema utilizado é chamado de Gladium, que é usado para fazer emissão de notas fiscais, mas que não faz o controle dos pagamentos a prazo. O controle das vendas a prazo é feito no excel pelo setor financeiro da empresa, ficando como responsabilidade dos caixas informar quais vendas foram a prazo ao setor. Todo esse processo exige uma mão de obra que necessita de um treinamento adequado dos funcionários para identificar e registrar tais pagamentos no Excel, além de ser suscetível a erros de comunicação, resultando em informações imprecisas. Além disso, há a falta de um sistema automatizado para importar informações de pix/transferências bancárias de maneira integrada ao sistema utilizado atualmente pela empresa, o que pode incorrer em erros de transcrição. Tais erros foram, inclusive, notados pela cliente durante o processo de explicação do problema ao consultar algumas das planilhas. Diante disso, vemos uma clara dependência excessiva de processos manuais para registrar os pagamentos a prazo às vendas/cobranças. Toda essa falta de uma estrutura organizacional eficiente para armazenar os extratos bancários e documentos relacionados aos pagamentos, aliado a erros que possam ser provenientes do ambiente de trabalho, tal como distrações durante o processo, além da falta de sistemas de verificação de erros para garantir a precisão desses dados registrados no Excel, tornam todo o trabalho suscetível a erros, como os relatados pela cliente.
 
-![Diagrama de Ishikawa](/assets/ishikawa.png)
+![Diagrama de Ishikawa](assets/ishikawa.png)
 <center>
 
 Figura 1 - Diagrama de Ishikawa
@@ -55,7 +55,7 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 
 ### 3.1 Requisitos:
 
-![Alt text](/assets/gupta1.png)
+![Alt text](assets/gupta1.png)
 <center>
 
 Figura 3 - Modelo Gupta para requisitos (fonte: Gupta, 2019)
@@ -72,7 +72,7 @@ Figura 3 - Modelo Gupta para requisitos (fonte: Gupta, 2019)
 ##### Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
 
 ### 3.2 Equipe de Desenvolvimento:
-![Alt text](/assets/gupta2.png)
+![Alt text](assets/gupta2.png)
 <center>
  
 Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)
@@ -90,7 +90,7 @@ Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)
 
 ### 3.3 Usuários:
 
-![Alt text](/assets/gupta3.png)
+![Alt text](assets/gupta3.png)
 <center>
 
 Figura 5 - Modelo Gupta para usuários (fonte: Gupta, 2019)
@@ -108,7 +108,7 @@ Figura 5 - Modelo Gupta para usuários (fonte: Gupta, 2019)
 
 ### 3.4 Tipo de Projeto e Risco Associado:
 
-![Alt text](/assets/gupta4.png)
+![Alt text](assets/gupta4.png)
 <center>
 
 Figura 6 - Modelo Gupta para tipo de projeto e risco associado (fonte: Gupta, 2019)
@@ -128,7 +128,7 @@ Figura 6 - Modelo Gupta para tipo de projeto e risco associado (fonte: Gupta, 20
 
 ### 3.5 Escolha do Modelo do Processo de Desenvolvimento
 
-![Alt text](/assets/rad.png)
+![Alt text](assets/rad.png)
 <center>
 
 Figura 7 - Procedimento do RAD ( Fonte: George Marsicano, 2023 )
@@ -151,7 +151,7 @@ Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o 
 
 ### 3.7 Processos e Procedimentos
 ####  Escolhas do Processo de Engenharia de Requisitos
-![Alt text](/assets/er_facetas.png)
+![Alt text](assets/er_facetas.png)
 <center>
 
 Figura 8 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)
@@ -160,14 +160,14 @@ Figura 8 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)
 
 Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requisitos (IREB, 2022), estabeleceu-se que se no presente projeto trataremos de um procedimento voltado para o cliente, haja vista que:
 
-1. Prooduto com enfâse aoo cliente
-2. Propósito exploratório;
+1. Prooduto com enfâse ao cliente
+2. Processo exploratório ;
 3. Tempo interativo.
 
 ####  Atividades do Processo de Engenharia de Requisitos
 Planejamos começar com a avaliação da utilidade do sistema para a empresa (conhecida como estudo de viabilidade), seguida pela descoberta e análise dos requisitos, a transformação deles em uma forma padronizada (especificação) e, finalmente, a verificação para garantir que os requisitos definidos realmente atendem às necessidades do cliente (validação). No entanto, na prática, a engenharia de requisitos é um processo iterativo, onde essas atividades se entrelaçam ao longo do tempo.
 
-![Alt text](/assets/requisitos_engenhariadeprocesso.jpeg)
+![Alt text](assets/requisitos_engenhariadeprocesso.jpeg)
 <center>
 
 Figura 9 - Atividades do Processo (Fonte da imagem: "T.I em foco: Engenharia de Requisitos" por Washington Almeida, obtida em [Gran Cursos](https://blog.grancursosonline.com.br/t-i-em-foco-engenharia-de-requisitos/)).
@@ -175,13 +175,23 @@ Figura 9 - Atividades do Processo (Fonte da imagem: "T.I em foco: Engenharia de 
 </center>
 
 
-#### Descoberta e Elicitação de Requisitos
+#### Requisitos e Planejamento
 
-A elicitação e a descoberta são processos essenciais no desenvolvimento de software e sistemas, envolvendo a obtenção de informações, respostas ou reações de indivíduos ou fontes diversas, como stakeholders, documentos, ferramentas de inteligência artificial e sistemas existentes. É crucial prestar atenção tanto aos requisitos funcionais quanto aos requisitos não funcionais durante esses processos. Além disso, a elicitação e a descoberta também incluem a identificação dos interessados, seus problemas, necessidades, desejos e expectativas, bem como a consideração de outros fatores que podem afetar o produto de software. Essas práticas são fundamentais para o sucesso no desenvolvimento de software e sistemas. 
+No processo de seleção de um ciclo de vida híbrido, foi fundamental identificar os processos específicos a serem utilizados em cada fase do projeto. Neste caso, consideramos a combinação de elementos do modelo em cascata com o modelo de desenvolvimento rápido (RAD) para maximizar a eficiência e a adaptabilidade.
 
-| Atividade | Método | Ferramenta | Entrega
-| --------- | ------ | ---------- | -------
-| Elicitação e Descoberta | Diagrama de causa e 5 porquês | Miro | Backlog de requisitos não validado
+A Engenharia de Requisitos desempenha um papel crucial nesse contexto, pois a compreensão completa e precisa dos requisitos do projeto é fundamental para guiar as decisões de desenvolvimento. A seguir, apresentamos uma tabela que descreve as fases e atividades de um modelo híbrido que começa com o ciclo de vida em cascata e transita para o modelo RAD:
+
+| Fase                                  | Abordagem     | Atividades Principais                                  |
+|---------------------------------------|---------------|-------------------------------------------------------|
+| 1. Planejamento Inicial               | Cascata       | - Definição de objetivos do projeto  <br /> - Coleta de requisitos <br /> - Estabelecimento de plano de projeto |
+| 2. Análise                            | Cascata       | - Análise detalhada de requisitos <br />- Especificação de requisitos funcionais e não funcionais<br /> - Documentação completa de requisitos                  |
+| 3. Design                             | Cascata           | - Criação de documentação de design  <br /> - Projeto de arquitetura do sistema <br />- Projeto de interface do usuário (baixa fidelidade) <br /> - Especificação de componentes de software  |
+| 4. Desenvolvimento Iterativo           | RAD           | - Desenvolvimento rápido de protótipos ou versões iniciais do software <br /> - Feedback constante dos stakeholders para refinamento  <br /> - Iterações frequentes de desenvolvimento e teste       |
+| 5. Integração                         | RAD           | - Integração dos componentes desenvolvidos nas iterações anteriores <br /> - Testes de integração contínuos <br />- Garantia de que as partes do sistema funcionem bem juntas |
+| 6. Teste e Qualidade                  | Cascata e RAD | - Teste de unidade, teste de integração e teste do sistema (Cascata)<br /> - Testes adicionais de aceitação do usuário e teste de desempenho (RAD) <br /> - Correção de bugs (RAD)               |
+| 7. Implantação                        | Cascata       | - Preparação para a implantação do sistema  <br /> - Treinamento de usuários finais  <br /> - Implantação final do sistema em ambiente de produção  |
+
+
 
 
 
