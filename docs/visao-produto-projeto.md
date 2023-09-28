@@ -69,12 +69,12 @@ Figura 3 - Modelo Gupta para requisitos (fonte: Gupta, 2019)
 | Nós podemos definir os requisitos ao início de cada ciclo?           | Sim            |
 | Os requisitos estão indicando um sistema complexo para se construir? | Sim            |
 
-##### Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
+Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
 
 ### 3.2 Equipe de Desenvolvimento:
 ![Alt text](assets/gupta2.png)
 <center>
- 
+
 Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)
 
 </center>
@@ -86,7 +86,7 @@ Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)
 | Pouca experiência com as ferramentas que serão usadas? | Não            |
 | Disponibilidade para treinamento, se necessário        | Sim            |
 
-##### Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.
+Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.
 
 ### 3.3 Usuários:
 
@@ -104,7 +104,7 @@ Figura 5 - Modelo Gupta para usuários (fonte: Gupta, 2019)
 | Usuário não tem experiência anterior em participação em projetos similares? | Não            |
 | Usuário são especialistas no domínio do problema?                           | Sim            |
 
-##### Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.
+Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.
 
 ### 3.4 Tipo de Projeto e Risco Associado:
 
@@ -124,7 +124,7 @@ Figura 6 - Modelo Gupta para tipo de projeto e risco associado (fonte: Gupta, 20
 | Uso de componentes reutilizáveis?                          | Sim            |
 | Os recursos (Tempo, dinheiro, pessoas etc) estão escassos? | Não            |
 
-##### Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.
+Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.
 
 ### 3.5 Escolha do Modelo do Processo de Desenvolvimento
 
@@ -136,7 +136,6 @@ Figura 7 - Procedimento do RAD ( Fonte: George Marsicano, 2023 )
 </center>
 
 Considerando todas as características do projeto, a equipe optou por utilizar o modelo RAD (Rapid Application Development), pois o projeto é de médio porte, com um prazo de entrega curto, a equipe tem experiência em projetos similares, e o projeto é uma melhoria de um sistema existente, o que facilita o desenvolvimento.A abordagem será hibrida com o modelo cascata para garantir a parte de levamento de requisitos e nas partes seguintes do desenvolvimento, o modelo RAD será utilizado.
-
 ### 3.6 Ferramentas
 
 Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o desenvolvimento do projeto.
