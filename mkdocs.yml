@@ -12,3 +12,5 @@ nav:
   - Home: index.md
   - Documentação:
     - Visão de Produto e Projeto: "visao-produto-projeto.md"
+  - Entregas:
+    - Unidade 1: "entrega_1.md"
