@@ -12,3 +12,4 @@
 [REQ - TABEÇAI- 2023.2 - Visao do Produto e Projeto](https://docs.google.com/document/d/1fCjTmk_wKqL_LBIz_erC9cBZ2Y5w80mrNOpX-TxtJrs/)
 
 ## Apresentação Vídeo
+[Vídeo de Apresentação](https://youtu.be/yi_mYYUEa8A)
