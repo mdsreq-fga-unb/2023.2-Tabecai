@@ -148,8 +148,22 @@ Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o 
 | [VSCode](https://code.visualstudio.com/) | Editor de código                       |
 | [Whimsical](https://whimsical.com/)      | Fluxograma                             |
 
-### 3.7 Processos e Procedimentos
-####  Escolhas do Processo de Engenharia de Requisitos
+### 3.7 Atividade RAD
+
+A abordagem conhecida em português como Desenvolvimento Rápido de Aplicações, ou RAD, é um método incremental que direciona as atividades conforme ilustrado na Figura 10. Esse método abrange a criação de módulos que passam pelas etapas de análise, design, codificação e teste. Cada um desses módulos é construído por equipes dedicadas, operando em paralelo, com base nos requisitos identificados e divididos durante o ciclo de elicitação. Para alcançar esse objetivo, empregamos diversas técnicas e ferramentas de desenvolvimento.
+
+A premissa subjacente é que, ao integrar esses módulos, conseguimos testar e entregar o produto final. No nosso caso, optamos por adotar uma abordagem híbrida. Inicialmente, utilizamos uma abordagem em cascata para os requisitos iniciais que identificamos. Posteriormente, nas fases subsequentes, incorporamos abordagens ágeis e o processo RAD em sua totalidade. Consequentemente, distribuiremos nossos cinco membros em dois times que trabalharão simultaneamente em módulos distintos.
+
+![Alt text](assets/RAD-model.png)
+
+<center >
+
+Figura 10 - Modelo de trabalho do RAD (fonte: *Software Engineering | Rapid application development model*, 2023)
+
+</center >
+
+### 3.8 Processos e Procedimentos
+####  3.8.1 Escolhas do Processo de Engenharia de Requisitos
 ![Alt text](assets/er_facetas.png)
 <center>
 
@@ -163,7 +177,7 @@ Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requi
 2. Processo exploratório ;
 3. Tempo interativo.
 
-####  Atividades do Processo de Engenharia de Requisitos
+####  3.8.2 Atividades do Processo de Engenharia de Requisitos
 Planejamos começar com a avaliação da utilidade do sistema para a empresa (conhecida como estudo de viabilidade), seguida pela descoberta e análise dos requisitos, a transformação deles em uma forma padronizada (especificação) e, finalmente, a verificação para garantir que os requisitos definidos realmente atendem às necessidades do cliente (validação). No entanto, na prática, a engenharia de requisitos é um processo iterativo, onde essas atividades se entrelaçam ao longo do tempo.
 
 ![Alt text](assets/requisitos_engenhariadeprocesso.jpeg)
@@ -174,7 +188,7 @@ Figura 9 - Atividades do Processo (Fonte da imagem: "T.I em foco: Engenharia de 
 </center>
 
 
-#### Requisitos e Planejamento
+#### 3.8.3 Requisitos e Planejamento
 
 No processo de seleção de um ciclo de vida híbrido, foi fundamental identificar os processos específicos a serem utilizados em cada fase do projeto. Neste caso, consideramos a combinação de elementos do modelo em cascata com o modelo de desenvolvimento rápido (RAD) para maximizar a eficiência e a adaptabilidade.
 
