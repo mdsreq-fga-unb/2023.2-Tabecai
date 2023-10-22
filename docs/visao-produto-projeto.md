@@ -49,6 +49,19 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 | Comunicar a situação do projeto | Equipe do Projeto e Professor | Mensalmente   | Artefatos solicitados, Relação de Feedbacks do Professor     |
 
 
+### 2.3 Planejamento das Fases e/ou Iterações do Projeto
+
+| Sprint   | Produto (Entrega)                    | Data de Início | Data de Fim   |
+|----------|-------------------------------------|----------------|---------------|
+| Sprint 1 | - Definição do produto; <br/>- Definição do Problema; <br />- Início do GitPages;  <br/>-Conclusão da ideia do produto; <br/>-Produção da Visão do Produto e Projeto;      | 14/09/2023     | 28/09/2023    |
+| Sprint  2 | -Criação da Versão Inicial do Backlog do Produto; <br />-Definição das Histórias de Usuário <br />-Definição de tecnologias utilizadas no Projeto; <br />-Produção do protótipo de baixa fidelidade. | 29/09/2023     | 13/10/2023    |
+| Sprint 3 | -Validação e Verificação de Requisitos  <br />-Levantamento de escorpo do MVP1 E MVP2  <br/>-Inicializar Front-end, pós validação do cliente  | 14/10/2023     | 26/10/2023    |
+| Sprint 4 |         | 27/10/2023     | 09/11/2023    |
+| Sprint 5 |         | 10/11/2023     | 24/11/2023    |
+| Sprint 6 |         | 25/11/2023     | 09/12/2023    |
+| Sprint 7 |         | 09/12/2023     | 14/12/2023    |
+
+
 ## 3. Metodologia de Desenvolvimento
 
 **Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
