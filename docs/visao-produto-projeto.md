@@ -180,10 +180,10 @@ Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requi
 ####  3.8.2 Atividades do Processo de Engenharia de Requisitos
 Planejamos começar com a avaliação da utilidade do sistema para a empresa (conhecida como estudo de viabilidade), seguida pela descoberta e análise dos requisitos, a transformação deles em uma forma padronizada (especificação) e, finalmente, a verificação para garantir que os requisitos definidos realmente atendem às necessidades do cliente (validação). No entanto, na prática, a engenharia de requisitos é um processo iterativo, onde essas atividades se entrelaçam ao longo do tempo.
 
-![Alt text](assets/requisitos_engenhariadeprocesso.jpeg)
+![Alt text](assets/atividadesReq.png)
 <center>
 
-Figura 9 - Atividades do Processo (Fonte da imagem: "T.I em foco: Engenharia de Requisitos" por Washington Almeida, obtida em [Gran Cursos](https://blog.grancursosonline.com.br/t-i-em-foco-engenharia-de-requisitos/)).
+Figura 9 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 
 </center>
 
@@ -223,6 +223,17 @@ MARSICANO, George. Centro de Estudos, Desenvolvimento e Inovação em Software (
 | 26/09/2023 | 1.0   | Criação do documento | Breno, Bruno, Gustavo Kenzo, Gustavo Henrique, Maicon, Maria Luisa |
 | 26/09/2023 | 1.1    | Adição da visão geral do produto, desenvolvimento do projeto e assets  | Gustavo Kenzo, Gustavo Henrique, Bruno | 
 | 27/09/2023 | 1.2    | Inicialização do tópico de Processos e Procedimentos   | Breno Yuri, Maria Luisa | 
+
+## Tecnologias
+
+| Tecnologia | Função |
+| :--------- | :----- |
+| [React](https://pt-br.reactjs.org/) | Biblioteca JavaScript para criar interfaces de usuário |
+| [Next.js](https://nextjs.org/) | Framework React |
+| [Node.js](https://nodejs.org/en/) | Ambiente de execução JavaScript |
+| [Prisma](https://www.prisma.io/) | Modelagem para banco de dados |
+| [Express](https://expressjs.com/pt-br/) | Framework para aplicativo da web do Node.js |
+| [TailwindCSS](https://tailwindcss.com/) | Framework CSS |
 
 
 
