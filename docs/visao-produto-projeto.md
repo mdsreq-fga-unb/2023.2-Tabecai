@@ -60,6 +60,18 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 | Sprint 6 |                                                                                                                                                                                                      | 25/11/2023     | 09/12/2023  |
 | Sprint 7 |                                                                                                                                                                                                      | 09/12/2023     | 14/12/2023  |
 
+### 2.4 Critérios de Replanejamento
+
+O Replanejamento é uma etapa crucial para garantir que o projeto permaneça ágil e flexível. Os critérios de replanejamento indicam quando e por que você deve revisar e ajustar o plano do projeto ou a abordagem do RAD.
+
+* Mudanças nos Requisitos do Cliente: Quando os requisitos do cliente mudam, o replanejamento é necessário para acomodar essas mudanças. Isso pode ser causado por novas informações, feedback do cliente ou evolução dos objetivos do projeto.
+
+* Problemas Técnicos Inesperados: Se surgirem problemas técnicos imprevistos durante o desenvolvimento que afetem a estimativa de tempo ou recursos, ex: trancamento da disciplina, pode ser necessário replanejar o projeto para lidar com esses problemas.
+
+* Feedback do Usuário: O feedback dos usuários pode revelar deficiências ou melhorias necessárias no sistema. O replanejamento pode ser acionado para incorporar essas sugestões.
+
+* Restrições de Tempo: Se as restrições de tempo forem mais apertadas do que o previsto, o replanejamento pode ser necessário para priorizar as funcionalidades essenciais e fazer ajustes para atender aos prazos.
+
 ## 3. Metodologia de Desenvolvimento
 
 **Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
