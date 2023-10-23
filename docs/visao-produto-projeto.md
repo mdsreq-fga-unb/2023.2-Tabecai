@@ -60,8 +60,6 @@ O objetivo do desenvolvimento deste produto é automatizar a administração do 
 | Sprint 5 |         | 10/11/2023     | 24/11/2023    |
 | Sprint 6 |         | 25/11/2023     | 09/12/2023    |
 | Sprint 7 |         | 09/12/2023     | 14/12/2023    |
-
-
 ## 3. Metodologia de Desenvolvimento
 
 **Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
