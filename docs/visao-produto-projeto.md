@@ -4,7 +4,7 @@
 
 ### 1.1 Problema
 
-O problema em questão envolve a gestão do fluxo de caixa nas lojas da empresa. Atualmente, o sistema utilizado é chamado de Gladium, que é usado para fazer emissão de notas fiscais, mas que não faz o controle dos pagamentos a prazo. O controle das vendas a prazo é feito no excel pelo setor financeiro da empresa, ficando como responsabilidade dos caixas informar quais vendas foram a prazo ao setor. Todo esse processo exige uma mão de obra que necessita de um treinamento adequado dos funcionários para identificar e registrar tais pagamentos no Excel, além de ser suscetível a erros de comunicação, resultando em informações imprecisas. Além disso, há a falta de um sistema automatizado para importar informações de pix/transferências bancárias de maneira integrada ao sistema utilizado atualmente pela empresa, o que pode incorrer em erros de transcrição. Tais erros foram, inclusive, notados pela cliente durante o processo de explicação do problema ao consultar algumas das planilhas. Diante disso, vemos uma clara dependência excessiva de processos manuais para registrar os pagamentos a prazo às vendas/cobranças. Toda essa falta de uma estrutura organizacional eficiente para armazenar os extratos bancários e documentos relacionados aos pagamentos, aliado a erros que possam ser provenientes do ambiente de trabalho, tal como distrações durante o processo, além da falta de sistemas de verificação de erros para garantir a precisão desses dados registrados no Excel, tornam todo o trabalho suscetível a erros, como os relatados pela cliente.
+O problema em questão envolve a gestão do fluxo de caixa nas lojas da empresa Natural Brasil, devido a deficiências no sistema atual (Gladium). Ele emite notas fiscais, mas não controla pagamentos a prazo. O controle é manual, feito no Excel, sujeito a erros de comunicação e exigindo treinamento para os funcionários. Além disso, a falta de integração para importar dados de pix/transferências bancárias pode causar erros. Isso resultou em imprecisões notadas pela cliente ao revisar planilhas. A empresa depende muito de processos manuais, carece de uma estrutura organizacional eficiente para arquivar documentos e extratos bancários, e não possui sistemas de verificação de erros. Isso torna o trabalho propenso a erros, como destacado pela cliente.
 
 ![Diagrama de Ishikawa](assets/ishikawa.png)
 
@@ -197,7 +197,7 @@ A premissa subjacente é que, ao integrar esses módulos, conseguimos testar e e
 
 <center >
 
-Figura 10 - Modelo de trabalho do RAD (fonte: _Software Engineering | Rapid application development model_, 2023)
+Figura 8 - Modelo de trabalho do RAD (fonte: _Software Engineering | Rapid application development model_, 2023)
 
 </center >
 
@@ -209,7 +209,7 @@ Figura 10 - Modelo de trabalho do RAD (fonte: _Software Engineering | Rapid appl
 
 <center>
 
-Figura 8 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)
+Figura 9 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)
 
 </center>
 
@@ -227,7 +227,7 @@ Planejamos começar com a avaliação da utilidade do sistema para a empresa (co
 
 <center>
 
-Figura 9 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
+Figura 10 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 
 </center>
 
@@ -242,7 +242,7 @@ Figura 9 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 | Verificação e Validação                                                              | Feedback           | Retorno de Feedback             |
 | Organização e Atualização                                                               | MoSCoW | Definição de  prioridades     |
                                              
-Figura 10 - Atividades de ER, Técnicas e Resultados (fonte: Marsicano, 2023)
+Figura 11 - Atividades de ER, Técnicas e Resultados (fonte: Marsicano, 2023)
 
 ## Referências
 
@@ -257,6 +257,7 @@ MARSICANO, George. Centro de Estudos, Desenvolvimento e Inovação em Software (
 | 26/09/2023 | 1.0    | Criação do documento                                                  | Breno, Bruno, Gustavo Kenzo, Gustavo Henrique, Maicon, Maria Luisa |
 | 26/09/2023 | 1.1    | Adição da visão geral do produto, desenvolvimento do projeto e assets | Gustavo Kenzo, Gustavo Henrique, Bruno                             |
 | 27/09/2023 | 1.2    | Inicialização do tópico de Processos e Procedimentos                  | Breno Yuri, Maria Luisa                                            |
+| 23/10/2023 | 1.3    | Alterações solicitadas pela avaliação                | Breno Yuri                                           |
 
 ## Tecnologias
 
