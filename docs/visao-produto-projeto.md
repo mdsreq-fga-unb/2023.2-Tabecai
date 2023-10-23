@@ -242,7 +242,7 @@ Figura 9 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 | Verificação e Validação                                                              | Feedback           | Retorno de Feedback             |
 | Organização e Atualização                                                               | MoSCoW | Definição de  prioridades     |
                                              
-
+Figura 10 - Atividades de ER, Técnicas e Resultados (fonte: Marsicano, 2023)
 
 ## Referências
 
