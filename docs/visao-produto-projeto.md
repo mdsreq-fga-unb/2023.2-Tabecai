@@ -233,8 +233,6 @@ Figura 9 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 
 #### 3.8.3 Requisitos e Planejamento
 
-#### 3.8.3 Requisitos e Planejamento
-
 | Atividade                                                                                | Técnica     | Entrega                                                                                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Elicitação e Descorberta                                                                | Diagrama de Ishikawa       | 	Backlog de requisitos                                                                              |
