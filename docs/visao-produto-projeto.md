@@ -233,19 +233,18 @@ Figura 9 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 
 #### 3.8.3 Requisitos e Planejamento
 
-No processo de seleção de um ciclo de vida híbrido, foi fundamental identificar os processos específicos a serem utilizados em cada fase do projeto. Neste caso, consideramos a combinação de elementos do modelo em cascata com o modelo de desenvolvimento rápido (RAD) para maximizar a eficiência e a adaptabilidade.
+#### 3.8.3 Requisitos e Planejamento
 
-A Engenharia de Requisitos desempenha um papel crucial nesse contexto, pois a compreensão completa e precisa dos requisitos do projeto é fundamental para guiar as decisões de desenvolvimento. A seguir, apresentamos uma tabela que descreve as fases e atividades de um modelo híbrido que começa com o ciclo de vida em cascata e transita para o modelo RAD:
+| Atividade                                                                                | Técnica     | Entrega                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Elicitação e Descorberta                                                                | Diagrama de Ishikawa       | 	Backlog de requisitos                                                                              |
+| Análise e Consenso                                     | Análise de Viabilidade       | Backlog de requisitos                                                |
+| Declaração                                                                         | User Stories, Temas, Casos de Uso       | User Stories   |
+| Representação                                                               | Prototipagem           | Protótipos |
+| Verificação e Validação                                                              | Feedback           | Retorno de Feedback             |
+| Organização e Atualização                                                               | MoSCoW | Definição de  prioridades     |
+                                             
 
-| Fase                         | Abordagem     | Atividade                                                                                | Atividades a ser desenvolvida                                                                                                                                                                 |
-| ---------------------------- | ------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Planejamento Inicial      | Cascata       | -Elicitação e Descorberta                                                                | - Definição de objetivos do projeto <br /> - Coleta de requisitos <br /> - Estabelecimento de plano de projeto                                                                                |
-| 2. Análise                   | Cascata       | -Análise e Consenso <br /> -Elicitação e Descorberta                                     | - Análise detalhada de requisitos <br />- Especificação de requisitos funcionais e não funcionais<br /> - Documentação completa de requisitos                                                 |
-| 3. Design                    | Cascata       | - Representação                                                                          | - Criação de documentação de design <br /> - Projeto de arquitetura do sistema <br />- Projeto de interface do usuário (baixa fidelidade) <br /> - Especificação de componentes de software   |
-| 4. Desenvolvimento Iterativo | RAD           | - Verificaçnao e Validação                                                               | - Desenvolvimento rápido de protótipos ou versões iniciais do software <br /> - Feedback constante dos stakeholders para refinamento <br /> - Iterações frequentes de desenvolvimento e teste |
-| 5. Integração                | RAD           | - Verificaçnao e Validação                                                               | - Integração dos componentes desenvolvidos nas iterações anteriores <br /> - Testes de integração contínuos <br />- Garantia de que as partes do sistema funcionem bem juntas                 |
-| 6. Teste e Qualidade         | Cascata e RAD | - Verificaçnao e Validação                                                               | - Teste de unidade, teste de integração e teste do sistema (Cascata)<br /> - Testes adicionais de aceitação do usuário e teste de desempenho (RAD) <br /> - Correção de bugs (RAD)            |
-| 7. Implantação               | Cascata       | - Representação formal <br /> - Verificação e validação <br /> Organização e Atualização | - Preparação para a implantação do sistema <br /> - Treinamento de usuários finais <br /> - Implantação final do sistema em ambiente de produção                                              |
 
 ## Referências
 
