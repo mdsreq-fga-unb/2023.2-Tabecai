@@ -191,7 +191,60 @@ Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o 
 
 A abordagem conhecida em português como Desenvolvimento Rápido de Aplicações, ou RAD, é um método incremental que direciona as atividades conforme ilustrado na Figura 10. Esse método abrange a criação de módulos que passam pelas etapas de análise, design, codificação e teste. Cada um desses módulos é construído por equipes dedicadas, operando em paralelo, com base nos requisitos identificados e divididos durante o ciclo de elicitação. Para alcançar esse objetivo, empregamos diversas técnicas e ferramentas de desenvolvimento.
 
-A premissa subjacente é que, ao integrar esses módulos, conseguimos testar e entregar o produto final. No nosso caso, optamos por adotar uma abordagem híbrida. Inicialmente, utilizamos uma abordagem em cascata para os requisitos iniciais que identificamos. Posteriormente, nas fases subsequentes, incorporamos abordagens ágeis e o processo RAD em sua totalidade. Consequentemente, distribuiremos nossos cinco membros em dois times que trabalharão simultaneamente em módulos distintos.
+O processo de desenvolvimento de software híbrido é uma abordagem que combina elementos de dois ou mais modelos, nossa abordagem vai combinar o modelo cascata com o modelo RAD onde o processo começa com uma fase de requisitos iniciais, que é realizada usando o modelo cascata. Nesta fase, os requisitos do software são coletados e documentados de forma completa e consistente.
+
+Uma pessoa do grupo será responsável por essa tarefa. Essa pessoa será responsável por usar uma abordagem de elicitação de requisitos para entender as necessidades do cliente. Ela também será responsável por garantir que os requisitos sejam completos, consistentes e realizáveis.
+
+Após a fase de requisitos iniciais, o processo muda para um modelo RAD. Nesta fase, o software é desenvolvido em ciclos iterativos e incrementais. Cada ciclo consiste em uma ou mais das etapas do processo de desenvolvimento de software, como análise, design, desenvolvimento, teste e entrega.
+
+Para o projeto de software com os 5 membros, sugerimos que o grupo pode ser dividido em três times, com uma pessoa apenas para requisitos. Cada time seria responsável pelo desenvolvimento de um módulo específico do software.
+
+O processo de desenvolvimento de software híbrido tem as seguintes vantagens:
+
+- Flexibilidade: O modelo RAD permite que o software seja desenvolvido de forma iterativa e incremental, o que pode ser útil para projetos de software com requisitos mutáveis.
+- Eficiência: O modelo cascata pode ser usado para garantir que os requisitos do software sejam completos e consistentes antes do desenvolvimento começar.
+- Colaboração: A divisão do grupo em três times pode facilitar a colaboração e a comunicação.
+
+**Vantagens da inclusão da pessoa nos requisitos**
+
+A inclusão de uma pessoa responsável pelos requisitos no processo de desenvolvimento de software híbrido tem as seguintes vantagens:
+
+- Garante que os requisitos sejam coletados e analisados com cuidado. A pessoa responsável pelos requisitos será capaz de se concentrar nessa tarefa e garantir que os requisitos sejam completos, consistentes e realizáveis.
+- Aumenta a eficiência do processo. A pessoa responsável pelos requisitos pode trabalhar em paralelo com os outros times, o que pode ajudar a acelerar o desenvolvimento do software.
+- Melhora a comunicação e a colaboração entre os times. A pessoa responsável pelos requisitos pode ser um ponto focal para a comunicação entre os times, o que pode ajudar a evitar erros e mal-entendidos.
+
+No geral, o processo de desenvolvimento de software híbrido é uma boa opção para projetos de software com requisitos mutáveis e que precisam ser desenvolvidos de forma eficiente e colaborativa.
+
+Aqui está uma explicação mais detalhada da imagem, com base no contexto fornecido:
+
+**Requisitos:** Os requisitos do software são coletados e documentados usando o modelo cascata. Nesta fase, o grupo usa uma abordagem de elicitação de requisitos para entender as necessidades do cliente. Uma pessoa do grupo será responsável por essa tarefa.
+
+**Análise:** Os requisitos são analisados para garantir que sejam completos, consistentes e realizáveis. Nesta fase, o grupo usa técnicas de análise de requisitos para identificar quaisquer problemas ou lacunas nos requisitos.
+
+**Design:** O software é projetado usando o modelo RAD. Nesta fase, o grupo cria um modelo de arquitetura e especifica detalhes de implementação.
+
+**Desenvolvimento:** O software é desenvolvido usando o modelo RAD. Nesta fase, o grupo divide o software em três módulos, com cada módulo sendo desenvolvido por um time.
+
+**Teste:** O software é testado usando o modelo RAD. Nesta fase, o grupo testa cada módulo após ser desenvolvido.
+
+**Entrega:** O software é entregue ao cliente.
+
+A divisão do grupo em três times, com uma pessoa apenas para requisitos, é uma maneira de garantir que os requisitos do software sejam coletados e analisados com cuidado. A pessoa responsável pelos requisitos será capaz de se concentrar nessa tarefa e garantir que os requisitos sejam completos, consistentes e realizáveis.
+
+| Time | Membros | Módulo responsável |
+|---|---|---|
+| **Requisitos** | Gustavo Kenzo | Requisitos |
+| **Desenvolvimento 1** | Maicon Rodrigues, Gustavo Henrique, Maria Luisa | Módulo 1 (back-end) |
+| **Desenvolvimento 2** | Bruno, Breno Yuri | Módulo 2 (front-end) |
+
+A divisão foi feita de forma a balancear as habilidades e experiências dos membros da equipe. O time de requisitos é responsável por coletar, documentar e analisar os requisitos do software. O time de desenvolvimento 1 é responsável pelo desenvolvimento do módulo 1, que é um módulo de back-end.
+
+**Justificativa da divisão**
+
+**Requisitos:** Uma pessoa foi designada para liderar os esforços de elicitação de requisitos, Gustavo Kenzo. Ele terá a oportunidade de se concentrar nessa tarefa e garantir que os requisitos sejam completos, consistentes e realizáveis.
+**Desenvolvimento 1:** Maicon Rodrigues, Gustavo Henrique e Maria Luisa têm experiência em desenvolvimento de software. Eles serão responsáveis pelo desenvolvimento do módulo 1, que é um módulo de back-end.
+**Desenvolvimento 2:** Bruno e Breno Yuri têm experiência em desenvolvimento de front-end. Eles serão responsáveis pelo desenvolvimento do módulo 2, que é um módulo de front-end.
+
 
 ![Alt text](assets/RAD-model.png)
 
@@ -221,9 +274,82 @@ Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requi
 
 #### 3.8.2 Atividades do Processo de Engenharia de Requisitos
 
-Planejamos começar com a avaliação da utilidade do sistema para a empresa (conhecida como estudo de viabilidade), seguida pela descoberta e análise dos requisitos, a transformação deles em uma forma padronizada (especificação) e, finalmente, a verificação para garantir que os requisitos definidos realmente atendem às necessidades do cliente (validação). No entanto, na prática, a engenharia de requisitos é um processo iterativo, onde essas atividades se entrelaçam ao longo do tempo.
+Como equipe de desenvolvimento de software, nos comprometemos a seguir as seguintes atividades no processo de engenharia de requisitos:
 
-![Alt text](assets/atividadesReq.png)
+## Viabilidade:
+
+1. Realizar um estudo de viabilidade para avaliar a pertinência do sistema para a empresa.
+
+## Descoberta e Análise de Requisitos:
+
+2. Realizar entrevistas com os usuários a fim de identificar suas necessidades.
+3. Conduzir reuniões com as partes interessadas para compreender as necessidades do negócio.
+4. Analisar documentos para identificar os requisitos do sistema.
+
+## Especificação de Requisitos:
+
+5. Especificar os requisitos do sistema por meio de um modelo, diagrama ou documento escrito.
+
+## Validação de Requisitos:
+
+6. Obter feedback dos usuários em relação aos requisitos do sistema.
+7. Realizar testes para validar os requisitos do sistema.
+
+## A Natureza Iterativa da Engenharia de Requisitos:
+
+As atividades do processo de engenharia de requisitos serão repetidas várias vezes à medida que o sistema é desenvolvido.
+
+## Exemplos e Ilustrações:
+
+### Viabilidade:
+
+- Um estudo de viabilidade pode incluir uma análise de mercado para avaliar a demanda por um produto ou serviço.
+
+### Descoberta e Análise de Requisitos:
+
+- Entrevistas com os usuários podem abranger questões relacionadas às tarefas que eles executam, os desafios que enfrentam e os objetivos que desejam alcançar.
+- Reuniões com as partes interessadas podem envolver discussões sobre as metas e objetivos do negócio.
+- A análise de documentos pode compreender a revisão de especificações de produtos, manuais de usuário e requisitos funcionais.
+
+### Especificação de Requisitos:
+
+- Um modelo pode ser empregado para representar os requisitos do sistema de maneira visual.
+- Um diagrama pode ser utilizado para representar os requisitos do sistema de forma estruturada.
+- Um documento escrito pode ser empregado para documentar detalhadamente os requisitos do sistema.
+
+### Validação de Requisitos:
+
+- O feedback dos usuários pode ser obtido por meio de entrevistas, pesquisas ou grupos focais.
+- Os testes podem ser realizados por meio de testes de unidade, testes de integração e testes de sistema.
+
+Como exemplo prático, podemos considerar o desenvolvimento de um sistema de gerenciamento de estoque para uma empresa de varejo.
+
+### Viabilidade:
+
+- O estudo de viabilidade poderia avaliar a necessidade de um sistema de gerenciamento de estoque para a empresa.
+- O estudo poderia considerar fatores como o tamanho do estoque, a frequência das vendas e os requisitos de relatórios.
+
+### Descoberta e Análise de Requisitos:
+
+- As entrevistas com os usuários poderiam incluir questões sobre como os funcionários atualmente gerenciam o estoque.
+- As reuniões com as partes interessadas poderiam incluir discussões sobre as metas e objetivos da empresa em relação ao sistema de gerenciamento de estoque.
+- A análise de documentos poderia englobar a análise de registros de vendas e inventário.
+
+### Especificação de Requisitos:
+
+- Um modelo poderia ser usado para representar o fluxo de trabalho do sistema de gerenciamento de estoque.
+- Um diagrama poderia ser usado para representar a estrutura do banco de dados do sistema.
+- Um documento escrito poderia ser empregado para documentar os requisitos funcionais e não funcionais do sistema.
+
+### Validação de Requisitos:
+
+- O feedback dos usuários poderia ser obtido por meio de entrevistas com os funcionários que utilizariam o sistema.
+- Os testes poderiam ser realizados por meio de testes de unidade, testes de integração e testes de sistema.
+
+Acreditamos firmemente que este processo de engenharia de requisitos nos permitirá desenvolver um sistema que atenda às necessidades dos usuários e do negócio.
+
+
+![Alt text](assets/er_atividades_marsicano.png)
 
 <center>
 
