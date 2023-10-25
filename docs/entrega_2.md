@@ -7,7 +7,7 @@
 
 ### Canvas MVP 1 e MVP 2
 
-![Alt text](assets/mvp1.png)
+![Alt text](assets/mvp1.jpg)
 
 A imagem acima mostra um MVP 1 para um sistema de gerenciamento de caixa. A imagem mostra que o MVP 1 é um produto básico que pode ser usado para registrar vendas e entradas de caixa.
 
@@ -16,7 +16,7 @@ A imagem mostra que o MVP 1 inclui as seguintes funcionalidades:
 * Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
 * Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
 
-![Alt text](assets/mvp2.png)
+![Alt text](assets/mvp2.jpg)
 
 A imagem acima mostra um MVP 2 para o mesmo sistema de gerenciamento de caixa. A imagem mostra que o MVP 2 é um produto mais completo que o MVP 1.
 
