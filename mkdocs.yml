@@ -12,6 +12,7 @@ nav:
   - Home: index.md
   - Documentação:
     - Visão de Produto e Projeto: "visao-produto-projeto.md"
+    - BackLog do Produto: "backlog_produto.md"
   - Entregas:
     - Unidade 1: "entrega_1.md"
     - Unidade 2: "entrega_2.md" 
