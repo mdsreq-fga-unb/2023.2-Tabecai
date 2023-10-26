@@ -14,28 +14,6 @@
 
 ![Alt text](assets/safe.png)
 
-### Canvas MVP 1 e MVP 2
-
-![Alt text](assets/mvp1.jpg)
-
-A imagem acima mostra um MVP 1 para um sistema de gerenciamento de caixa. A imagem mostra que o MVP 1 é um produto básico que pode ser usado para registrar vendas e entradas de caixa.
-
-A imagem mostra que o MVP 1 inclui as seguintes funcionalidades:
-
-- Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
-- Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
-
-![Alt text](assets/mvp2.jpg)
-
-A imagem acima mostra um MVP 2 para o mesmo sistema de gerenciamento de caixa. A imagem mostra que o MVP 2 é um produto mais completo que o MVP 1.
-
-A imagem mostra que o MVP 2 inclui as seguintes funcionalidades:
-
-- Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
-- Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
-- Vinculação de produto a compra: Os funcionários de caixa devem ser capazes de vincular produtos a compras.
-- Geração de relatórios de vendas: Os gerentes de loja devem ser capazes de gerar relatórios de vendas, incluindo o valor das vendas, os produtos vendidos e os funcionários de caixa responsáveis.
-
 ### Definição das atividades presentes em cada MVP
 
 No nosso projeto, a análise de viabilidade para construção dos MVP`s foi feito ultilizando Matriz de priorização, afim de se identificar o que é mais importante, ela conta com 2 critérios: Valor de negócio (VALOR) e Complexidade Técnica (ESFORÇO). <br/>  
@@ -109,6 +87,15 @@ Dados os Pesos, a ideia para a construção e divisão dos MVP's, deu-se a parti
 
 ### MVP 1
 
+![Alt text](assets/mvp1.jpg)
+
+A imagem acima mostra um MVP 1 para um sistema de gerenciamento de caixa. A imagem mostra que o MVP 1 é um produto básico que pode ser usado para registrar vendas e entradas de caixa.
+
+A imagem mostra que o MVP 1 inclui as seguintes funcionalidades:
+
+- Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
+- Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
+
 | MVP 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Justificativa                                                                                                                       |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
 | US01 - Eu como administrador, quero ser capaz de deletar um funcionário, para caso não faça mais parte da minha empresa. <br>US02 - Eu como administrador, quero ser capaz de editar um funcionário, para poder mudar as informações do mesmo<br>US03 - Eu como administrador, quero ser capaz de criar um funcionário, para que ele possa exercer a função dele.<br>US04 - Eu como administrador, quero ser capaz de ler um funcionário ou todos os funcionários, para poder ter relatórios dos mesmos.               | O administrador deve ser capaz de poder ter funcionarios e manipular eles no programa.                                              |
@@ -120,6 +107,17 @@ Dados os Pesos, a ideia para a construção e divisão dos MVP's, deu-se a parti
 | US27 - Eu como administrador, quero ser capaz de criar um produto, para ser registrado em compras.<br>US28 - Eu como administrador, quero ser capaz de editar um produto, para atualizar suas informações.<br>US29 - Eu como administrador, quero ser capaz de deletar um produto, para que não seja atribuído a compras                                                                                                                                                                                               | O administrador deve ser capaz de criar um produto para ele ser colocado a venda.                                                   |
 
 ### MVP 2
+
+![Alt text](assets/mvp2.jpg)
+
+A imagem acima mostra um MVP 2 para o mesmo sistema de gerenciamento de caixa. A imagem mostra que o MVP 2 é um produto mais completo que o MVP 1.
+
+A imagem mostra que o MVP 2 inclui as seguintes funcionalidades:
+
+- Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
+- Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
+- Vinculação de produto a compra: Os funcionários de caixa devem ser capazes de vincular produtos a compras.
+- Geração de relatórios de vendas: Os gerentes de loja devem ser capazes de gerar relatórios de vendas, incluindo o valor das vendas, os produtos vendidos e os funcionários de caixa responsáveis.
 
 | MVP 2                                                                                                                                                                                                                                                                                                                                                                                                                                                | Justificativa                                                                                                       |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
