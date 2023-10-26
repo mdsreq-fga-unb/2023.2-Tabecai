@@ -1,5 +1,9 @@
 ## Apresentação do Backlog (MVP1 e MVP2)
 
+### Apresentação
+
+---iframe video -----
+
 ### Material
 
 <iframe src='https://miro.com/app/board/uXjVMmS3Ge8=/?share_link_id=305468132627' width='100%' height='480px' style='min-width: 640px; min-height: 480px; background-color: #f4f4f4; border: 1px solid #efefef' sandbox='allow-same-origin allow-scripts allow-modals allow-popups allow-popups-to-escape-sandbox'></iframe>
@@ -31,15 +35,6 @@ A imagem mostra que o MVP 2 inclui as seguintes funcionalidades:
 - Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
 - Vinculação de produto a compra: Os funcionários de caixa devem ser capazes de vincular produtos a compras.
 - Geração de relatórios de vendas: Os gerentes de loja devem ser capazes de gerar relatórios de vendas, incluindo o valor das vendas, os produtos vendidos e os funcionários de caixa responsáveis.
-
-### Apresentação
-
----iframe video -----
-
-| Data     | Versão | Descrição                             | Autor(es) | Revisor(es) |
-| -------- | ------ | ------------------------------------- | --------- | ----------- |
-| 24/05/23 | `1.0`  | Vídeo sobre a apresentação do Backlog | Alguém    |
-| 22/06/23 | `1.1`  | Adicionando material                  | Maicon    |
 
 ### Definição das atividades presentes em cada MVP
 
