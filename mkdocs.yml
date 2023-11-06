@@ -13,8 +13,10 @@ nav:
   - Documentação:
       - Visão de Produto: 'visao-produto.md'
       - Visão de Projeto: 'visão-projeto.md'
-      - BackLog do Produto: 'backlog_produto.md'
       - Processo: 'processo.md'
+      - BackLog do Produto: 'backlog_produto.md'
+      - Sprints: 'sprints.md'
+     
   - Entregas:
       - Unidade 1: 'entrega_1.md'
       - Unidade 2: 'entrega_2.md'
