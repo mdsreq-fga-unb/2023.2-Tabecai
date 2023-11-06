@@ -1,7 +1,7 @@
 site_name: Tabeçaí
 
-repo_name: "2023.2-Tabecai"
-repo_url: "https://github.com/mdsreq-fga-unb/2023.2-Tabecai"
+repo_name: '2023.2-Tabecai'
+repo_url: 'https://github.com/mdsreq-fga-unb/2023.2-Tabecai'
 
 theme:
   name: material
@@ -11,12 +11,13 @@ site_description: Este repositório é dedicado ao projeto da Turma 4 da discipl
 nav:
   - Home: index.md
   - Documentação:
-    - Visão de Produto: "visao-produto.md"
-    - Visão de Projeto: "visão-projeto.md"
-    - BackLog do Produto: "backlog_produto.md"
-    - Processo: "processo.md"
+      - Visão de Produto: 'visao-produto.md'
+      - Visão de Projeto: 'visão-projeto.md'
+      - BackLog do Produto: 'backlog_produto.md'
+      - Processo: 'processo.md'
   - Entregas:
-    - Unidade 1: "entrega_1.md"
-    - Unidade 2: "entrega_2.md" 
+      - Unidade 1: 'entrega_1.md'
+      - Unidade 2: 'entrega_2.md'
   - Lições Aprendidas:
-    - Unidade 1: "lessons.md"
+      - Unidade 1: 'lessons.md'
+      - Unidade 2: 'lessons.md'
