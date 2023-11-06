@@ -17,6 +17,18 @@
 | Caixa           | Gerenciamento de Caixa                      | Criar, ler, editar e deletar caixa              | US23 - Eu como administrador, quero ser capaz de ler um caixa, para poder gerar as informações do mesmo.<br>US24 - Eu como administrador, quero ser capaz de criar um caixa, para poder ter vendas.<br>US25 - Eu como administrador, quero ser capaz de deletar um caixa, para dizer que ele não existe mais na loja.<br>US26 -Eu como administrador, quero ser capaz de editar uma caixa, para mudar o responsável.      |
 |Caixa           |Gerenciamento de Produto                     |Criar, ler, editar e deletar produto               |US27 - Eu como administrador, quero ser capaz de criar um produto, para ser registrado em compras.<br>US28 - Eu como administrador, quero ser capaz de editar um produto, para atualizar suas informações.<br>US29 - Eu como administrador, quero ser capaz de deletar um produto, para que não seja atribuído a compras.|
 
+### Requisitos Não Funcionais
+
+| Código | Tipo           | Descrição                                                                                                                |   |
+|--------|----------------|--------------------------------------------------------------------------------------------------------------------------|---|
+| RNF01  | Desempenho     | A aplicação deve ser capaz de lidar com um volume de tráfego de 100 usuários simultâneos.                                |   |
+| RNF02  | Portabilidade  | A aplicação deve ser compatível com as versões de até dezembro de 2023 dos navegadores Chrome, Safari, Firefox e Brave.  |   |
+| RNF03  | Confiabilidade | Deve garantir que apenas aqueles registrados no sistema tenham acesso a aplicação.                                       |   |
+| RNF04  | Escalabilidade | A aplicação deve ser capaz de aumentar sua capacidade para acomodar o crescimento de dados ou usuários.                  |   |
+| RNF05  | Interface      | A aplicação deve manter um estilo de design consistente em toda a interface, incluindo fontes, cores e ícones.           |   |
+| RNF06  | Interface      | A interface deve ser responsiva, adaptando-se a diferentes tamanhos de tela e dispositivos, como smartphones e tablets.  |   |
+
+
 ### Definição das atividades presentes em cada MVP
 
 No nosso projeto, a análise de viabilidade para construção dos MVP`s foi feito ultilizando Matriz de priorização, afim de se identificar o que é mais importante, ela conta com 2 critérios: Valor de negócio (VALOR) e Complexidade Técnica (ESFORÇO). <br/>  
