@@ -25,10 +25,10 @@
 | Sprint 1 | - Definição do produto; <br/>- Definição do Problema; <br />- Início do GitPages; <br/>-Conclusão da ideia do produto; <br/>-Produção da Visão do Produto e Projeto; | 14/09/2023     | 28/09/2023  |
 | Sprint 2 | -Criação da Versão Inicial do Backlog do Produto; <br />-Definição das Histórias de Usuário <br />-Definição de tecnologias utilizadas no Projeto; <br />-Produção do protótipo de baixa fidelidade. | 29/09/2023     | 13/10/2023  |
 | Sprint 3 | -Validação e Verificação de Requisitos <br />-Levantamento de escorpo do MVP1 E MVP2 <br/>-Inicializar Front-end, pós validação do cliente | 14/10/2023     | 26/10/2023  |
-| Sprint 4 | MVP 1<br/>US01;<br/>US02;<br/>US03;<br/>US04;<br/>US07;<br/>US08;<br/>US09;<br/>US10;<br/>US17;<br/>US19;<br/>US21;<br/>US23;<br/>US24;<br/>US25;<br/>US26;<br/>US27;<br/>US28;<br/>US29. | 27/10/2023     | 09/11/2023  |
-| Sprint 5 | Revisão e correção de bugs MVP1, espaço para resolução de transbordamento. | 10/11/2023     | 24/11/2023  |
-| Sprint 6 | MVP 2<br/>US05;<br/>US06;<br/>US11;<br/>US12;<br/>US13;<br/>US14;<br/>US15;<br/>US16;<br/>US18;<br/>US20;<br/>US22. | 25/11/2023     | 09/12/2023  |
-| Sprint 7 | Revisão e correção de bugs MVP2, espaço para resolução de transbordamento. | 09/12/2023     | 14/12/2023  |
+| Sprint 4 | MVP 1<br/>US01;<br/>US02;<br/>US03;<br/>US04;<br/>US07;<br/>US08;<br/>US09;<br/>US10;<br/>US17; | 27/10/2023     | 09/11/2023  |
+| Sprint 5 | MVP1 <br/>US19;<br/>US21;<br/>US23;<br/>US24;<br/>US25;<br/>US26;<br/>US27;<br/>US28;<br/>US29. | 10/11/2023     | 24/11/2023  |
+| Sprint 6 | MVP 2<br/>US05;<br/>US06;<br/>US11;<br/>US12;<br/>US13; | 25/11/2023     | 09/12/2023  |
+| Sprint 7 |MVP2 <br/>US14;<br/>US15;<br/>US16;<br/>US18;<br/>US20;<br/>US22. | 09/12/2023     | 14/12/2023  |
 
 ### 2.4 Critérios de Replanejamento
 
