@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Logo from '../../assets/logo.svg'
+import Image from "next/image"
+import Logo from "../../assets/logo.svg"
 
 export default function Login() {
   return (
