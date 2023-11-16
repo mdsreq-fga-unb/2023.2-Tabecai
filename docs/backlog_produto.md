@@ -140,3 +140,22 @@ A imagem mostra que o MVP 2 inclui as seguintes funcionalidades:
 | US18 - Eu como administrador, quero ser capaz de gerar um relatório do cliente, para poder cobrar uma venda.                                                                                                                                                                                                                                                                                                                                         | O administrador deve ser capaz de gerar o relatório de um cliente para cobrar uma venda ou várias do mesmo cliente. |
 | US20 - Eu como funcionário, quero ser capaz de atribuir uma compra a um cliente, para gerenciar dívidas.                                                                                                                                                                                                                                                                                                                                             | O funcionario deve poder atribuir uma venda a um cliente para poder cobra-lo no futuro.                             |
 | US23 - Eu como administrador, quero ser capaz de criar uma compra, para poder cobrá-la.<br>US25 - Eu como administrador, quero ser capaz de deletar uma compra, para dizer que ela já foi paga.                                                                                                                                                                                                                                                      | O administrador deve ser capaz de criar uma compra e atribuir a um cliente e deve poder deletar a mesma.            |
+
+
+ ## DOR e DOD
+O Desenvolvimento Orientado por Dados (DOD) coloca a análise de dados no centro das decisões de desenvolvimento. Já a Definição de Objetivos e Resultados (DOR) estabelece um método claro para definir metas tangíveis. Essas abordagens, quando combinadas, proporcionam eficiência e alinhamento estratégico. Neste contexto, exploraremos da seguinte forma a combinação do DOD e DOR no projeto.
+
+**DOR**
+- O Requisito possui informação necessária para ser trabalhado? 
+- O requisito é consistente com os objetivos do projeto?
+- O requisito foi validado com o cliente?
+- O requisito está alinhado com as necessidades dos usuários?
+- O Requisito está representado por uma história de usuário?  
+- As dependências do Requisito estão identificadas (se houver)?
+
+**DOD**
+- O requisito foi implementado de acordo com os critérios de aceitação?
+- A atividade foi entregue por completo?
+- Foram aplicados testes para validar? Passou minimamente por todos?
+- Os testes são executados de forma consistente?
+- A implementação é consistente com a arquitetura?

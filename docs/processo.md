@@ -1,8 +1,8 @@
-## 3. Metodologia de Desenvolvimento
+## Metodologia de Desenvolvimento
 
 **Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.**
 
-### 3.1 Requisitos:
+### 1. Requisitos:
 
 ![Alt text](assets/gupta1.png)
 
@@ -21,7 +21,7 @@ Figura 3 - Modelo Gupta para requisitos (fonte: Gupta, 2019)
 
 Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.
 
-### 3.2 Equipe de Desenvolvimento:
+### 2. Equipe de Desenvolvimento:
 
 ![Alt text](assets/gupta2.png)
 
@@ -40,7 +40,7 @@ Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)
 
 Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.
 
-### 3.3 Usuários:
+### 3. Usuários:
 
 ![Alt text](assets/gupta3.png)
 
@@ -59,7 +59,7 @@ Figura 5 - Modelo Gupta para usuários (fonte: Gupta, 2019)
 
 Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.
 
-### 3.4 Tipo de Projeto e Risco Associado:
+### 4. Tipo de Projeto e Risco Associado:
 
 ![Alt text](assets/gupta4.png)
 
@@ -78,9 +78,9 @@ Figura 6 - Modelo Gupta para tipo de projeto e risco associado (fonte: Gupta, 20
 | Uso de componentes reutilizáveis?                          | Sim            |
 | Os recursos (Tempo, dinheiro, pessoas etc) estão escassos? | Não            |
 
-Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis.
+Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis. 
 
-#### 3.4.1 Riscos
+Tendo em vista isso, a tabela abaixo apresenta o quadro de riscos assciado ao desenvolvimento do projeto.
 
 | Risco                                                                               | Resolução                                                                                                                   |
 | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco assoc
 | Alterações de serviços externos (APIs de Bancos, por exemplo)                       | Adequar o produto o mais rápido possível de acordo com a nova documentação com as alterações realizadas                     |
 | Falta de capacitação de um membro da equipe em relação a tecnologia sendo utilizada | O membro da equipe deve buscar ajuda de alguém que saiba, ou procurar por materiais e documentações para preencher a lacuna |
 
-### 3.5 Escolha do Modelo do Processo de Desenvolvimento
+## Modelo do Processo de Desenvolvimento
 
 ![Alt text](assets/rad.png)
 
@@ -101,7 +101,7 @@ Figura 7 - Procedimento do RAD ( Fonte: George Marsicano, 2023 )
 
 Considerando todas as características do projeto, a equipe optou por utilizar o modelo RAD (Rapid Application Development), pois o projeto é de médio porte, com um prazo de entrega curto, a equipe tem experiência em projetos similares, e o projeto é uma melhoria de um sistema existente, o que facilita o desenvolvimento.A abordagem será hibrida com o modelo cascata para garantir a parte de levamento de requisitos e nas partes seguintes do desenvolvimento, o modelo RAD será utilizado.
 
-### 3.6 Ferramentas
+## Ferramentas
 
 Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o desenvolvimento do projeto.
 
@@ -113,7 +113,7 @@ Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o 
 | [VSCode](https://code.visualstudio.com/) | Editor de código                       |
 | [Whimsical](https://whimsical.com/)      | Fluxograma                             |
 
-### 3.7 Atividade RAD
+## Atividade RAD
 
 A abordagem conhecida em português como Desenvolvimento Rápido de Aplicações, ou RAD, é um método incremental que direciona as atividades conforme ilustrado na Figura 10. Esse método abrange a criação de módulos que passam pelas etapas de análise, design, codificação e teste. Cada um desses módulos é construído por equipes dedicadas, operando em paralelo, com base nos requisitos identificados e divididos durante o ciclo de elicitação. Para alcançar esse objetivo, empregamos diversas técnicas e ferramentas de desenvolvimento.
 
@@ -180,9 +180,9 @@ Figura 8 - Modelo de trabalho do RAD (fonte: _Software Engineering | Rapid appli
 
 </center >
 
-### 3.8 Processos e Procedimentos
+##  Processos e Procedimentos
 
-#### 3.8.1 Escolhas do Processo de Engenharia de Requisitos
+### 1. Escolhas do Processo de Engenharia de Requisitos
 
 ![Alt text](assets/er_facetas.png)
 
@@ -198,92 +198,23 @@ Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requi
 2. Processo exploratório ;
 3. Tempo interativo.
 
-#### 3.8.2 Atividades do Processo de Engenharia de Requisitos
+#### 2. Atividades do Processo de Engenharia de Requisitos
 
 Como equipe de desenvolvimento de software, nos comprometemos a seguir as seguintes atividades no processo de engenharia de requisitos:
 
-## Viabilidade:
-
-1. Realizar um estudo de viabilidade para avaliar a pertinência do sistema para a empresa.
-
-## Descoberta e Análise de Requisitos:
-
-2. Realizar entrevistas com os usuários a fim de identificar suas necessidades.
-3. Conduzir reuniões com as partes interessadas para compreender as necessidades do negócio.
-4. Analisar documentos para identificar os requisitos do sistema.
-
-## Especificação de Requisitos:
-
-5. Especificar os requisitos do sistema por meio de um modelo, diagrama ou documento escrito.
-
-## Validação de Requisitos:
-
-6. Obter feedback dos usuários em relação aos requisitos do sistema.
-7. Realizar testes para validar os requisitos do sistema.
-
-## A Natureza Iterativa da Engenharia de Requisitos:
-
-As atividades do processo de engenharia de requisitos serão repetidas várias vezes à medida que o sistema é desenvolvido.
-
-## Exemplos e Ilustrações:
-
-### Viabilidade:
-
-- Um estudo de viabilidade pode incluir uma análise de mercado para avaliar a demanda por um produto ou serviço.
-
-### Descoberta e Análise de Requisitos:
-
-- Entrevistas com os usuários podem abranger questões relacionadas às tarefas que eles executam, os desafios que enfrentam e os objetivos que desejam alcançar.
-- Reuniões com as partes interessadas podem envolver discussões sobre as metas e objetivos do negócio.
-- A análise de documentos pode compreender a revisão de especificações de produtos, manuais de usuário e requisitos funcionais.
-
-### Especificação de Requisitos:
-
-- Um modelo pode ser empregado para representar os requisitos do sistema de maneira visual.
-- Um diagrama pode ser utilizado para representar os requisitos do sistema de forma estruturada.
-- Um documento escrito pode ser empregado para documentar detalhadamente os requisitos do sistema.
-
-### Validação de Requisitos:
-
-- O feedback dos usuários pode ser obtido por meio de entrevistas, pesquisas ou grupos focais.
-- Os testes podem ser realizados por meio de testes de unidade, testes de integração e testes de sistema.
-
-Como exemplo prático, podemos considerar o desenvolvimento de um sistema de gerenciamento de estoque para uma empresa de varejo.
-
-### Viabilidade:
-
-- O estudo de viabilidade poderia avaliar a necessidade de um sistema de gerenciamento de estoque para a empresa.
-- O estudo poderia considerar fatores como o tamanho do estoque, a frequência das vendas e os requisitos de relatórios.
-
-### Descoberta e Análise de Requisitos:
-
-- As entrevistas com os usuários poderiam incluir questões sobre como os funcionários atualmente gerenciam o estoque.
-- As reuniões com as partes interessadas poderiam incluir discussões sobre as metas e objetivos da empresa em relação ao sistema de gerenciamento de estoque.
-- A análise de documentos poderia englobar a análise de registros de vendas e inventário.
-
-### Especificação de Requisitos:
-
-- Um modelo poderia ser usado para representar o fluxo de trabalho do sistema de gerenciamento de estoque.
-- Um diagrama poderia ser usado para representar a estrutura do banco de dados do sistema.
-- Um documento escrito poderia ser empregado para documentar os requisitos funcionais e não funcionais do sistema.
-
-### Validação de Requisitos:
-
-- O feedback dos usuários poderia ser obtido por meio de entrevistas com os funcionários que utilizariam o sistema.
-- Os testes poderiam ser realizados por meio de testes de unidade, testes de integração e testes de sistema.
-
-Acreditamos firmemente que este processo de engenharia de requisitos nos permitirá desenvolver um sistema que atenda às necessidades dos usuários e do negócio.
+| Etapa                                 | Descrição                                                                                                                                                                   |
+|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Viabilidade**                       | 1. Realizar um estudo de viabilidade para avaliar a pertinência do sistema para a empresa.                                                                                  |
+| **Descoberta e Análise de Requisitos** | 2. Realizar entrevistas com os usuários a fim de identificar suas necessidades.<br>3. Conduzir reuniões com as partes interessadas para compreender as necessidades do negócio.<br>4. Analisar documentos para identificar os requisitos do sistema. |
+| **Especificação de Requisitos**        | 5. Especificar os requisitos do sistema por meio de um modelo, diagrama ou documento escrito.                                                                               |
+| **Validação de Requisitos**            | 6. Obter feedback dos usuários em relação aos requisitos do sistema.<br>7. Realizar testes para validar os requisitos do sistema.           |
 
 
-![Alt text](assets/er_atividades_marsicano.png)
 
-<center>
+As atividades do processo de engenharia de requisitos serão repetidas várias vezes à medida que o sistema é desenvolvido. 
 
-Figura 10 - Atividades da Engenharia de Requisitos (fonte: Marsicano, 2023)
 
-</center>
-
-#### 3.8.3 Requisitos e Planejamento
+##  Requisitos e Planejamento
 
 | Atividade                                                                                | Técnica     | Entrega                                                                                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
