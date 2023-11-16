@@ -5,26 +5,26 @@ import Logo from "../assets/logo.svg"
 
 
 const telas = [{
-    nome: "Caixa1",
+    nome: "Caixa",
     http: ""
 },
 {
-    nome: "Caixa2",
+    nome: "Clientes",
     http: ""
 },
 {
-    nome: "Caixa3",
+    nome: "Produto",
     http: ""
 },
 {
-    nome: "Caixa4",
+    nome: "Painel Financeiro",
     http: ""
 }]
 
 const filtros = ["Tudo", "Efetuado", "Em Processo", "Transação Com Erro"]
 
 export const Header = () => {
-    return (<header className="flex flex-row items-center p-6 justify-between border-b-2 border-gray-200">
+    return (<header className="flex flex-row items-center p-6 justify-between border-b-2 border-gray-200 w-screen">
     <div className="flex flex-row items-center justify-betweenspace-x-2">
         <strong className="text-4xl text-[#422F8A] justify-center font-bold mr-3">Tabeçai</strong>
         <Image src={Logo} alt="Logo" width={22} height={22} />
