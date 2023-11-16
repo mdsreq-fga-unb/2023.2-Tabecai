@@ -1,9 +1,9 @@
-FROM node:20.9.0
+FROM node
 
 WORKDIR /usr/app
 
-COPY package.json ./ 
-COPY ./.docker/entrypoint.sh /entrypoint.sh
+COPY package.json ./
+COPY ./entrypoint.sh /entrypoint.sh
 
 COPY . .
 

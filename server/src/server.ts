@@ -1,21 +1,18 @@
 import Fastify from 'fastify'
-import { Prisma, PrismaClient } from '@prisma/client'
+import { adminRoutes } from './modules/admin/infra/http/controllers/routes'
 
-(async () => {
-  const fastify = Fastify({
-    logger: true
-  })
+const fastify = Fastify({
+  logger: true
+})
 
-  const prisma = new PrismaClient()
+fastify.register(adminRoutes, { prefix: '/admin' })
 
-  fastify.get('/', async function handler(request, reply) {
-    return { hello: 'world' }
-  })
-
+const start = async () => {
   try {
     await fastify.listen({ port: 3333, host: '0.0.0.0' })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
   }
-})()
+}
+start()
