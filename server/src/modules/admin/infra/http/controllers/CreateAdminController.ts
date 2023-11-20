@@ -13,7 +13,7 @@ export async function CreateAdminController(request: FastifyRequest, response: F
   const data = createAdminBodySchema.parse(request.body)
 
   const createAdminUseCase = MakeCreateAdmin()
-  await createAdminUseCase.execute(data)
+  const admin = await createAdminUseCase.execute(data)
 
-  return response.status(201).send()
+  return response.status(201).send(admin)
 }

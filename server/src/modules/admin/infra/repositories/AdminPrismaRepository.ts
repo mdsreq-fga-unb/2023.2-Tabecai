@@ -19,4 +19,22 @@ export class AdminPrismaRepository implements IAdminRepository {
 
     return admin
   }
+
+  public async listAll(): Promise<Admin[]> {
+    const admins = await this.prisma.admin.findMany()
+
+    return admins
+  }
+
+  public async update(id: string, data: Prisma.AdminUpdateInput): Promise<Admin> {
+    const admin = await this.prisma.admin.update({ where: { id }, data })
+
+    return admin
+  }
+
+  public async delete(id: string): Promise<Admin> {
+    const admin = await this.prisma.admin.delete({ where: { id } })
+
+    return admin
+  }
 }

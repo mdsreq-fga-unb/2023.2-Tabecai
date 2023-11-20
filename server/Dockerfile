@@ -1,11 +1,14 @@
-FROM node
+# FROM node:21.2.0
 
-WORKDIR /usr/app
+# WORKDIR /home/app
 
-COPY package.json ./
-COPY ./entrypoint.sh /entrypoint.sh
+# COPY package.json ./
 
-COPY . .
+# RUN npm install
 
-RUN chmod +x /entrypoint.sh
-CMD ["/entrypoint.sh"]
+# COPY . .
+
+# EXPOSE 3333
+
+# RUN yarn prisma:install
+# CMD ["sh", "-c", "yarn prisma migrate deploy && yarn dev"]
