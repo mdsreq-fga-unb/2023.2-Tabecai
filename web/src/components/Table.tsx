@@ -1,110 +1,132 @@
 type Comprinhas = {
-    id: number
-    nomeCliente: string
-    status: "Em Processo" | "Pago" | "Transação Com Error"
-    valor: number
-    compra:"Cartão" | "Dinheiro" | "Pix" | "Boleto"
-    quantidade: string
-    data: string
-
-}
+    id: number;
+    nomeCliente: string;
+    status: "Em Processo" | "Pago" | "Transação Com Error";
+    valor: number;
+    compra: "Cartão" | "Dinheiro" | "Pix" | "Boleto";
+    quantidade: string;
+    data: string;
+};
 const compra: Comprinhas[] = [
-    {   id: 1,
+    {
+        id: 1,
         nomeCliente: "João",
         status: "Transação Com Error",
         valor: 563,
         compra: "Boleto",
         quantidade: "1",
-        data: "12/01/2022"
+        data: "12/01/2022",
     },
     {
         id: 2,
-        nomeCliente: "Gustavo Henriqu ",
-        status: "Pago",
+        nomeCliente: "Gustavo",
+        status: "Transação Com Error",
         valor: 325,
         compra: "Pix",
         quantidade: "12",
-        data: "03/09/2021"
+        data: "03/09/2021",
     },
-    { 
+    {
         id: 3,
-        nomeCliente: "Caua", 
-        status: "Transação Com Error", 
+        nomeCliente: "Caua",
+        status: "Transação Com Error",
         valor: 890,
-        compra: "Cartão", 
-        quantidade: "45", 
-        data: "10/10/2020" },
-]
+        compra: "Cartão",
+        quantidade: "45",
+        data: "10/10/2020",
+    },
+];
 
-const coluns = [ "Cliente", "Status", "Valor", "Compra", "Quantidade", "Data", ""]
-
+const coluns = [
+    "Checkbox",
+    "Cliente",
+    "Status",
+    "Valor",
+    "Compra",
+    "Quantidade",
+    "Data",
+    "Opções",
+];
 
 export const Table = () => {
     return (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-indigo-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-300">
-                    <tr>
-                        <th scope="col" className="p-4">
-                            <div className="flex items-center">
-                                <input id="checkbox-all-search" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
-                            </div>
-                        </th>
-                        {coluns.map((colun) => {
-                            return (
-                                <th key={colun} scope="col" className="px-6 py-3">
-                                    {colun}
-                                </th>
-                            )
-                        })}
-
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {compra.map((compra) => {
+        <table className="flex-col text-sm text-gray-500 dark:text-gray-400 mt-12 md:w-11/12 hidden sm:flex shadow-2xl">
+            <thead className="border">
+                <tr className="flex text-xs text-indigo-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-300 justify-between">
+                    {coluns.map((colun) => {
                         return (
-                            <tr key= {compra.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td className="w-4 p-4">
-                                    <div className="flex items-center">
-                                        <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                        <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
-                                    </div>
-                                </td>
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {compra.nomeCliente}
-                                </th>
-                                <td className="flex flex-row items-center justify-center px-6 py-4">
-                                    <div className="mx-8">
-                                    <p className="bg-indigo-200 text-zinc-800 rounded-full text-xs p-2 px-2"> 
-                                            {compra.status}
-                                        </p>
-                                    </div>
-                                </td>
-
-                                <td className="px-6 py-4">
-                                        {compra.valor} 
-                                </td>
-                                <td className="px-6 py-4"> 
-                                  R$ { Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(compra.valor)}
-                                </td>
-                                <td className="px-6 py-4">
-                                    {compra.quantidade}
-                                </td>
-                                <td className="px-6 py-4">
-                                    {compra.data}
-                                </td>
-                                <td className="flex items-center px-6 py-4">
-                                    <a href="#" className="font-medium text-indigo-600 dark:text-indigo-500 hover:underline">Edit</a>
-                                    <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
-                                </td>
-                            </tr>
-                        )
+                            <th
+                                key={colun}
+                                className="flex w-1/6 justify-center p-2"
+                            >
+                                {colun}
+                            </th>
+                        );
                     })}
-                </tbody>
-            </table>
-        </div>
-    
+                </tr>
+            </thead>
 
-)}
+            <tbody className="border rounded-xl">
+                {compra.map((compra) => {
+                    return (
+                        <tr
+                            key={compra.id}
+                            className="flex text-xs text-indigo-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-300 justify-between p-2"
+                        >
+                            <td className="flex w-1/6 justify-center p-2">
+                                <input
+                                    id="checkbox-table-search-1"
+                                    type="checkbox"
+                                    className=" text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                />
+                                <label
+                                    htmlFor="checkbox-table-search-1"
+                                    className=""
+                                ></label>
+                            </td>
+                            <td
+                                scope="row"
+                                className=" text-gray-900 dark:text-white justify-center flex w-1/6 p-2 font-bold"
+                            >
+                                {compra.nomeCliente}
+                            </td>
+                            <td className="text-gray-900 dark:text-white justify-center flex w-1/6 p-2  rounded-full">
+                                {compra.status}
+                            </td>
+
+                            <td className="flex justify-center w-1/6 p-2">
+                                {Intl.NumberFormat("pt-BR", {
+                                    style: "currency",
+                                    currency: "BRL",
+                                }).format(compra.valor)}
+                            </td>
+                            <td className="flex justify-center w-1/6 p-2">
+                                {compra.valor}
+                            </td>
+                            <td className="flex w-1/6 justify-center p-2">
+                                {compra.quantidade}
+                            </td>
+                            <td className="flex w-1/6 justify-center p-2">
+                                {compra.data}
+                            </td>
+                            <td className="flex w-1/6 justify-center p-2">
+                                <a
+                                    href="#"
+                                    className="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+                                >
+                                    Edit
+                                </a>
+                                <a
+                                    href="#"
+                                    className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
+                                >
+                                    Remove
+                                </a>
+                            </td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
+    );
+};
