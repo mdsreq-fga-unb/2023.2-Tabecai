@@ -1,6 +1,7 @@
 import Fastify from 'fastify'
 import { adminRoutes } from './modules/admin/infra/http/controllers/routes'
 import { funcionarioRoutes } from './modules/funcionario/infra/http/controllers/routes'
+import { sharedRoutes } from './shared/infra/http/controllers/routes'
 
 const fastify = Fastify({
   logger: true
@@ -8,6 +9,7 @@ const fastify = Fastify({
 
 fastify.register(adminRoutes, { prefix: '/admin' })
 fastify.register(funcionarioRoutes, { prefix: '/funcionario' })
+fastify.register(sharedRoutes, { prefix: '/shared' })
 
 const start = async () => {
   try {

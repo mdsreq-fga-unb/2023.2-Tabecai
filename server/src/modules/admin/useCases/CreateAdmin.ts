@@ -1,4 +1,5 @@
 import { IAdminRepository } from "../repositories/IAdminRepository";
+import { hash } from "bcrypt";
 
 interface IRequest {
   email: string;
@@ -26,9 +27,11 @@ export class CreateAdmin {
       throw new Error('Admin already exists')
     }
 
+    const hashedPassword = await hash(password, 12);
+
     const admin = await this.adminRepository.create({
       email,
-      password,
+      password: hashedPassword,
       name,
       cellphone
     })
