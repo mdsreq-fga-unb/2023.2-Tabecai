@@ -10,6 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Method {
+  CREDITO
+  DEBITO
+  DINHEIRO
+  PIX
+}
+
 model Admin {
   id        String   @id @default(uuid())
   email     String   @unique
@@ -27,6 +34,14 @@ model Funcionario {
   name      String
   cellphone String
   cpf       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Compra {
+  id        String   @id @default(uuid())
+  price     Float
+  method    Method
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
