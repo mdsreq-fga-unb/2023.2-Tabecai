@@ -1,33 +1,43 @@
+"use client";
 import { ChevronDown, Moon, MoonIcon, Search } from "lucide-react";
 import Image from "next/image";
 import Logo from "../assets/logo.svg";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const telas = [
     {
         nome: "Caixa",
-        http: "",
+        http: "/",
     },
     {
         nome: "Clientes",
-        http: "",
+        http: "/",
     },
-    {
-        nome: "Produto",
-        http: "",
-    },
+    // {
+    //     nome: "Produto",
+    //     http: "/",
+    // },
     {
         nome: "Painel Financeiro",
-        http: "",
+        http: "/",
+    },
+    {
+        nome: "Funcionario",
+        http: "/funcionarios",
     },
 ];
 
 const filtros = ["Tudo", "Efetuado", "Em Processo", "Transação Com Erro"];
 
 export const Header = () => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const isMobile = useMediaQuery({ minWidth: 1280 });
+
     return (
-        <header className="flex flex-row items-center p-6 justify-between border-b-2 border-gray-200 w-full">
-            <div className="flex flex-row items-center justify-betweenspace-x-2">
-                <strong className="text-2xl xl:text-4xl text-[#422F8A] justify-center font-bold mr-3">
+        <header className="flex flex-row items-center p-6 border-b-2 border-gray-200 w-full">
+            <div className="flex flex-row items-center">
+                <strong className="text-xl xl:text-4xl text-[#422F8A] justify-center font-bold mr-3">
                     Tabeçai
                 </strong>
                 <Image src={Logo} alt="Logo" width={22} height={22} />
@@ -54,23 +64,22 @@ export const Header = () => {
                         />
                     </svg>
                 </button> */}
+                {telas.map((tela) => {
+                    return (
+                        <a
+                            key={tela.nome}
+                            className="hover:font-bold cursor-pointer hover:bg-slate-100 rounded-xl text-sm md:text-lg p-2 sm:p-4 md:ml-4"
+                            href={tela.http}
+                        >
+                            {tela.nome}
+                        </a>
+                    );
+                })}
 
-                <div className="flex ml-12">
-                    {telas.map((tela) => {
-                        return (
-                            <a key={tela.nome}
-                                className="px-4 py-2 hover:font-bold ml-4 cursor-pointer hover:bg-slate-100 rounded-xl"
-                                href="/login"
-                            >
-                                {tela.nome}
-                            </a>
-                        );
-                    })}
-                </div>
-                <div className="flex flex-row space-x-3">
+                {/* <div className="flex flex-row space-x-3">
                     <p className=" text-zinc-300">|</p>
                     {/* <input type="text" className='flex bg-green-700' /> */}
-                </div>
+                {/* </div> */}
             </div>
 
             {/* <div className="flex flex-row  items-center">

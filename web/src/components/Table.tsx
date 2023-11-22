@@ -2,9 +2,6 @@ type Comprinhas = {
     id: number;
     nomeCliente: string;
     status: "Em Processo" | "Pago" | "Transação Com Error";
-    valor: number;
-    compra: "Cartão" | "Dinheiro" | "Pix" | "Boleto";
-    quantidade: string;
     data: string;
 };
 const compra: Comprinhas[] = [
@@ -12,45 +9,27 @@ const compra: Comprinhas[] = [
         id: 1,
         nomeCliente: "João",
         status: "Transação Com Error",
-        valor: 563,
-        compra: "Boleto",
-        quantidade: "1",
         data: "12/01/2022",
     },
     {
         id: 2,
         nomeCliente: "Gustavo",
         status: "Transação Com Error",
-        valor: 325,
-        compra: "Pix",
-        quantidade: "12",
         data: "03/09/2021",
     },
     {
         id: 3,
         nomeCliente: "Caua",
         status: "Transação Com Error",
-        valor: 890,
-        compra: "Cartão",
-        quantidade: "45",
         data: "10/10/2020",
     },
 ];
 
-const coluns = [
-    "Checkbox",
-    "Cliente",
-    "Status",
-    "Valor",
-    "Compra",
-    "Quantidade",
-    "Data",
-    "Opções",
-];
+const coluns = ["Checkbox", "Cliente", "Status", "Data", "Opções"];
 
 export const Table = () => {
     return (
-        <table className="flex-col text-sm text-gray-500 dark:text-gray-400 mt-12 md:w-11/12 hidden sm:flex shadow-2xl">
+        <table className="flex-col text-sm text-gray-500 dark:text-gray-400 mt-12 md:w-11/12  shadow-2xl">
             <thead className="border">
                 <tr className="flex text-xs text-indigo-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-indigo-300 justify-between">
                     {coluns.map((colun) => {
@@ -94,7 +73,7 @@ export const Table = () => {
                                 {compra.status}
                             </td>
 
-                            <td className="flex justify-center w-1/6 p-2">
+                            {/* <td className="flex justify-center w-1/6 p-2">
                                 {Intl.NumberFormat("pt-BR", {
                                     style: "currency",
                                     currency: "BRL",
@@ -105,7 +84,7 @@ export const Table = () => {
                             </td>
                             <td className="flex w-1/6 justify-center p-2">
                                 {compra.quantidade}
-                            </td>
+                            </td> */}
                             <td className="flex w-1/6 justify-center p-2">
                                 {compra.data}
                             </td>
