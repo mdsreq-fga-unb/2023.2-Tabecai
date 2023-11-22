@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import fastifyCors from "@fastify/cors";
 import { adminRoutes } from './modules/admin/infra/http/controllers/routes'
 import { funcionarioRoutes } from './modules/funcionario/infra/http/controllers/routes'
 import { sharedRoutes } from './shared/infra/http/controllers/routes'
@@ -6,6 +7,8 @@ import { sharedRoutes } from './shared/infra/http/controllers/routes'
 const fastify = Fastify({
   logger: true
 })
+
+fastify.register(fastifyCors);
 
 fastify.register(adminRoutes, { prefix: '/admin' })
 fastify.register(funcionarioRoutes, { prefix: '/funcionario' })
