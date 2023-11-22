@@ -12,7 +12,7 @@ interface IResponse {
 export class ReadAdmins {
   constructor(private adminRepository: IAdminRepository) { }
 
-  public async execute(): Promise<IResponse[]> {
+  async execute(): Promise<IResponse[]> {
     const admins = await this.adminRepository.listAll()
 
     return admins
