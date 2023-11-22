@@ -1,4 +1,4 @@
-import { FuncionarioPrismaRepository } from "../../infra/http/controllers/repositories/FuncionarioPrismaRepository";
+import { FuncionarioPrismaRepository } from "../../infra/repositories/FuncionarioPrismaRepository";
 import { DeleteFuncionario } from "../DeleteFuncionario";
 
 export function MakeDeleteFuncionario() {
