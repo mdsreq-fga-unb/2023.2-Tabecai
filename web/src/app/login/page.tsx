@@ -8,17 +8,17 @@ export default function Login() {
     const animate = {
         hidden: {
             opacity: 0,
-            y: `1em`,
+            y: "1em",
         },
 
         hiddenInputs: {
             opacity: 0,
-            x: `2em`,
+            x: "2em",
         },
 
         visibleInputs: {
             opacity: 1,
-            x: `0em`,
+            x: "0em",
             transition: {
                 duration: 1.5,
                 ease: [0.2, 0.65, 0.5, 1],
@@ -27,7 +27,7 @@ export default function Login() {
 
         visibleLogo: {
             opacity: 1,
-            y: `0em`,
+            y: "0em",
             transition: {
                 duration: 2,
                 ease: [0.4, 0.8, 1, 1],
@@ -36,7 +36,7 @@ export default function Login() {
 
         visible: {
             opacity: 1,
-            y: `0em`,
+            y: "0em",
             transition: {
                 duration: 1.5,
                 ease: [0.2, 0.65, 0.3, 1],

@@ -58,7 +58,7 @@ export const Header = () => {
                 <div className="flex ml-12">
                     {telas.map((tela) => {
                         return (
-                            <a
+                            <a key={tela.nome}
                                 className="px-4 py-2 hover:font-bold ml-4 cursor-pointer hover:bg-slate-100 rounded-xl"
                                 href="/login"
                             >
@@ -69,7 +69,6 @@ export const Header = () => {
                 </div>
                 <div className="flex flex-row space-x-3">
                     <p className=" text-zinc-300">|</p>
-                    <Search size={24} />
                     {/* <input type="text" className='flex bg-green-700' /> */}
                 </div>
             </div>
