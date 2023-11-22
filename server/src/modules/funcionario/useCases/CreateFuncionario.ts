@@ -1,3 +1,4 @@
+import { hash } from "bcrypt";
 import { IFuncionarioRepository } from "../repositories/IFuncionarioRepository";
 
 interface IRequest {
@@ -27,10 +28,11 @@ export class CreateFuncionario {
     if (alreadyExists) {
       throw new Error('Funcionario already exists');
     }
+    const hashedPassword = await hash(password, 12);
 
     const funcionario = await this.funcionarioRepository.create({
       email,
-      password,
+      password: hashedPassword,
       name,
       cellphone,
       cpf

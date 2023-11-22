@@ -7,7 +7,7 @@ export async function CreateAdminController(request: FastifyRequest, response: F
     name: z.string(),
     email: z.string().email(),
     password: z.string().min(6),
-    cellphone: z.string().length(11)
+    cellphone: z.string().min(11).max(20)
   })
 
   const data = createAdminBodySchema.parse(request.body)

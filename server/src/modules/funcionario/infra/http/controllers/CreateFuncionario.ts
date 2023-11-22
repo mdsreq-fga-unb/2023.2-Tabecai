@@ -7,8 +7,8 @@ export async function CreateFuncionarioController(request: FastifyRequest, respo
     name: z.string(),
     email: z.string().email(),
     password: z.string().min(6),
-    cellphone: z.string().length(11),
-    cpf: z.string().length(11)
+    cellphone: z.string().min(11).max(20),
+    cpf: z.string().min(11).max(20)
   })
 
   const data = createFuncionarioBodySchema.parse(request.body)
