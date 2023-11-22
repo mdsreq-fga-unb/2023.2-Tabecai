@@ -6,10 +6,9 @@ export default function FuncionariosTela(){
     return(
         <div>
             <Header/>
-            <HeaderPage/>
+            <HeaderPage type="Funcionarios"/>
             <main className="mx-5 my-10">
                 <Funcionarios/>
-
             </main>
 
         </div>

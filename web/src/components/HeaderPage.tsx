@@ -1,14 +1,41 @@
+"use client"
 import { DownloadCloud, Filter, MoreVertical, Search } from "lucide-react"
+import { ModalCreateFuncionario } from "./ModalCreateFuncionario";
+import { useState } from "react";
+import { ModalCreateProduto } from "./ModalCreateProduto";
 
 const filtros = ["Filtro1", "Filtro2", "Filtro3", "Filtro4"];
 
+type HeaderPageProps = {
+    type : "Funcionarios" | "Produto" | "Clientes" | "Produtos" | "Painel Financeiro"
+}
 
-export const HeaderPage = () => {
+type ModalProps = {
+    ModalType : boolean
+    onCloseModal : () => void
+  }
+
+const modals: Record<HeaderPageProps["type"], (data : ModalProps)=> JSX.Element > = {
+    "Funcionarios": ModalCreateFuncionario,
+    "Produto": ModalCreateProduto,
+    "Clientes": ModalCreateFuncionario,
+    "Produtos": ModalCreateFuncionario,
+    "Painel Financeiro": ModalCreateFuncionario
+  }
+
+export const HeaderPage = ({ type }: HeaderPageProps) => {
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function onCloseModal() {
+        setIsOpen(false);
+    }
+    const ModalComponent = modals[type]
+
     return (
     <div className="flex flex-col justify-between ">
         <div className="flex flex-row items-end justify-between ">
             <strong className="text-2xl m-10">Caixa</strong>
-            <button className="flex flex-row space-x-2 items-center p-4 text-white bg-indigo-600 rounded-lg m-10">
+            <button  onClick={() => setIsOpen(true)} className="flex flex-row space-x-2 items-center p-4 text-white bg-indigo-600 rounded-lg m-10">
                 <strong className="text-white">Adicionar</strong>
                 <DownloadCloud size={24} />
             </button>
@@ -39,7 +66,14 @@ export const HeaderPage = () => {
             </div>
         </div>
 
+        {/* MODAL AQUI DE TESTE */}
+        <ModalComponent ModalType={modalIsOpen} onCloseModal={onCloseModal} />
+
+
+
     </div>
+
+
 
     
 

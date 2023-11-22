@@ -4,13 +4,13 @@ import { ArrowRightCircle, Play } from "lucide-react"
     "nome": "João",
     "email": "oie@unb.com.br",
     "telefone": "999999999",
-    "funcao": "Caixa",
+    "funcao": "Contador",
   }, 
   {
     "nome": "Maria",
     "email": "maria@gmail.com",
     "telefone": "999999999",
-    "funcao": "Gerente",
+    "funcao": "Caixa",
   },
   {
     "nome": "João",
@@ -22,17 +22,18 @@ import { ArrowRightCircle, Play } from "lucide-react"
     "nome": "Maria",
     "email": "maria@gmail.com",
     "telefone": "999999999",
-    "funcao": "Caixa",
+    "funcao": "Gerente Adm",
   },
-]
+  ]as const
 
 export const Funcionarios = () => {
     return (
         <div className='grid grid-cols-3 gap-4 justify-items-center'>
           
             {funci.slice(0, 6).map((funcionario) => {
-                  const coresBox = funcionario.funcao === "Caixa" ? "hover:bg-green-600 bg-green-700" : "hover:bg-violet-600 bg-violet-700";
-                  const coresSet = funcionario.funcao === "Caixa" ? "text-green-200 hover:text-green-800" : "text-violet-200 hover:text-violet-800";
+                  const coresBox = ["Caixa", "Contador"].includes(funcionario.funcao) ?"hover:bg-green-600 bg-green-700" : "hover:bg-violet-600 bg-violet-700";
+                 
+                  const coresSet = funcionario.funcao === "Gerente Adm"|| funcionario.funcao ==="Gerente" ? "text-green-200 hover:text-green-800" : "text-violet-200 hover:text-violet-800";
 
                   return (
                       <div  key={funcionario.nome} className={`flex group items-center justify-center ${coresBox} transition-colors gap-4 rounded overflow-hidden p-2  w-11/12`}>
@@ -54,11 +55,7 @@ export const Funcionarios = () => {
                           
                     </div>
                   )
-
-                
             })}
         </div>
-
     )
-
 }
