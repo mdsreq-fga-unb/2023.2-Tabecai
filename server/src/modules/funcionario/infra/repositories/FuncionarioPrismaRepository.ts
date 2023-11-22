@@ -1,5 +1,5 @@
 import { Funcionario, Prisma, PrismaClient } from "@prisma/client";
-import { IFuncionarioRepository } from "../../../../repositories/IFuncionarioRepository";
+import { IFuncionarioRepository } from "../../repositories/IFuncionarioRepository";
 
 export class FuncionarioPrismaRepository implements IFuncionarioRepository {
   private prisma: PrismaClient
