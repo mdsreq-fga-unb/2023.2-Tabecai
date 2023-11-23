@@ -1,17 +1,17 @@
-import { api } from "@/services/api";
-import { m } from "framer-motion";
-import { useEffect, useState } from "react";
-import Modal from "react-modal";
+import { api } from '@/services/api';
+import { m } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "40%",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '40%',
   },
 };
 
@@ -24,24 +24,24 @@ export const ModalCreateCaixa = ({
   ModalType,
   onCloseModal,
 }: ModalCreateCaixaProps) => {
-  const [clienteName, setClienteName] = useState("");
-  const [date, setDate] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [value, setValue] = useState("");
-  const [modalWidth, setModalWidth] = useState("50%");
+  const [clienteName, setClienteName] = useState('');
+  const [date, setDate] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const [value, setValue] = useState('');
+  const [modalWidth, setModalWidth] = useState('50%');
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 728) {
-        setModalWidth("95%");
+        setModalWidth('95%');
       } else {
-        setModalWidth("40%");
+        setModalWidth('40%');
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -63,6 +63,16 @@ export const ModalCreateCaixa = ({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    try {
+      const response = await api.post('/compra', {
+        price: Number(value),
+        method: paymentMethod,
+        status: 'PENDENTE',
+      });
+
+      onCloseModal();
+    } catch (error) {}
   };
 
   return (
@@ -79,7 +89,7 @@ export const ModalCreateCaixa = ({
         <div className="bg-white rounded-lg  dark:bg-gray-700">
           <div className="flex items-center justify-between p-4 md:p-5 ">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Adicionar Novo Funcionario
+              Adicionar Nova Venda
             </h3>
             <button
               onClick={onCloseModal}
@@ -160,7 +170,7 @@ export const ModalCreateCaixa = ({
                 />
               </div>
 
-              <div>
+              {/* <div>
                 <label
                   htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -175,7 +185,7 @@ export const ModalCreateCaixa = ({
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   required
                 />
-              </div>
+              </div> */}
 
               <button
                 type="submit"

@@ -27,7 +27,6 @@ export const Table = () => {
   async function getCompras() {
     const response = await api.get('/compra/all');
     setCompras(response.data);
-    console.log(response.data);
   }
 
   useEffect(() => {
@@ -51,11 +50,52 @@ export const Table = () => {
 
         <tbody className="w-full">
           {compras.map((compra) => {
+            let statusText;
+
+            switch (compra.status) {
+              case 'PENDENTE':
+                statusText = 'Pendente';
+                break;
+              case 'PAGO':
+                statusText = 'Pago';
+                break;
+              case 'CANCELADO':
+                statusText = 'Cancelado';
+                break;
+              default:
+                statusText = 'Pendente';
+                break;
+            }
+
             return (
               <tr key={compra.id} className="text-center border">
                 <td className="py-4">Cliente exemplo</td>
-                <td className="py-4">{compra.status}</td>
-                <td className="py-4">{compra.price}</td>
+                <td className="py-4">
+                  <div className="flex items-center justify-center">
+                    <span
+                      className={`${
+                        compra.status === 'PENDENTE'
+                          ? 'bg-yellow-500'
+                          : compra.status === 'PAGO'
+                          ? 'bg-green-500'
+                          : 'bg-red-500'
+                      } text-white font-bold py-1 px-3 rounded-full text-sm`}
+                    >
+                      <span
+                        className={`w-2 h-2 rounded-full ${
+                          compra.status === 'PENDENTE'
+                            ? 'bg-yellow-600'
+                            : compra.status === 'PAGO'
+                            ? 'bg-green-600'
+                            : 'bg-red-600'
+                        } inline-block mr-2
+                    `}
+                      />
+                      {statusText}
+                    </span>
+                  </div>
+                </td>
+                <td className="py-4">R$ {compra.price}</td>
                 <td className="py-4">{compra.method}</td>
                 <td className="py-4">
                   {new Date(compra.createdAt).toLocaleDateString('pt-BR')}

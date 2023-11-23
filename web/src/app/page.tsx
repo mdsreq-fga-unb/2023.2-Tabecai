@@ -12,13 +12,20 @@ import Image from 'next/image';
 import Logo from '../../assets/logo.svg';
 import { Header } from '@/components/Header';
 import { Table } from '@/components/Table';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ModalCreateCaixa } from '@/components/ModalCreateCaixa';
 
 const filtros = ['Tudo', 'Efetuado', 'Em Processo', 'Transação Com Erro'];
 
 export default function Home() {
   const router = useRouter();
+  const [modalCreateIsOpen, setCreateIsOpen] = useState(false);
+
+  function onCloseCreateModal() {
+    setCreateIsOpen(false);
+    window.location.reload();
+  }
 
   async function getUser() {
     const user = localStorage.getItem('user'); // refatorar no mvp2
@@ -38,9 +45,17 @@ export default function Home() {
     <div className="flex flex-col w-full h-screen items-center">
       <Header />
 
+      <ModalCreateCaixa
+        ModalType={modalCreateIsOpen}
+        onCloseModal={onCloseCreateModal}
+      />
+
       <div className="flex flex-row items-end justify-between w-11/12">
         <strong className="text-2xl m-10">Caixa</strong>
-        <button className="flex flex-row space-x-2 items-center p-4 text-white bg-indigo-600 rounded-lg m-10">
+        <button
+          className="flex flex-row space-x-2 items-center p-4 text-white bg-indigo-600 rounded-lg m-10"
+          onClick={() => setCreateIsOpen(true)}
+        >
           <strong className="text-white">Adicionar</strong>
           <DownloadCloud size={24} />
         </button>
