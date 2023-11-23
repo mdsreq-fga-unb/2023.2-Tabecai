@@ -1,26 +1,30 @@
-'use client';
-import Image from 'next/image';
-import Logo from '../../assets/logo.svg';
+"use client";
+import Image from "next/image";
+import Logo from "../../assets/logo.svg";
 
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { api } from '@/services/api';
-import { useRouter } from 'next/navigation';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { api } from "@/services/api";
+import { useRouter } from "next/navigation";
+import { ModalUpdateCompras } from "@/components/ModalUpdateCompra";
+import { ModalCreateFuncionario } from "@/components/ModalCreateFuncionario";
+import { ModalCreateCaixa } from "@/components/ModalCreateCaixa";
+import { ModalUpdateFuncionario } from "@/components/ModaUpdateFuncionario";
 
 const animate = {
   hidden: {
     opacity: 0,
-    y: '1em',
+    y: "1em",
   },
 
   hiddenInputs: {
     opacity: 0,
-    x: '2em',
+    x: "2em",
   },
 
   visibleInputs: {
     opacity: 1,
-    x: '0em',
+    x: "0em",
     transition: {
       duration: 1.5,
       ease: [0.2, 0.65, 0.5, 1],
@@ -29,7 +33,7 @@ const animate = {
 
   visibleLogo: {
     opacity: 1,
-    y: '0em',
+    y: "0em",
     transition: {
       duration: 2,
       ease: [0.4, 0.8, 1, 1],
@@ -38,7 +42,7 @@ const animate = {
 
   visible: {
     opacity: 1,
-    y: '0em',
+    y: "0em",
     transition: {
       duration: 1.5,
       ease: [0.2, 0.65, 0.3, 1],
@@ -46,8 +50,8 @@ const animate = {
   },
 };
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const router = useRouter();
 
@@ -65,23 +69,31 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await api.post('/shared/login', {
+      const response = await api.post("/shared/login", {
         email,
         password,
       });
       if (response.status === 200) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-        router.push('/');
+        localStorage.setItem("user", JSON.stringify(response.data));
+        router.push("/");
       } else {
-        alert('Usuário ou senha incorretos');
+        alert("Usuário ou senha incorretos");
       }
     } catch (error) {
-      alert('Erro ao fazer login');
+      alert("Erro ao fazer login");
     }
   };
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  function onCloseModal() {
+    setModalIsOpen(false);
+  }
   return (
     <div className="flex bg-slate-100 justify-center items-center h-screen">
-      <div className="md:w-6/12 p-16 bg-white shadow-xl rounded-2xl w-11/12 ">
+      {/* <ModalUpdateCompras onCloseModal={onCloseModal} ModalType /> */}
+      {/* <ModalCreateCaixa onCloseModal={onCloseModal} ModalType /> */}
+      <ModalUpdateFuncionario onCloseModal={onCloseModal} ModalType />
+      {/* <ModalCreateFuncionario onCloseModal={onCloseModal} ModalType /> */}
+      {/* <div className="md:w-6/12 p-16 bg-white shadow-xl rounded-2xl w-11/12 ">
         <motion.div
           className="flex flex-row items-center"
           initial={animate.hidden}
@@ -126,7 +138,7 @@ export default function Login() {
             Entrar
           </motion.button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
