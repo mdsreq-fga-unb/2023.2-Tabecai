@@ -1,4 +1,4 @@
-import Modal from "react-modal";
+import Modal from 'react-modal';
 
 interface AlertProps {
   Message: string;
@@ -7,14 +7,14 @@ interface AlertProps {
 }
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    borderColor: "#DBDBDB",
-    borderRadius: "10px",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    borderColor: '#DBDBDB',
+    borderRadius: '10px',
   },
 };
 export const AlertComponent = ({
