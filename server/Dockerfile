@@ -1,14 +1,14 @@
-# FROM node:21.2.0
+FROM node:21.2.0
 
-# WORKDIR /home/app
+WORKDIR /home/app
 
-# COPY package.json ./
+COPY package.json ./
 
-# RUN npm install
+RUN npm install
 
-# COPY . .
+COPY . .
 
-# EXPOSE 3333
+EXPOSE 3535
 
-# RUN yarn prisma:install
-# CMD ["sh", "-c", "yarn prisma migrate deploy && yarn dev"]
+RUN yarn prisma:install
+CMD ["sh", "-c", "yarn prisma migrate deploy && yarn dev"]
