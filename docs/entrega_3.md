@@ -1,6 +1,10 @@
+## Reunião com Cliente
+<iframe width="768" height="432" src="https://www.youtube.com/watch?v=oaW1fB_jBOE" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
 ## PBB (Product Backlog Building)
 
 <iframe width="768" height="432" src="https://miro.com/app/board/uXjVMmS3Ge8=/?moveToWidget=3458764569098248326&cot=14" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+Mais detalhes a respeito dos Critérios de Aceição e BDD`s , encontra-se na respectiva pasta do PBB
 
 
 ## USM (User Stories Mapping )
