@@ -32,7 +32,7 @@ export default function Home() {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [getUser]);
 
   return (
     <div className="flex flex-col w-full h-screen items-center">
@@ -66,11 +66,11 @@ export default function Home() {
             <Search size={24} />
             <input type="text" className="hidden xl:block"></input>
           </div>
-          <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-indigo-600 bg-indigo-200 rounded-lg">
+          <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg">
             <strong className="text-indigo-600">Filtro</strong>
             <Filter size={24} />
           </button>
-          <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-zinc-300 bg-indigo-200 rounded-lg ">
+          <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-zinc-300 bg-indigo-100 rounded-lg ">
             <MoreVertical size={24} />
           </button>
         </div>
