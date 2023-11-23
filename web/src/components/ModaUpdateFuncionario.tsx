@@ -13,15 +13,15 @@ const customStyles = {
   },
 };
 
-type ModalCreateFuncionarioProps = {
+type ModalUpdateFuncionarioProps = {
   ModalType: boolean;
   onCloseModal: () => void;
 };
 
-export const ModalCreateFuncionario = ({
+export const ModalUpdateFuncionario = ({
   ModalType,
   onCloseModal,
-}: ModalCreateFuncionarioProps) => {
+}: ModalUpdateFuncionarioProps) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -303,7 +303,13 @@ export const ModalCreateFuncionario = ({
                 type="submit"
                 className="w-full h-12 text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
               >
-                Criar
+                Deletar
+              </button>
+              <button
+                type="submit"
+                className="w-full h-12 text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
+              >
+                Salvar
               </button>
             </form>
           </div>
