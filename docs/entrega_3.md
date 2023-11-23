@@ -1,5 +1,5 @@
 ## Reunião com Cliente
-<iframe width="768" height="432" src="https://www.youtube.com/watch?v=oaW1fB_jBOE" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+<iframe width="768" height="432" src="https://www.youtube.com/embed/oaW1fB_jBOE" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
 ## PBB (Product Backlog Building)
 
