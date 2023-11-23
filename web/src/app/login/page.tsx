@@ -89,11 +89,7 @@ export default function Login() {
   }
   return (
     <div className="flex bg-slate-100 justify-center items-center h-screen">
-      {/* <ModalUpdateCompras onCloseModal={onCloseModal} ModalType /> */}
-      {/* <ModalCreateCaixa onCloseModal={onCloseModal} ModalType /> */}
-      <ModalUpdateFuncionario onCloseModal={onCloseModal} ModalType />
-      {/* <ModalCreateFuncionario onCloseModal={onCloseModal} ModalType /> */}
-      {/* <div className="md:w-6/12 p-16 bg-white shadow-xl rounded-2xl w-11/12 ">
+      <div className="md:w-6/12 p-16 bg-white shadow-xl rounded-2xl w-11/12 ">
         <motion.div
           className="flex flex-row items-center"
           initial={animate.hidden}
@@ -138,7 +134,7 @@ export default function Login() {
             Entrar
           </motion.button>
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }
