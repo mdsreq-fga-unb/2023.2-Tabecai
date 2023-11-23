@@ -5,7 +5,8 @@ import { z } from "zod"
 export async function CreateCompraController(request: FastifyRequest, response: FastifyReply) {
   const createCompraBodySchema = z.object({
     price: z.number(),
-    method: z.enum(['CREDITO', 'DEBITO', 'DINHEIRO', 'PIX'])
+    method: z.enum(['CREDITO', 'DEBITO', 'DINHEIRO', 'PIX']),
+    status: z.enum(['PENDENTE', 'PAGO', 'CANCELADO'])
   })
 
   const data = createCompraBodySchema.parse(request.body)

@@ -5,7 +5,8 @@ import { MakeUpdateCompra } from "../../useCases/factories/MakeUpdateCompra";
 export async function UpdateCompraController(request: FastifyRequest, response: FastifyReply) {
   const updateCompraBodySchema = z.object({
     price: z.number(),
-    method: z.enum(['CREDITO', 'DEBITO', 'DINHEIRO', 'PIX'])
+    method: z.enum(['CREDITO', 'DEBITO', 'DINHEIRO', 'PIX']),
+    status: z.enum(['PENDENTE', 'PAGO', 'CANCELADO'])
   })
 
   const data = updateCompraBodySchema.parse(request.body)

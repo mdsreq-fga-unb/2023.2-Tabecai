@@ -17,6 +17,12 @@ enum Method {
   PIX
 }
 
+enum Status {
+  PENDENTE
+  PAGO
+  CANCELADO
+}
+
 model Admin {
   id        String   @id @default(uuid())
   email     String   @unique
@@ -42,6 +48,7 @@ model Compra {
   id        String   @id @default(uuid())
   price     Float
   method    Method
+  status    Status
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
