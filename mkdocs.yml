@@ -15,9 +15,9 @@ nav:
       - Visão de Projeto: 'visão-projeto.md'
       - Processo: 'processo.md'
       - BackLog do Produto: 'backlog_produto.md'
-      - Exercícios Unidade 3: 'exercicios_unidade_3.md'
-        - PBB HealthNet: 'pbb_heatnet.md'
-        - USM ComunEventos : 'usm_comuneventos.md'
+      - Exercícios Unidade 3:
+          - PBB HealthNet: 'pbb_heatnet.md'
+          - USM ComunEventos : 'usm_comuneventos.md'
   - Entregas:
       - Unidade 1: 'entrega_1.md'
       - Unidade 2: 'entrega_2.md'
