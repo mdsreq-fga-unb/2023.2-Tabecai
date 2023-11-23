@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "prisma": "prisma",
-    "prisma:install": "yarn global add prisma"
+    "prisma:install": "yarn global add prisma",
+    "seed": "tsx prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
