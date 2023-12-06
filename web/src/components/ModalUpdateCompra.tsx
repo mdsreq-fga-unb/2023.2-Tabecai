@@ -77,7 +77,7 @@ export const ModalUpdateCompras = ({
     e.preventDefault();
 
     try {
-      const response = await api.put(`/compra/${compra.id}`, {
+      const response = await api.patch(`/compra/${compra.id}`, {
         price: value,
         method: paymentMethod,
         status: "PENDENTE",
@@ -181,24 +181,6 @@ export const ModalUpdateCompras = ({
                   placeholder="Valor da Compra"
                   value={value}
                   onChange={handleChangeValue}
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="text"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Data da Compra
-                </label>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  value={date}
-                  onChange={handleDateChange}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   required
                 />
               </div>
