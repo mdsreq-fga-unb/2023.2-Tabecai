@@ -16,7 +16,7 @@ interface IFuncionario {
   cpf: string;
 }
 
-export const Funcionarios = () => {
+export const Clientes = () => {
   const [funcionarios, setFuncionarios] = useState<IFuncionario[]>([]);
   const [openModal, setOpenModal] = useState(false);
 
@@ -71,7 +71,7 @@ export const Funcionarios = () => {
         let icon;
 
         if (funcionario.funcao === "Administrador") {
-          coresBox = "bg-[#825CE6] ";
+          coresBox = "bg-[#5C83E6] ";
           iconBackground = "bg-[#B175FF]";
           icon = admIcon;
         } else {
@@ -88,31 +88,26 @@ export const Funcionarios = () => {
             className={`flex items-center justify-between ${coresBox} gap-4 rounded-xl  p-4 w-11/12 h-26`}
           >
             <div className="flex flex-row items-center gap-4">
-              <div
-                className={`rounded-full w-20 h-20 p-5 ${iconBackground} items-center justify-center flex`}
-              >
-                <Image src={icon} alt="icone" />
-              </div>
-              <div className="py-1 text-left">
-                <p className="text-white text-xs lg:text-md xl:text-lg font-bold">
-                  {funcionario.funcao}
-                </p>
+              <div className="py-1 text-left p-6">
                 <p className="text-white font-semibold text-xs lg:text-md xl:text-lg text-ellipsis">
                   {funcionario.name}
                 </p>
-                <p className="text-white text-xs lg:text-md xl:text-lg text-ellipsis">
+                <p className="text-white text-xs lg:text-md xl:text-lg text-ellipsis font-light">
                   {funcionario.email}
                 </p>
-                <p className="text-white text-xs lg:text-md xl:text-lg">
+                <p className="text-white text-xs lg:text-md xl:text-lg font-light">
                   {funcionario.cellphone}
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-4">
+              <p className="text-white font-semi  bold text-lg">
+                Compras a pagar : 2
+              </p>
               <ArrowRightCircle
                 size={30}
-                color="#9400DB"
+                color="#FFE145"
                 className={`transition hover:-translate-y-1 hover:scale-110 cursor-pointer justify-center`}
               />
               <ModalUpdateFuncionario

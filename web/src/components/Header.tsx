@@ -10,10 +10,10 @@ const telas = [
     nome: "Caixa",
     http: "/",
   },
-  // {
-  //     nome: "Clientes",
-  //     http: "/",
-  // },
+  {
+    nome: "Clientes",
+    http: "/clientes",
+  },
   // {
   //     nome: "Produto",
   //     http: "/",

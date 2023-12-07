@@ -31,7 +31,7 @@ export default function Home() {
 
   useEffect(() => {
     getUser();
-  }, [getUser]);
+  }, []);
 
   return (
     <div className="flex flex-col w-full h-screen items-center">
