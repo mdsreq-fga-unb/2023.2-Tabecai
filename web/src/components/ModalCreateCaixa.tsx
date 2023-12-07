@@ -1,17 +1,17 @@
-import { api } from '@/services/api';
-import { m } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Modal from 'react-modal';
+import { api } from "@/services/api";
+import { m } from "framer-motion";
+import { useEffect, useState } from "react";
+import Modal from "react-modal";
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '40%',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "40%",
   },
 };
 
@@ -24,24 +24,24 @@ export const ModalCreateCaixa = ({
   ModalType,
   onCloseModal,
 }: ModalCreateCaixaProps) => {
-  const [clienteName, setClienteName] = useState('');
-  const [date, setDate] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
-  const [value, setValue] = useState('');
-  const [modalWidth, setModalWidth] = useState('50%');
+  const [clienteName, setClienteName] = useState("");
+  const [date, setDate] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [value, setValue] = useState("");
+  const [modalWidth, setModalWidth] = useState("50%");
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 728) {
-        setModalWidth('95%');
+        setModalWidth("95%");
       } else {
-        setModalWidth('40%');
+        setModalWidth("40%");
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -49,7 +49,7 @@ export const ModalCreateCaixa = ({
     setClienteName(e.target.value);
   };
 
-  const handleChangeMethod = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeMethod = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPaymentMethod(e.target.value);
   };
 
@@ -65,10 +65,10 @@ export const ModalCreateCaixa = ({
     e.preventDefault();
 
     try {
-      const response = await api.post('/compra', {
+      const response = await api.post("/compra", {
         price: Number(value),
         method: paymentMethod,
-        status: 'PENDENTE',
+        status: "PENDENTE",
       });
 
       onCloseModal();
@@ -142,15 +142,19 @@ export const ModalCreateCaixa = ({
                 >
                   Metodo de Pagamento
                 </label>
-                <input
-                  type="text"
+                <select
                   name="paymentMethod"
                   id="paymentMethod"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   placeholder="Metodo de Pagamento"
                   onChange={handleChangeMethod}
                   required
-                />
+                >
+                  <option value="DEBITO">Debito</option>
+                  <option value="CREDITO">Credito</option>
+                  <option value="DINHEIRO">DINHEIRO</option>
+                  <option value="PIX">PIX</option>
+                </select>
               </div>
               <div>
                 <label

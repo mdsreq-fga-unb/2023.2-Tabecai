@@ -13,22 +13,31 @@ const customStyles = {
   },
 };
 
+interface IFuncionario {
+  id: string;
+  email: string;
+  funcao: string;
+  name: string;
+  cellphone: string;
+  cpf: string;
+}
+
 type ModalUpdateFuncionarioProps = {
+  funcionario: IFuncionario;
   ModalType: boolean;
   onCloseModal: () => void;
 };
-
 export const ModalUpdateFuncionario = ({
+  funcionario,
   ModalType,
   onCloseModal,
 }: ModalUpdateFuncionarioProps) => {
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState(funcionario.name.split(" ")[0]);
+  const [lastName, setLastName] = useState(funcionario.name.split(" ")[1]);
+  const [cpf, setCpf] = useState(funcionario.cpf);
+  const [email, setEmail] = useState(funcionario.email);
   const [password, setPassword] = useState("");
-  const [cellphone, setCellphone] = useState("");
+  const [cellphone, setCellphone] = useState(funcionario.cellphone);
 
   const cpfMask = (value: string) => {
     return value
@@ -47,10 +56,6 @@ export const ModalUpdateFuncionario = ({
       .replace(/(-\d{4})\d+?$/, "$1");
   };
 
-  const handleCheckboxChange = () => {
-    setIsAdmin(!isAdmin);
-  };
-
   const handleFirstNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFirstName(e.target.value);
   };
@@ -61,6 +66,7 @@ export const ModalUpdateFuncionario = ({
 
   const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCpf(cpfMask(e.target.value));
+    console.log(e.target.value);
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,41 +79,29 @@ export const ModalUpdateFuncionario = ({
 
   const handleCellphoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCellphone(cellphoneMask(e.target.value));
+    console.log(cellphone);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     let data = {
-      name: firstName + " " + lastName,
+      id: funcionario.id,
       email,
       password,
-      cellphone,
+      name: firstName + " " + lastName,
+      cellphone: cellphone.replace(/\D/g, ""),
+      cpf: cpf.replace(/\D/g, ""),
     };
 
-    if (isAdmin) {
-      try {
-        await api.post("/admin", data);
-
-        alert("Administrador cadastrado com sucesso!");
-        onCloseModal();
-      } catch (error) {
-        alert("Erro ao cadastrar administrador!");
-      }
-    } else {
-      try {
-        await api.post("/funcionario", {
-          ...data,
-          cpf,
-        });
-
-        alert("Funcionario cadastrado com sucesso!");
-        onCloseModal();
-      } catch (error) {
-        alert("Erro ao cadastrar funcionario!");
-      }
-    }
+    await api.patch(`/funcionario/${funcionario.id}`, data);
+    onCloseModal();
   };
+
+  function deleteFuncionario() {
+    api.delete(`/funcionario/${funcionario.id}`);
+    onCloseModal();
+  }
 
   return (
     <div className="m-100">
@@ -120,7 +114,7 @@ export const ModalUpdateFuncionario = ({
         <div className="bg-white rounded-lg  dark:bg-gray-700">
           <div className="flex items-center justify-between p-4 md:p-5 ">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Adicionar Novo Funcionario
+              Editar Funcionario
             </h3>
             <button
               onClick={onCloseModal}
@@ -165,6 +159,7 @@ export const ModalUpdateFuncionario = ({
                     placeholder="Nome"
                     onChange={handleFirstNameChange}
                     required
+                    value={firstName}
                   />
                 </div>
                 <div>
@@ -182,6 +177,7 @@ export const ModalUpdateFuncionario = ({
                     placeholder="Sobrenome"
                     onChange={handleLastNameChange}
                     required
+                    value={lastName}
                   />
                 </div>
               </div>
@@ -200,6 +196,7 @@ export const ModalUpdateFuncionario = ({
                   placeholder="name@company.com"
                   onChange={handleEmailChange}
                   required
+                  value={email}
                 />
               </div>
 
@@ -240,26 +237,24 @@ export const ModalUpdateFuncionario = ({
                 />
               </div>
 
-              {isAdmin ? null : (
-                <div>
-                  <label
-                    htmlFor="text"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    CPF
-                  </label>
-                  <input
-                    type="text"
-                    name="cpf"
-                    id="cpf"
-                    placeholder="000.000.000-00"
-                    onChange={handleCpfChange}
-                    value={cpf}
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    required
-                  />
-                </div>
-              )}
+              <div>
+                <label
+                  htmlFor="text"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  CPF
+                </label>
+                <input
+                  type="text"
+                  name="cpf"
+                  id="cpf"
+                  placeholder="000.000.000-00"
+                  onChange={handleCpfChange}
+                  value={cpf}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  required
+                />
+              </div>
 
               {/* <div>
                 <label
@@ -278,7 +273,7 @@ export const ModalUpdateFuncionario = ({
                 />
               </div> */}
 
-              <div className="flex justify-between">
+              {/* <div className="flex justify-between">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
                     <input
@@ -297,10 +292,11 @@ export const ModalUpdateFuncionario = ({
                     Administrador
                   </label>
                 </div>
-              </div>
+              </div> */}
 
               <button
                 type="submit"
+                onClick={deleteFuncionario}
                 className="w-full h-12 text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
               >
                 Deletar

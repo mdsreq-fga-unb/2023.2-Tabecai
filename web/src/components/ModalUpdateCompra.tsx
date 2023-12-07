@@ -15,19 +15,31 @@ const customStyles = {
   },
 };
 
+interface ICompra {
+  id: string;
+  price: number;
+  method: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 type ModalUpdateComprasProps = {
   ModalType: boolean;
   onCloseModal: () => void;
+  compra: ICompra;
 };
 
 export const ModalUpdateCompras = ({
   ModalType,
   onCloseModal,
+  compra,
 }: ModalUpdateComprasProps) => {
-  const [clienteName, setClienteName] = useState("");
-  const [date, setDate] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [value, setValue] = useState("");
+  const [clienteName, setClienteName] = useState(compra.id);
+  const [date, setDate] = useState(compra.createdAt);
+  const [paymentMethod, setPaymentMethod] = useState(compra.method);
+  const [value, setValue] = useState(compra.price);
+  const [status, setStatus] = useState(compra.status);
   const [modalWidth, setModalWidth] = useState("50%");
 
   useEffect(() => {
@@ -49,20 +61,35 @@ export const ModalUpdateCompras = ({
     setClienteName(e.target.value);
   };
 
-  const handleChangeMethod = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeMethod = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPaymentMethod(e.target.value);
   };
 
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+    const value = parseFloat(e.target.value);
+    setValue(value);
   };
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDate(e.target.value);
   };
 
+  const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setStatus(e.target.value);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    try {
+      const response = await api.patch(`/compra/${compra.id}`, {
+        price: value,
+        method: paymentMethod,
+        status: status,
+      });
+
+      onCloseModal();
+    } catch (error) {}
   };
 
   return (
@@ -121,6 +148,7 @@ export const ModalUpdateCompras = ({
                   id="firstName"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   placeholder="Nome"
+                  value={clienteName}
                   onChange={handleChangeCliente}
                   required
                 />
@@ -132,15 +160,20 @@ export const ModalUpdateCompras = ({
                 >
                   Metodo de Pagamento
                 </label>
-                <input
-                  type="text"
+                <select
                   name="paymentMethod"
                   id="paymentMethod"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   placeholder="Metodo de Pagamento"
+                  value={paymentMethod}
                   onChange={handleChangeMethod}
                   required
-                />
+                >
+                  <option value="DEBITO">Debito</option>
+                  <option value="CREDITO">Credito</option>
+                  <option value="DINHEIRO">Dinheiro</option>
+                  <option value="PIX">PIX</option>
+                </select>
               </div>
               <div>
                 <label
@@ -155,33 +188,39 @@ export const ModalUpdateCompras = ({
                   id="value"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   placeholder="Valor da Compra"
+                  value={value}
                   onChange={handleChangeValue}
                   required
                 />
               </div>
-
               <div>
                 <label
                   htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Data da Compra
+                  Status da Compra
                 </label>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  onChange={handleDateChange}
+                <select
+                  name="status"
+                  id="status"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Status da Compra"
+                  value={status}
                   required
-                />
+                  onChange={handleStatusChange}
+                >
+                  <option value="PENDENTE">Pendente</option>
+                  <option value="PAGO">Pago</option>
+                  <option value="CANCELADO">Cancelado</option>
+                </select>
               </div>
 
               <button
                 type="submit"
+                onClick={onCloseModal}
                 className="w-full h-12  text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-bold text-lg rounded-lg px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
               >
-                Criar
+                Editar
               </button>
             </form>
           </div>
