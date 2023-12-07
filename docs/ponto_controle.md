@@ -15,7 +15,6 @@ BackLog + Critérios de Aceite
 
 ## Planejamento das Sprints
 ![Alt text](./assets/planejamentoSprint.png)
-![Alt text](image-1.png)
 
 ## Review da Sprint 1 
 26/11 ate 02/12
@@ -23,7 +22,9 @@ BackLog + Critérios de Aceite
 
 
 ## DOR e DOD
+
 DOR
+
 |                                                               | US05                                                                                                 | US06                                                                                    | US14                                                                                     | US15                                                                                          | US16                                                                                                 | US17                                                                                                                | US18                                                                                                   | US20                                                                                              | US25                                                                             | US25                                                                                          |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 |                                                                |  Eu como funcionário, quero ser capaz de cobrar uma compra, para saber que a compra a prazo foi paga | Eu como funcionário, quero ser capaz de criar um cliente, para poder atribuir compras.	 | Eu como administrador, quero ser capaz de criar um cliente, para poder cobrar uma venda. | Eu como administrador, quero ser capaz de editar um cliente, para poder dizer se já foi pago. | Eu como administrador, quero ser capaz de deletar um cliente, para dizer que não é mais meu cliente. | Eu como administrador, quero ser capaz de ler um cliente ou todos os clientes, para verificar quantos clientes tem. | Eu como administrador, quero ser capaz de gerar um relatório do cliente, para poder cobrar uma venda.	 | Eu como funcionário, quero ser capaz de atribuir uma compra a um cliente, para gerenciar dívidas. | Eu como administrador, quero ser capaz de criar uma compra, para poder cobrá-la. | Eu como administrador, quero ser capaz de deletar uma compra, para dizer que ela já foi paga. |
@@ -34,7 +35,10 @@ DOR
 | O Requisito está representado por uma história de usuário?     |  ✅                                                                                                   |  ✅                                                                                      |  ✅                                                                                       |  ✅                                                                                            |  ✅                                                                                                   |  ✅                                                                                                                  |  ✅                                                                                                     |  ✅                                                                                                |  ✅                                                                               |  ✅                                                                                            |
 | As dependências do Requisito estão identificadas (se houver)?  |  ✅                                                                                                   |  ✅                                                                                      |                                                                                          |                                                                                               |                                                                                                      |                                                                                                                     |  ✅                                                                                                     |  ✅                                                                                                |  ✅                                                                               |  ✅                                                                                            |
 
+
 DOD
+
+
 |                                                                       | US01                                                                                                              | US07                                                                                                                | US24                                                                                          | US25                                                                                          |
 |-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 |                                                                       | Eu como administrador, quero ser capaz de deletar um funcionário, para caso não faça mais parte da minha empresa. | Eu como administrador, quero ser capaz de deletar um administrador, para caso não faça mais parte da minha empresa. | Eu como administrador, quero ser capaz de editar uma compra, para dizer se o valor  aumentou. | Eu como administrador, quero ser capaz de deletar uma compra, para dizer que ela já foi paga. |
@@ -45,3 +49,7 @@ DOD
 ## Diagrama UML - Refatorado
 
 ![Alt text](./assets/diagramaUML.png)
+
+
+## Especificações de Caso de Uso
+![Alt text](./assets/casosUso.png)
