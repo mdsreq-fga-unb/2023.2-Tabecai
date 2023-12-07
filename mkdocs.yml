@@ -17,6 +17,7 @@ nav:
       - BackLog do Produto: 'backlog_produto.md'
       - PBB HealthNet: 'pbb_heatnet.md'
       - USM ComunEventos : 'usm_comuneventos.md'
+      - Ponto de controle : 'ponto_controle.md'
   - Entregas:
       - Unidade 1: 'entrega_1.md'
       - Unidade 2: 'entrega_2.md'
