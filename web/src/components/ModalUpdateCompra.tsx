@@ -39,6 +39,7 @@ export const ModalUpdateCompras = ({
   const [date, setDate] = useState(compra.createdAt);
   const [paymentMethod, setPaymentMethod] = useState(compra.method);
   const [value, setValue] = useState(compra.price);
+  const [status, setStatus] = useState(compra.status);
   const [modalWidth, setModalWidth] = useState("50%");
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export const ModalUpdateCompras = ({
     setClienteName(e.target.value);
   };
 
-  const handleChangeMethod = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeMethod = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPaymentMethod(e.target.value);
   };
 
@@ -73,6 +74,10 @@ export const ModalUpdateCompras = ({
     setDate(e.target.value);
   };
 
+  const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setStatus(e.target.value);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -80,7 +85,7 @@ export const ModalUpdateCompras = ({
       const response = await api.patch(`/compra/${compra.id}`, {
         price: value,
         method: paymentMethod,
-        status: "PENDENTE",
+        status: status,
       });
 
       onCloseModal();
@@ -155,8 +160,7 @@ export const ModalUpdateCompras = ({
                 >
                   Metodo de Pagamento
                 </label>
-                <input
-                  type="text"
+                <select
                   name="paymentMethod"
                   id="paymentMethod"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -164,7 +168,12 @@ export const ModalUpdateCompras = ({
                   value={paymentMethod}
                   onChange={handleChangeMethod}
                   required
-                />
+                >
+                  <option value="DEBITO">Debito</option>
+                  <option value="CREDITO">Credito</option>
+                  <option value="DINHEIRO">Dinheiro</option>
+                  <option value="PIX">PIX</option>
+                </select>
               </div>
               <div>
                 <label
@@ -183,6 +192,27 @@ export const ModalUpdateCompras = ({
                   onChange={handleChangeValue}
                   required
                 />
+              </div>
+              <div>
+                <label
+                  htmlFor="text"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Status da Compra
+                </label>
+                <select
+                  name="status"
+                  id="status"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Status da Compra"
+                  value={status}
+                  required
+                  onChange={handleStatusChange}
+                >
+                  <option value="PENDENTE">Pendente</option>
+                  <option value="PAGO">Pago</option>
+                  <option value="CANCELADO">Cancelado</option>
+                </select>
               </div>
 
               <button

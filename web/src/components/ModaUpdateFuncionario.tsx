@@ -27,7 +27,6 @@ type ModalUpdateFuncionarioProps = {
   ModalType: boolean;
   onCloseModal: () => void;
 };
-
 export const ModalUpdateFuncionario = ({
   funcionario,
   ModalType,
@@ -67,7 +66,7 @@ export const ModalUpdateFuncionario = ({
 
   const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCpf(cpfMask(e.target.value));
-    console.log(cpfMask(e.target.value));
+    console.log(e.target.value);
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -91,11 +90,12 @@ export const ModalUpdateFuncionario = ({
       email,
       password,
       name: firstName + " " + lastName,
-      cellphone,
-      cpf,
+      cellphone: cellphone.replace(/\D/g, ""),
+      cpf: cpf.replace(/\D/g, ""),
     };
 
     await api.patch(`/funcionario/${funcionario.id}`, data);
+    onCloseModal();
   };
 
   function deleteFuncionario() {

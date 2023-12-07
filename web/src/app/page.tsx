@@ -1,22 +1,14 @@
-'use client';
-import {
-  ChevronDown,
-  DownloadCloud,
-  Filter,
-  Moon,
-  MoreHorizontal,
-  MoreVertical,
-  Search,
-} from 'lucide-react';
-import Image from 'next/image';
-import Logo from '../../assets/logo.svg';
-import { Header } from '@/components/Header';
-import { Table } from '@/components/Table';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { ModalCreateCaixa } from '@/components/ModalCreateCaixa';
+"use client";
+import { DownloadCloud, Filter, MoreVertical, Search } from "lucide-react";
+import Image from "next/image";
+import Logo from "../../assets/logo.svg";
+import { Header } from "@/components/Header";
+import { Table } from "@/components/Table";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { ModalCreateCaixa } from "@/components/ModalCreateCaixa";
 
-const filtros = ['Tudo', 'Efetuado', 'Em Processo', 'Transação Com Erro'];
+const filtros = ["Tudo", "Efetuado", "Em Processo", "Transação Com Erro"];
 
 export default function Home() {
   const router = useRouter();
@@ -28,13 +20,13 @@ export default function Home() {
   }
 
   async function getUser() {
-    const user = localStorage.getItem('user'); // refatorar no mvp2
+    const user = localStorage.getItem("user"); // refatorar no mvp2
 
     if (user) {
       return JSON.parse(user);
     }
 
-    router.push('/login');
+    router.push("/login");
   }
 
   useEffect(() => {
