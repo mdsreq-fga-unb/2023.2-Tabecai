@@ -114,7 +114,10 @@ export const Table = () => {
                   {new Date(compra.createdAt).toLocaleDateString("pt-BR")}
                 </td>
                 <td>
-                  <button onClick={() => setIsOpen(true)}>
+                  <button
+                    onClick={() => setIsOpen(true)}
+                    className="p-3 hover:bg-slate-200 rounded-full transition ease-in"
+                  >
                     <Pencil size={24} color="#666" />
                     <ModalUpdateCompras
                       onCloseModal={onCloseModal}
@@ -125,7 +128,7 @@ export const Table = () => {
                 </td>
                 <td>
                   <button onClick={() => deleteCompra(compra.id)}>
-                    <div className="py-4 flex items-center justify-center">
+                    <div className="p-3 flex items-center justify-center hover:bg-slate-200 rounded-full transition ease-in ">
                       <Trash size={24} color="#666" />
                     </div>
                   </button>
