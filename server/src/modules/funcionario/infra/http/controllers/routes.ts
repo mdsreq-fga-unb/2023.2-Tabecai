@@ -1,8 +1,8 @@
 import { FastifyInstance } from 'fastify'
-import { CreateFuncionarioController } from './CreateFuncionario'
-import { ReadFuncionariosController } from './ReadFuncionarios'
-import { UpdateFuncionarioController } from './UpdateFuncionario'
 import { DeleteFuncionarioController } from './DeleteFuncionarioController'
+import { CreateFuncionarioController } from './CreateFuncionarioController'
+import { ReadFuncionariosController } from './ReadFuncionariosController'
+import { UpdateFuncionarioController } from './UpdateFuncionarioController'
 
 export async function funcionarioRoutes(fastify: FastifyInstance) {
   fastify.post('/', CreateFuncionarioController)

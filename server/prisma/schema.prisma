@@ -42,6 +42,7 @@ model Funcionario {
   cpf       String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Caixa     Caixa[]
 }
 
 model Compra {
@@ -51,6 +52,12 @@ model Compra {
   status    Status
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  cliente   Cliente? @relation(fields: [clienteId], references: [id])
+  clienteId String?
+
+  Caixa   Caixa?  @relation(fields: [caixaId], references: [id])
+  caixaId String?
 }
 
 model Cliente {
@@ -60,4 +67,14 @@ model Cliente {
   cpf       String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Compra    Compra[]
+}
+
+model Caixa {
+  id            String      @id @default(uuid())
+  compras       Compra[]
+  funcionario   Funcionario @relation(fields: [funcionarioId], references: [id])
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  funcionarioId String
 }
