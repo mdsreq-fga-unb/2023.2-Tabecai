@@ -8,25 +8,35 @@ export class SharedPrismaRepository implements ISharedRepository {
     this.prisma = new PrismaClient();
   }
 
-  async findByEmail(email: string): Promise<Admin | Funcionario | null> {
+  async findAdminByEmail(email: string): Promise<Admin | null> {
     const admin = await this.prisma.admin.findUnique({
       where: {
         email
       }
     })
 
-    if (admin) {
-      return admin
-    }
+    return admin
+  }
 
+  async findFuncionarioByEmail(email: string): Promise<Funcionario | null> {
     const funcionario = await this.prisma.funcionario.findUnique({
       where: {
         email
       }
     })
 
-    if (funcionario) {
-      return funcionario
+    return funcionario
+  }
+
+  async findCaixaByFuncionarioId(funcionarioId: string): Promise<string | null> {
+    const caixa = await this.prisma.caixa.findFirst({
+      where: {
+        funcionarioId
+      }
+    })
+
+    if (caixa) {
+      return caixa.id
     }
 
     return null

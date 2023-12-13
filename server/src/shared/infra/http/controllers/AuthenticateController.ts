@@ -13,14 +13,25 @@ export async function AuthenticateController(
   const { email, password } = registerBodySchema.parse(request.body);
 
   const authenticateUseCase = MakeAuthenticate();
-  let { admin, funcionario } = await authenticateUseCase.execute({ email, password });
+  const authenticateResponse = await authenticateUseCase.execute({
+    email,
+    password,
+  });
 
-  if (admin) {
-    return response.status(200).send(admin);
+  if (authenticateResponse.admin) {
+    return response.status(200).send({
+      admin: authenticateResponse.admin,
+      funcionario: null,
+      caixaId: authenticateResponse.caixaId,
+    });
   }
 
-  if (funcionario) {
-    return response.status(200).send(funcionario);
+  if (authenticateResponse.funcionario) {
+    return response.status(200).send({
+      admin: null,
+      funcionario: authenticateResponse.funcionario,
+      caixaId: authenticateResponse.caixaId,
+    });
   }
 
   return response.status(404).send();
