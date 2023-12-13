@@ -10,18 +10,22 @@ site_description: Este repositório é dedicado ao projeto da Turma 4 da discipl
 
 nav:
   - Home: index.md
+
   - Documentação:
-      - Visão de Produto: 'visao-produto.md'
-      - Visão de Projeto: 'visão-projeto.md'
-      - Processo: 'processo.md'
-      - BackLog do Produto: 'backlog_produto.md'
-      - PBB HealthNet: 'pbb_heatnet.md'
+      - Visão de Produto: 'visao-produto.md' #ok
+      - Visão de Projeto: 'visão-projeto.md' #ok
+      - Processo: 'processo.md' #ok
+      - BackLog do Produto: 'backlog_produto.md' 
+      - MVPS`s: 'mvp.md'
+      - PBB e BDD HealthNet: 'pbb_heatnet.md'
       - USM ComunEventos : 'usm_comuneventos.md'
-      - Ponto de controle : 'ponto_controle.md'
+      - Caso de Uso _____ : 'caso_de_uso.md'
+      - Soluções de Software : 'ponto_controle.md'
   - Entregas:
       - Unidade 1: 'entrega_1.md'
       - Unidade 2: 'entrega_2.md'
       - Unidade 3: 'entrega_3.md'
+      - Unidade 3: 'entrega_4.md'
   - Lições Aprendidas:
       - Unidade 1: 'lessons.md'
       - Unidade 2: 'lessons.md'
