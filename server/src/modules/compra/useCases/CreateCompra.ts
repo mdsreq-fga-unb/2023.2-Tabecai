@@ -5,7 +5,9 @@ interface IRequest {
   price: number;
   method: Method;
   status: Status;
-
+  createdAt: string;
+  caixaId: string;
+  clienteId?: string;
 }
 
 interface IResponse {
@@ -20,11 +22,14 @@ interface IResponse {
 export class CreateCompra {
   constructor(private compraRepository: ICompraRepository) { }
 
-  public async execute({ price, method, status }: IRequest): Promise<IResponse> {
+  public async execute({ price, method, status, createdAt, caixaId, clienteId }: IRequest): Promise<IResponse> {
     const compra = await this.compraRepository.create({
       price,
       method,
       status,
+      createdAt,
+      caixaId,
+      clienteId
     });
 
     return compra

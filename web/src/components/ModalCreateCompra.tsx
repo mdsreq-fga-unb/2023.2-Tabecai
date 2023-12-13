@@ -15,22 +15,35 @@ const customStyles = {
   },
 };
 
-type ModalCreateCaixaProps = {
+type ModalCreateCompraProps = {
   ModalType: boolean;
   onCloseModal: () => void;
+  clientes: any;
 };
 
-export const ModalCreateCaixa = ({
+interface ICliente {
+  id: string;
+  name: string;
+  cellphone: string;
+  cpf: string;
+  createdAt: string;
+}
+
+export const ModalCreateCompra = ({
   ModalType,
   onCloseModal,
-}: ModalCreateCaixaProps) => {
+  clientes,
+}: ModalCreateCompraProps) => {
   const [clienteName, setClienteName] = useState("");
+  const [cliente, setCliente] = useState<ICliente>();
   const [date, setDate] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("DEBITO");
   const [value, setValue] = useState("");
   const [modalWidth, setModalWidth] = useState("50%");
 
   useEffect(() => {
+    setDate(new Date().toISOString().split("T")[0]);
+
     const handleResize = () => {
       if (window.innerWidth < 728) {
         setModalWidth("95%");
@@ -47,6 +60,7 @@ export const ModalCreateCaixa = ({
 
   const handleChangeCliente = (e: React.ChangeEvent<HTMLInputElement>) => {
     setClienteName(e.target.value);
+    setCliente(undefined);
   };
 
   const handleChangeMethod = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -65,10 +79,15 @@ export const ModalCreateCaixa = ({
     e.preventDefault();
 
     try {
-      const response = await api.post("/compra", {
+      const caixaId = localStorage.getItem("caixaId");
+
+      await api.post("/compra", {
         price: Number(value),
-        method: paymentMethod,
+        method: paymentMethod.toUpperCase(),
         status: "PENDENTE",
+        caixaId,
+        clienteId: cliente?.id,
+        createdAt: new Date(`${date}T03:00:00.000Z`),
       });
 
       onCloseModal();
@@ -123,17 +142,41 @@ export const ModalCreateCaixa = ({
                   htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Nome do Cliente
+                  Cliente (Opcional)
                 </label>
                 <input
                   type="text"
                   name="firstName"
                   id="firstName"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="Nome"
+                  placeholder="Cliente"
                   onChange={handleChangeCliente}
-                  required
+                  value={clienteName}
                 />
+                {clienteName.length > 0 && !cliente && (
+                  <div className="flex flex-col space-y-2">
+                    {clientes
+                      .filter((cliente: any) =>
+                        cliente.name
+                          .toLowerCase()
+                          .includes(clienteName.toLowerCase())
+                      )
+                      .map((cliente: any) => (
+                        <button
+                          key={cliente.id}
+                          className="flex flex-row space-x-2 items-center p-2 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg"
+                          onClick={() => {
+                            setCliente(cliente);
+                            setClienteName(cliente.name);
+                          }}
+                        >
+                          <strong className="text-indigo-600">
+                            {cliente.name}
+                          </strong>
+                        </button>
+                      ))}
+                  </div>
+                )}
               </div>
               <div>
                 <label
@@ -174,7 +217,7 @@ export const ModalCreateCaixa = ({
                 />
               </div>
 
-              {/* <div>
+              <div>
                 <label
                   htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -185,11 +228,12 @@ export const ModalCreateCaixa = ({
                   type="date"
                   name="date"
                   id="date"
+                  value={date}
                   onChange={handleDateChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   required
                 />
-              </div> */}
+              </div>
 
               <button
                 type="submit"

@@ -6,7 +6,8 @@ export async function UpdateCompraController(request: FastifyRequest, response: 
   const updateCompraBodySchema = z.object({
     price: z.number(),
     method: z.enum(['CREDITO', 'DEBITO', 'DINHEIRO', 'PIX']),
-    status: z.enum(['PENDENTE', 'PAGO', 'CANCELADO'])
+    status: z.enum(['PENDENTE', 'PAGO', 'CANCELADO']),
+    createdAt: z.string()
   })
 
   const data = updateCompraBodySchema.parse(request.body)

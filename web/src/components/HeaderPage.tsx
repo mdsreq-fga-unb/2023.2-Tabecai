@@ -1,17 +1,18 @@
-"use client";
-import { DownloadCloud, Filter, MoreVertical, Search } from "lucide-react";
-import { ModalCreateFuncionario } from "./ModalCreateFuncionario";
-import { useState } from "react";
-import { ModalCreateProduto } from "./ModalCreateProduto";
-const filtros = ["Filtro1", "Filtro2", "Filtro3", "Filtro4"];
+'use client';
+import { DownloadCloud, Filter, MoreVertical, Search } from 'lucide-react';
+import { ModalCreateFuncionario } from './ModalCreateFuncionario';
+import { useState } from 'react';
+import { ModalCreateProduto } from './ModalCreateProduto';
+import { ModalCreateCliente } from './ModalCreateCliente';
+const filtros = ['Filtro1', 'Filtro2', 'Filtro3', 'Filtro4'];
 
 type HeaderPageProps = {
   type:
-    | "Funcionarios"
-    | "Produto"
-    | "Clientes"
-    | "Produtos"
-    | "Painel Financeiro";
+    | 'Funcionarios'
+    | 'Produto'
+    | 'Clientes'
+    | 'Produtos'
+    | 'Painel Financeiro';
   title: string;
 };
 
@@ -32,14 +33,14 @@ type Func = [
   string[]
 ];
 
-const modals: Record<HeaderPageProps["type"], Func> = {
-  Funcionarios: [ModalCreateFuncionario, ["Caixa", "Gerente", "Administrador"]],
-  Produto: [ModalCreateProduto, ["Caixa", "Gerente", "Administrador"]],
-  Clientes: [ModalCreateFuncionario, ["Caixa", "Gerente", "Administrador"]],
-  Produtos: [ModalCreateFuncionario, ["Caixa", "Gerente", "Administrador"]],
-  "Painel Financeiro": [
+const modals: Record<HeaderPageProps['type'], Func> = {
+  Funcionarios: [ModalCreateFuncionario, ['Caixa', 'Gerente', 'Administrador']],
+  Produto: [ModalCreateProduto, ['Caixa', 'Gerente', 'Administrador']],
+  Clientes: [ModalCreateCliente, ['Caixa', 'Gerente', 'Administrador']],
+  Produtos: [ModalCreateFuncionario, ['Caixa', 'Gerente', 'Administrador']],
+  'Painel Financeiro': [
     ModalCreateFuncionario,
-    ["Caixa", "Gerente", "Administrador"],
+    ['Caixa', 'Gerente', 'Administrador'],
   ],
 };
 

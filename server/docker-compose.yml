@@ -1,19 +1,19 @@
-version: "3.1"
+version: '3.1'
 
 services:
-  tabecai-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: tabecai-api
-    restart: always
-    depends_on:
-      - tabecai-database
-    ports:
-      - 3535:3535
-    volumes:
-      - .:/home/app
-    working_dir: /home/app
+  # tabecai-api:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: tabecai-api
+  #   restart: always
+  #   depends_on:
+  #     - tabecai-database
+  #   ports:
+  #     - 3535:3535
+  #   volumes:
+  #     - .:/home/app
+  #   working_dir: /home/app
 
   tabecai-database:
     container_name: tabecai-database

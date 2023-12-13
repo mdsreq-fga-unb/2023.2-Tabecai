@@ -4,6 +4,8 @@ import { adminRoutes } from './modules/admin/infra/http/controllers/routes'
 import { funcionarioRoutes } from './modules/funcionario/infra/http/controllers/routes'
 import { compraRoutes } from './modules/compra/infra/http/routes'
 import { sharedRoutes } from './shared/infra/http/controllers/routes'
+import { clienteRoutes } from './modules/cliente/infra/http/controllers/routes';
+import { caixaRoutes } from './modules/caixa/infra/http/controllers/routes';
 
 const fastify = Fastify({
   logger: true
@@ -15,6 +17,8 @@ fastify.register(adminRoutes, { prefix: '/admin' })
 fastify.register(funcionarioRoutes, { prefix: '/funcionario' })
 fastify.register(sharedRoutes, { prefix: '/shared' })
 fastify.register(compraRoutes, { prefix: '/compra' })
+fastify.register(clienteRoutes, { prefix: '/cliente' })
+fastify.register(caixaRoutes, { prefix: '/caixa' })
 
 const start = async () => {
   try {

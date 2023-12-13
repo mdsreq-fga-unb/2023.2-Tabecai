@@ -6,6 +6,7 @@ interface IRequest {
   price: number;
   method: Method;
   status: Status;
+  createdAt: string;
 }
 
 interface IResponse {
@@ -20,12 +21,13 @@ interface IResponse {
 export class UpdateCompra {
   constructor(private compraRepository: ICompraRepository) { }
 
-  public async execute({ id, price, method, status }: IRequest): Promise<IResponse> {
+  public async execute({ id, price, method, status, createdAt }: IRequest): Promise<IResponse> {
     const compra = await this.compraRepository.update(id, {
       id,
       price,
       method,
       status,
+      createdAt,
     });
 
     return compra

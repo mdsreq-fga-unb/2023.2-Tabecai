@@ -1,15 +1,15 @@
-import { api } from "@/services/api";
-import { useState } from "react";
-import Modal from "react-modal";
+import { api } from '@/services/api';
+import { useState } from 'react';
+import Modal from 'react-modal';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
   },
 };
 
@@ -23,28 +23,28 @@ export const ModalCreateFuncionario = ({
   onCloseModal,
 }: ModalCreateFuncionarioProps) => {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [cellphone, setCellphone] = useState("");
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [cellphone, setCellphone] = useState('');
 
   const cpfMask = (value: string) => {
     return value
-      .replace(/\D/g, "")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1,2})/, "$1-$2")
-      .replace(/(-\d{2})\d+?$/, "$1");
+      .replace(/\D/g, '')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+      .replace(/(-\d{2})\d+?$/, '$1');
   };
 
   const cellphoneMask = (value: string) => {
     return value
-      .replace(/\D/g, "")
-      .replace(/(\d{2})(\d)/, "($1) $2")
-      .replace(/(\d{5})(\d)/, "$1-$2")
-      .replace(/(-\d{4})\d+?$/, "$1");
+      .replace(/\D/g, '')
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2')
+      .replace(/(-\d{4})\d+?$/, '$1');
   };
 
   const handleCheckboxChange = () => {
@@ -79,7 +79,7 @@ export const ModalCreateFuncionario = ({
     e.preventDefault();
 
     let data = {
-      name: firstName + " " + lastName,
+      name: firstName + ' ' + lastName,
       email,
       password,
       cellphone,
@@ -87,24 +87,30 @@ export const ModalCreateFuncionario = ({
 
     if (isAdmin) {
       try {
-        await api.post("/admin", data);
+        const response = await api.post('/admin', data);
 
-        alert("Administrador cadastrado com sucesso!");
+        const caixaResponse = await api.post(`/caixa/${response.data.id}`);
+        localStorage.setItem('caixaId', caixaResponse.data.id);
+
+        alert('Administrador cadastrado com sucesso!');
         onCloseModal();
       } catch (error) {
-        alert("Erro ao cadastrar administrador!");
+        alert('Erro ao cadastrar administrador!');
       }
     } else {
       try {
-        await api.post("/funcionario", {
+        const response = await api.post('/funcionario', {
           ...data,
           cpf,
         });
 
-        alert("Funcionario cadastrado com sucesso!");
+        const caixaResponse = await api.post(`/caixa/${response.data.id}`);
+        localStorage.setItem('caixaId', caixaResponse.data.id);
+
+        alert('Funcionario cadastrado com sucesso!');
         onCloseModal();
       } catch (error) {
-        alert("Erro ao cadastrar funcionario!");
+        alert('Erro ao cadastrar funcionario!');
       }
     }
   };

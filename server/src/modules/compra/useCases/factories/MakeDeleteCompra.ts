@@ -1,4 +1,4 @@
-import { CompraPrismaRepository } from "../../infra/repositories/CompraPrismaRepositoty";
+import { CompraPrismaRepository } from "../../infra/repositories/CompraPrismaRepository";
 import { DeleteCompra } from "../DeleteCompra";
 
 export function MakeDeleteCompra() {

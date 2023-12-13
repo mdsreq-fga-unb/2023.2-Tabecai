@@ -1,28 +1,20 @@
-import { api } from "@/services/api";
-import { m } from "framer-motion";
-import { useEffect, useState } from "react";
-import Modal from "react-modal";
+import { api } from '@/services/api';
+import { m } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
+import { ICompra } from './Table';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "40%",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '40%',
   },
 };
-
-interface ICompra {
-  id: string;
-  price: number;
-  method: string;
-  status: string;
-  createdAt: string;
-  updatedAt: string;
-}
 
 type ModalUpdateComprasProps = {
   ModalType: boolean;
@@ -35,25 +27,29 @@ export const ModalUpdateCompras = ({
   onCloseModal,
   compra,
 }: ModalUpdateComprasProps) => {
-  const [clienteName, setClienteName] = useState(compra.id);
+  const [clienteName, setClienteName] = useState(
+    compra.cliente ? compra.cliente.name : ''
+  );
   const [date, setDate] = useState(compra.createdAt);
   const [paymentMethod, setPaymentMethod] = useState(compra.method);
   const [value, setValue] = useState(compra.price);
   const [status, setStatus] = useState(compra.status);
-  const [modalWidth, setModalWidth] = useState("50%");
+  const [modalWidth, setModalWidth] = useState('50%');
 
   useEffect(() => {
+    console.log(compra);
+
     const handleResize = () => {
       if (window.innerWidth < 728) {
-        setModalWidth("95%");
+        setModalWidth('95%');
       } else {
-        setModalWidth("40%");
+        setModalWidth('40%');
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -82,11 +78,15 @@ export const ModalUpdateCompras = ({
     e.preventDefault();
 
     try {
-      const response = await api.patch(`/compra/${compra.id}`, {
+      const data = {
         price: value,
-        method: paymentMethod,
+        method: paymentMethod.toUpperCase(),
         status: status,
-      });
+        createdAt: `${date}`,
+      };
+      console.log(data);
+
+      await api.patch(`/compra/${compra.id}`, data);
 
       onCloseModal();
     } catch (error) {}
@@ -150,7 +150,6 @@ export const ModalUpdateCompras = ({
                   placeholder="Nome"
                   value={clienteName}
                   onChange={handleChangeCliente}
-                  required
                 />
               </div>
               <div>
@@ -215,9 +214,27 @@ export const ModalUpdateCompras = ({
                 </select>
               </div>
 
+              <div>
+                <label
+                  htmlFor="text"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Data da Compra
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  id="date"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Data da Compra"
+                  value={new Date(date).toISOString().split('T')[0]}
+                  onChange={handleDateChange}
+                  required
+                />
+              </div>
+
               <button
                 type="submit"
-                onClick={onCloseModal}
                 className="w-full h-12  text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-bold text-lg rounded-lg px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800"
               >
                 Editar
