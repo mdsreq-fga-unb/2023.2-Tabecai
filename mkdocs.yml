@@ -13,14 +13,14 @@ nav:
 
   - Documentação:
       - Visão de Produto: 'visao-produto.md' #ok
-      - Visão de Projeto: 'visão-projeto.md' #ok
+      - Visão de Projeto: 'visão-projeto.md' # FALTA ATUALIZAR O PLANEJAMENTO SPRINT (MVP1 e 2)
       - Processo: 'processo.md' #ok
-      - BackLog do Produto: 'backlog_produto.md' 
+      - BackLog do Produto: 'backlog_produto.md' #ok
       - MVPS`s: 'mvp.md'
       - PBB e BDD HealthNet: 'pbb_heatnet.md'
       - USM ComunEventos : 'usm_comuneventos.md'
       - Caso de Uso _____ : 'caso_de_uso.md'
-      - Soluções de Software : 'ponto_controle.md'
+      - Soluções de Software : 'processoSoftware.md'
   - Entregas:
       - Unidade 1: 'entrega_1.md'
       - Unidade 2: 'entrega_2.md'
