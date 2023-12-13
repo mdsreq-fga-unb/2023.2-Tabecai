@@ -70,8 +70,18 @@ export default function Login() {
         password,
       });
       if (response.status === 200) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-        localStorage.setItem('id', response.data.id);
+        if (response.data.admin) {
+          localStorage.setItem('user', JSON.stringify(response.data.admin));
+          localStorage.setItem('id', response.data.admin.id);
+          localStorage.setItem('caixaId', response.data.caixaId);
+        } else {
+          localStorage.setItem(
+            'user',
+            JSON.stringify(response.data.funcionario)
+          );
+          localStorage.setItem('id', response.data.funcionario.id);
+          localStorage.setItem('caixaId', response.data.caixaId);
+        }
         router.push('/');
       } else {
         alert('Usuário ou senha incorretos');
