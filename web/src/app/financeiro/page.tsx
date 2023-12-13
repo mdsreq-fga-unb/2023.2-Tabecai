@@ -1,5 +1,5 @@
-'use client';
-import { Header } from '@/components/Header';
+"use client";
+import { Header } from "@/components/Header";
 import {
   BarChart,
   Bar,
@@ -10,10 +10,10 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
-import { AmountsCard } from '@/components/financeiro/Card';
-import { useEffect, useState } from 'react';
-import { api } from '@/services/api';
+} from "recharts";
+import { AmountsCard } from "@/components/financeiro/Card";
+import { useEffect, useState } from "react";
+import { api } from "@/services/api";
 
 interface ICompra {
   id: string;
@@ -92,10 +92,10 @@ export default function Financeiro() {
     const allCompras: ICompra[] = [];
 
     compras.forEach((compra) => {
-      if (compra.status === 'PENDENTE') {
+      if (compra.status === "PENDENTE") {
         allCompras.push(compra);
         setTotalPending((prev) => prev + compra.price);
-      } else if (compra.status === 'PAGO') {
+      } else if (compra.status === "PAGO") {
         setTotalReceived((prev) => prev + compra.price);
       }
     });
@@ -110,7 +110,7 @@ export default function Financeiro() {
 
   useEffect(() => {
     async function getCaixas() {
-      const response = await api.get('/caixa/all');
+      const response = await api.get("/caixa/all");
       const caixas = await response.data;
 
       setCaixas(caixas);
@@ -150,9 +150,9 @@ export default function Financeiro() {
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" style={{ fill: 'white' }} />
-                <YAxis style={{ fill: 'white' }} />
-                <Tooltip cursor={{ fill: 'rgba(0,0,0,0.1)' }} />
+                <XAxis dataKey="date" style={{ fill: "white" }} />
+                <YAxis style={{ fill: "white" }} />
+                <Tooltip cursor={{ fill: "rgba(0,0,0,0.1)" }} />
                 <Legend />
                 <Bar dataKey="PAGO" fill="#3ABB64" />
                 <Bar dataKey="PENDENTE" fill="#FFE145" />
@@ -171,13 +171,16 @@ export default function Financeiro() {
               const minutos = new Date(compra.createdAt).getMinutes();
 
               return (
-                <div className="flex w-full items-center justify-between p-4 border-b">
+                <div
+                  className="flex w-full items-center justify-between p-4 border-b"
+                  key={compra.id}
+                >
                   <div>
                     <h2 className="font-bold text-white">
                       {compra.Caixa.funcionario.name}
                     </h2>
                     <h3 className="text-white">
-                      {new Date(compra.createdAt).toLocaleDateString()} às{' '}
+                      {new Date(compra.createdAt).toLocaleDateString()} às{" "}
                       {horas}:{minutos}
                     </h3>
                   </div>

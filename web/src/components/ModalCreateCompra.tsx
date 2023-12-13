@@ -1,17 +1,17 @@
-import { api } from '@/services/api';
-import { m } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Modal from 'react-modal';
+import { api } from "@/services/api";
+import { m } from "framer-motion";
+import { useEffect, useState } from "react";
+import Modal from "react-modal";
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '40%',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "40%",
   },
 };
 
@@ -34,27 +34,27 @@ export const ModalCreateCompra = ({
   onCloseModal,
   clientes,
 }: ModalCreateCompraProps) => {
-  const [clienteName, setClienteName] = useState('');
+  const [clienteName, setClienteName] = useState("");
   const [cliente, setCliente] = useState<ICliente>();
-  const [date, setDate] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('DEBITO');
-  const [value, setValue] = useState('');
-  const [modalWidth, setModalWidth] = useState('50%');
+  const [date, setDate] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("DEBITO");
+  const [value, setValue] = useState("");
+  const [modalWidth, setModalWidth] = useState("50%");
 
   useEffect(() => {
-    setDate(new Date().toISOString().split('T')[0]);
+    setDate(new Date().toISOString().split("T")[0]);
 
     const handleResize = () => {
       if (window.innerWidth < 728) {
-        setModalWidth('95%');
+        setModalWidth("95%");
       } else {
-        setModalWidth('40%');
+        setModalWidth("40%");
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -79,12 +79,12 @@ export const ModalCreateCompra = ({
     e.preventDefault();
 
     try {
-      const caixaId = localStorage.getItem('caixaId');
+      const caixaId = localStorage.getItem("caixaId");
 
-      await api.post('/compra', {
+      await api.post("/compra", {
         price: Number(value),
         method: paymentMethod.toUpperCase(),
-        status: 'PENDENTE',
+        status: "PENDENTE",
         caixaId,
         clienteId: cliente?.id,
         createdAt: new Date(`${date}T03:00:00.000Z`),
@@ -163,6 +163,7 @@ export const ModalCreateCompra = ({
                       )
                       .map((cliente: any) => (
                         <button
+                          key={cliente.id}
                           className="flex flex-row space-x-2 items-center p-2 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg"
                           onClick={() => {
                             setCliente(cliente);
