@@ -8,13 +8,13 @@
 ![Alt text](./assets/retrospectivaSprint.png)
 
 ## Sprint Planning 
-BackLog + Critérios de Aceite
+### Planejamento
+![Alt text](./assets/planejamentoSprint.png)
 
+### BackLog + Critérios de Aceite
 <hhttps://trello.com/b/Iy2dbQCw/mvp2-tabe%C3%A7ai>
 ![Alt text](./assets/planningSprint.png)
 
-## Planejamento das Sprints
-![Alt text](./assets/planejamentoSprint.png)
 
 ## Review da Sprint 1 
 26/11 ate 02/12

@@ -1,6 +1,9 @@
-### Diagrama SAFe
+### Diagrama SAFe (inicialmente Proposto)
 
 ![Alt text](assets/safe.png)
+
+### Diagrama SAFe (final)
+![Alt text](assets/safe1.png)
 
 ### Requisitos Funcionais
 
