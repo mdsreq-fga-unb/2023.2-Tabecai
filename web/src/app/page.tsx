@@ -1,45 +1,56 @@
-"use client";
-import { DownloadCloud, Filter, MoreVertical, Search } from "lucide-react";
-import Image from "next/image";
-import Logo from "../../assets/logo.svg";
-import { Header } from "@/components/Header";
-import { Table } from "@/components/Table";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { ModalCreateCaixa } from "@/components/ModalCreateCaixa";
+'use client';
+import { DownloadCloud, Filter, MoreVertical, Search } from 'lucide-react';
+import Image from 'next/image';
+import Logo from '../../assets/logo.svg';
+import { Header } from '@/components/Header';
+import { Table } from '@/components/Table';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { ModalCreateCompra } from '@/components/ModalCreateCompra';
+import { api } from '@/services/api';
 
-const filtros = ["Tudo", "Efetuado", "Em Processo", "Transação Com Erro"];
+const filtros = ['Tudo', 'Efetuado', 'Em Processo', 'Transação Com Erro'];
 
 export default function Home() {
   const router = useRouter();
   const [modalCreateIsOpen, setCreateIsOpen] = useState(false);
+  const [clientes, setClientes] = useState([]);
 
   function onCloseCreateModal() {
     setCreateIsOpen(false);
     window.location.reload();
   }
 
-  async function getUser() {
-    const user = localStorage.getItem("user"); // refatorar no mvp2
+  useEffect(() => {
+    function userIsLogged() {
+      const token = localStorage.getItem('user');
 
-    if (user) {
-      return JSON.parse(user);
+      if (!token) {
+        router.push('/login');
+      }
     }
 
-    router.push("/login");
-  }
+    async function getClientes() {
+      try {
+        const response = await api.get('/cliente/all');
+        setClientes(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-  useEffect(() => {
-    getUser();
+    userIsLogged();
+    getClientes();
   }, []);
 
   return (
     <div className="flex flex-col w-full h-screen items-center">
       <Header />
 
-      <ModalCreateCaixa
+      <ModalCreateCompra
         ModalType={modalCreateIsOpen}
         onCloseModal={onCloseCreateModal}
+        clientes={clientes}
       />
 
       <div className="flex flex-row items-end justify-between w-11/12">

@@ -27,7 +27,15 @@ export class CaixaPrismaRepository implements ICaixaRepository {
   async listAll(): Promise<Caixa[]> {
     const caixas = await this.prisma.caixa.findMany({
       include: {
-        compras: true
+        compras: {
+          include: {
+            Caixa: {
+              include: {
+                funcionario: true
+              }
+            },
+          }
+        }
       }
     });
 
@@ -79,9 +87,9 @@ export class CaixaPrismaRepository implements ICaixaRepository {
   }
 
   async read(id: string): Promise<Caixa | null> {
-    const caixa = await this.prisma.caixa.findUnique({
+    const caixa = await this.prisma.caixa.findFirst({
       where: {
-        id
+        funcionarioId: id
       },
       include: {
         compras: true

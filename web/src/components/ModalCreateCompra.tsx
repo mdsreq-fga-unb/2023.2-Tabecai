@@ -1,52 +1,66 @@
-import { api } from "@/services/api";
-import { m } from "framer-motion";
-import { useEffect, useState } from "react";
-import Modal from "react-modal";
+import { api } from '@/services/api';
+import { m } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    width: "40%",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: '40%',
   },
 };
 
-type ModalCreateCaixaProps = {
+type ModalCreateCompraProps = {
   ModalType: boolean;
   onCloseModal: () => void;
+  clientes: any;
 };
 
-export const ModalCreateCaixa = ({
+interface ICliente {
+  id: string;
+  name: string;
+  cellphone: string;
+  cpf: string;
+  createdAt: string;
+}
+
+export const ModalCreateCompra = ({
   ModalType,
   onCloseModal,
-}: ModalCreateCaixaProps) => {
-  const [clienteName, setClienteName] = useState("");
-  const [date, setDate] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [value, setValue] = useState("");
-  const [modalWidth, setModalWidth] = useState("50%");
+  clientes,
+}: ModalCreateCompraProps) => {
+  const [clienteName, setClienteName] = useState('');
+  const [cliente, setCliente] = useState<ICliente>();
+  const [date, setDate] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('DEBITO');
+  const [value, setValue] = useState('');
+  const [modalWidth, setModalWidth] = useState('50%');
 
   useEffect(() => {
+    setDate(new Date().toISOString().split('T')[0]);
+
     const handleResize = () => {
       if (window.innerWidth < 728) {
-        setModalWidth("95%");
+        setModalWidth('95%');
       } else {
-        setModalWidth("40%");
+        setModalWidth('40%');
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const handleChangeCliente = (e: React.ChangeEvent<HTMLInputElement>) => {
     setClienteName(e.target.value);
+    setCliente(undefined);
   };
 
   const handleChangeMethod = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -65,10 +79,15 @@ export const ModalCreateCaixa = ({
     e.preventDefault();
 
     try {
-      const response = await api.post("/compra", {
+      const caixaId = localStorage.getItem('caixaId');
+
+      await api.post('/compra', {
         price: Number(value),
-        method: paymentMethod,
-        status: "PENDENTE",
+        method: paymentMethod.toUpperCase(),
+        status: 'PENDENTE',
+        caixaId,
+        clienteId: cliente?.id,
+        createdAt: new Date(`${date}T03:00:00.000Z`),
       });
 
       onCloseModal();
@@ -123,17 +142,40 @@ export const ModalCreateCaixa = ({
                   htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Nome do Cliente
+                  Cliente (Opcional)
                 </label>
                 <input
                   type="text"
                   name="firstName"
                   id="firstName"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                  placeholder="Nome"
+                  placeholder="Cliente"
                   onChange={handleChangeCliente}
-                  required
+                  value={clienteName}
                 />
+                {clienteName.length > 0 && !cliente && (
+                  <div className="flex flex-col space-y-2">
+                    {clientes
+                      .filter((cliente: any) =>
+                        cliente.name
+                          .toLowerCase()
+                          .includes(clienteName.toLowerCase())
+                      )
+                      .map((cliente: any) => (
+                        <button
+                          className="flex flex-row space-x-2 items-center p-2 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg"
+                          onClick={() => {
+                            setCliente(cliente);
+                            setClienteName(cliente.name);
+                          }}
+                        >
+                          <strong className="text-indigo-600">
+                            {cliente.name}
+                          </strong>
+                        </button>
+                      ))}
+                  </div>
+                )}
               </div>
               <div>
                 <label
@@ -174,7 +216,7 @@ export const ModalCreateCaixa = ({
                 />
               </div>
 
-              {/* <div>
+              <div>
                 <label
                   htmlFor="text"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -185,11 +227,12 @@ export const ModalCreateCaixa = ({
                   type="date"
                   name="date"
                   id="date"
+                  value={date}
                   onChange={handleDateChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   required
                 />
-              </div> */}
+              </div>
 
               <button
                 type="submit"

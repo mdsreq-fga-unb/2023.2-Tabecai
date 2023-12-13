@@ -15,7 +15,36 @@ export class CompraPrismaRepository implements ICompraRepository {
   }
 
   public async listAll(): Promise<Compra[]> {
-    const compra = await this.prisma.compra.findMany()
+    const compra = await this.prisma.compra.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      }, include: {
+        cliente: true,
+        Caixa: {
+          include: {
+            funcionario: true
+          }
+        }
+      }
+    })
+
+    return compra
+  }
+
+  public async listByCaixa(caixaId: string): Promise<Compra[]> {
+    const compra = await this.prisma.compra.findMany({
+      where: { caixaId }, include: {
+        cliente: true,
+        Caixa: {
+          include: {
+            funcionario: true
+          }
+        }
+      },
+      orderBy: {
+        createdAt: 'asc'
+      }
+    })
 
     return compra
   }

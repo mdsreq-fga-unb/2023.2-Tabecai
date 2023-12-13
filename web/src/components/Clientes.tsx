@@ -1,57 +1,31 @@
-"use client";
-import { ArrowRightCircle, Play } from "lucide-react";
-import admIcon from "../assets/adm.svg";
-import funcionarioIcon from "../assets/funcionario.svg";
-import Image from "next/image";
-import { api } from "@/services/api";
-import { useEffect, useState } from "react";
-import { ModalUpdateFuncionario } from "./ModaUpdateFuncionario";
+'use client';
+import { ArrowRightCircle, Play } from 'lucide-react';
+import { api } from '@/services/api';
+import { useEffect, useState } from 'react';
 
-interface IFuncionario {
+interface ICliente {
   id: string;
-  email: string;
-  funcao: string;
   name: string;
   cellphone: string;
   cpf: string;
+  createdAt: string;
 }
 
 export const Clientes = () => {
-  const [funcionarios, setFuncionarios] = useState<IFuncionario[]>([]);
+  const [clientes, setClientes] = useState<ICliente[]>([]);
   const [openModal, setOpenModal] = useState(false);
 
-  async function getFuncionarios() {
-    const people = [];
-
-    const administradoresResponse = await api.get("/admin/all");
-    const administradores = administradoresResponse.data.map(
-      (administrador: IFuncionario) => {
-        return {
-          ...administrador,
-          funcao: "Administrador",
-        };
-      }
-    );
-    people.push(...administradores);
-
-    const funcionariosResponse = await api.get("/funcionario/all");
-    const funcionarios = funcionariosResponse.data.map(
-      (funcionario: IFuncionario) => {
-        return {
-          ...funcionario,
-          funcao: "Funcionário",
-        };
-      }
-    );
-    people.push(...funcionarios);
-
-    console.log(people);
-
-    setFuncionarios(people);
+  async function getClientes() {
+    try {
+      const response = await api.get('/cliente/all');
+      setClientes(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
-    getFuncionarios();
+    getClientes();
   }, []);
 
   function handleOpenModal() {
@@ -65,38 +39,23 @@ export const Clientes = () => {
 
   return (
     <div className="grid lg:grid-cols-3 gap-4 sm:grid-cols-2 grid-cols-1">
-      {funcionarios.map((funcionario: IFuncionario) => {
-        let coresBox;
-        let iconBackground;
-        let icon;
-
-        if (funcionario.funcao === "Administrador") {
-          coresBox = "bg-[#5C83E6] ";
-          iconBackground = "bg-[#B175FF]";
-          icon = admIcon;
-        } else {
-          coresBox = "bg-[#77DD77]";
-          iconBackground = "bg-[#68D282]";
-          icon = funcionarioIcon;
-        }
-
-        const coresIconBackground = [""];
+      {clientes.map((cliente: ICliente) => {
         return (
           <button
-            key={funcionario.id}
+            key={cliente.id}
             onClick={() => handleOpenModal()}
-            className={`flex items-center justify-between ${coresBox} gap-4 rounded-xl  p-4 w-11/12 h-26`}
+            className={`flex items-center gap-6 rounded-xl px-6 py-4 h-26 bg-[#5C83E6]`}
           >
-            <div className="flex flex-row items-center gap-4">
-              <div className="py-1 text-left p-6">
-                <p className="text-white font-semibold text-xs lg:text-md xl:text-lg text-ellipsis">
-                  {funcionario.name}
-                </p>
-                <p className="text-white text-xs lg:text-md xl:text-lg text-ellipsis font-light">
-                  {funcionario.email}
+            <div className="flex flex-col items-center gap-4">
+              <div className="text-left">
+                <p className="text-white font-bold text-lg lg:text-md xl:text-lg text-ellipsis">
+                  {cliente.name}
                 </p>
                 <p className="text-white text-xs lg:text-md xl:text-lg font-light">
-                  {funcionario.cellphone}
+                  {cliente.cellphone}
+                </p>
+                <p className="text-white text-xs lg:text-md xl:text-lg font-light">
+                  {cliente.cpf}
                 </p>
               </div>
             </div>
@@ -110,11 +69,11 @@ export const Clientes = () => {
                 color="#FFE145"
                 className={`transition hover:-translate-y-1 hover:scale-110 cursor-pointer justify-center`}
               />
-              <ModalUpdateFuncionario
+              {/* <ModalUpdateFuncionario
                 ModalType={openModal}
                 onCloseModal={handleCloseModal}
                 funcionario={funcionario}
-              />
+              /> */}
             </div>
           </button>
         );

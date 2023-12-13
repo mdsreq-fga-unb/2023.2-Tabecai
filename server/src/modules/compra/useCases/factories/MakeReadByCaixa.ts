@@ -1,8 +1,8 @@
 import { CompraPrismaRepository } from "../../infra/repositories/CompraPrismaRepository";
-import { CreateCompra } from "../CreateCompra";
+import { ReadByCaixa } from "../ReadByCaixa";
 
-export function MakeCreateCompra() {
+export function MakeReadByCaixa() {
   const compraRepository = new CompraPrismaRepository()
 
-  return new CreateCompra(compraRepository)
+  return new ReadByCaixa(compraRepository)
 }
