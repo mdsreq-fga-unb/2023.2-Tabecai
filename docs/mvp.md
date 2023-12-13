@@ -72,14 +72,12 @@ Dados os Pesos, a ideia para a construção e divisão dos MVP's, deu-se a parti
 
 ### MVP 1
 
-![Alt text](assets/mvp1.jpg)
+![Alt text](assets/mvp1.png)
 
 A imagem acima mostra um MVP 1 para um sistema de gerenciamento de caixa. A imagem mostra que o MVP 1 é um produto básico que pode ser usado para registrar vendas e entradas de caixa.
 
-A imagem mostra que o MVP 1 inclui as seguintes funcionalidades:
+A imagem mostra que o MVP 1 inclui as funcionalidades de CRUD de funcionario, administrador e compra, bem como as relações envolvidas entre cada.
 
-- Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
-- Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
 
 | MVP 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Justificativa                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -91,16 +89,11 @@ A imagem mostra que o MVP 1 inclui as seguintes funcionalidades:
 
 ### MVP 2
 
-![Alt text](assets/mvp2.jpg)
+![Alt text](assets/mvp2.png)
 
-A imagem acima mostra um MVP 2 para o mesmo sistema de gerenciamento de caixa. A imagem mostra que o MVP 2 é um produto mais completo que o MVP 1.
+A imagem acima mostra um MVP 2 para o mesmo sistema de gerenciamento de caixa. 
 
-A imagem mostra que o MVP 2 inclui as seguintes funcionalidades:
-
-- Autenticação de usuários: Os usuários devem ser capazes de se autenticar no sistema usando um nome de usuário e senha.
-- Registro de entrada de caixa: Os funcionários de caixa devem ser capazes de registrar entradas de caixa, incluindo o valor da venda, o produto vendido e o funcionário de caixa responsável.
-- Vinculação de produto a compra: Os funcionários de caixa devem ser capazes de vincular produtos a compras.
-- Geração de relatórios de vendas: Os gerentes de loja devem ser capazes de gerar relatórios de vendas, incluindo o valor das vendas, os produtos vendidos e os funcionários de caixa responsáveis.
+A imagem mostra que o MVP 2 inclui o restante das funcionalidades esperadas no nosso produto, nele se encontra o CRUD de cliente, a materialização de caixas, onde pode-se segregar as vendas e gerar difntes relatorios a depender do adm.
 
 | MVP 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Justificativa                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -110,22 +103,4 @@ A imagem mostra que o MVP 2 inclui as seguintes funcionalidades:
 | US20 - Eu como funcionário, quero ser capaz de atribuir uma compra a um cliente, para gerenciar dívidas. <br> US21 - Eu como administrador, quero ser capaz de excluir uma atribuição de compra de um cliente, para casos de engano                                                                                                                                                                                                                                                                                           | O funcionario deve poder atribuir uma venda a um cliente para poder cobra-lo no futuro.                             |
 | US22 - Eu como funcionário, quero ser capaz de criar uma compra, para o rastreamento das vendas do dia no sistema.<br>US23 - Eu como administrador, quero ser capaz de criar uma compra, para poder cobrá-la.<br>US24 - Eu como administrador, quero ser capaz de editar uma compra, para dizer se o valor  aumentou. <br>US25 - Eu como administrador, quero ser capaz de deletar uma compra, para dizer que ela já foi paga. <br> US26 - Eu como administrador, quero ser capaz de ler uma compra, para fazer um relatório. | O administrador deve ser capaz de criar uma compra e atribuir a um cliente e deve poder deletar a mesma.            |
 | US27 - Eu como administrador, quero ser capaz de criar um caixa, para poder ter vendas. <br> US28 - Eu como administrador, quero ser capaz de ler um caixa, para poder gerar as informações sobre o mesmo. <br> US29 -Eu como administrador, quero ser capaz de editar um caixa, para mudar o responsável.<br>US30 - Eu como administrador, quero ser capaz de deletar um caixa, para dizer que ele não existe mais na loja.                                                                                                  |                                                                                                                     |
-| US31 - Eu como administrador, quero ser capaz de gerar o relatório de um caixa, para ter um resumo do dia. <br> US32 - Eu como administrador, quero ser capaz de ler o relatório de um caixa, para ter um acesso a relatórios de dias anteriores.                                                                                                                                                                                                                                                                             |                                                                                                                     |
-
-
-
- ## DOR e DOD
-O Desenvolvimento Orientado por Dados (DOD) coloca a análise de dados no centro das decisões de desenvolvimento. Já a Definição de Objetivos e Resultados (DOR) estabelece um método claro para definir metas tangíveis. Essas abordagens, quando combinadas, proporcionam eficiência e alinhamento estratégico. Neste contexto, exploraremos da seguinte forma a combinação do DOD e DOR no projeto.
-
-**DOR**
-- O Requisito possui informação necessária para ser 
-- O requisito é consistente com os objetivos do projeto? 
-- O requisito foi validado com o cliente?                        
-- O requisito está alinhado com as necessidades dos usuários?     
-- O Requisito está representado por uma história de usuário?  
-- As dependências do Requisito estão identificadas (se houver)?
-
-**DOD**
-- O requisito foi implementado de acordo com os critérios de aceitação? 
-- A atividade foi entregue por completo?                                               
-- A implementação é consistente com a arquitetura? 
+| US31 - Eu como administrador, quero ser capaz de gerar o relatório de um caixa, para ter um resumo do dia. <br> US32 - Eu como administrador, quero ser capaz de ler o relatório de um caixa, para ter um acesso a relatórios de dias anteriores.                                                                                                                                                                                                                 
