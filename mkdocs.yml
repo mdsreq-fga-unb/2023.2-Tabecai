@@ -16,10 +16,12 @@ nav:
       - Visão de Projeto: 'visão-projeto.md' # FALTA ATUALIZAR O PLANEJAMENTO SPRINT (MVP1 e 2)
       - Processo: 'processo.md' #ok
       - BackLog do Produto: 'backlog_produto.md' #ok
-      - MVPS`s: 'mvp.md'
+      - MVPS`s: 'mvp.md' #ok
+      - Caso de Uso _____ : 'casoUso.md'
+            # terminar no miro !!!!!    
+
       - PBB e BDD HealthNet: 'pbb_heatnet.md'
       - USM ComunEventos : 'usm_comuneventos.md'
-      - Caso de Uso _____ : 'caso_de_uso.md'
       - Soluções de Software : 'processoSoftware.md'
   - Entregas:
       - Unidade 1: 'entrega_1.md'

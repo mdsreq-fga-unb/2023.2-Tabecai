@@ -1,133 +1,24 @@
 # Exercício de Construção de Backlog de Produto usando PBB (Product Backlog Building)
 
-Este documento constitui a documentação oficial da atividade de Product Backlog Building (PBB), orientada pelo Prof. Dr. George Marsicano. No cenário do desenvolvimento ágil de software, o PBB destaca-se como uma abordagem sistemática para criar e aprimorar o Backlog de Produto, garantindo sua alinhamento preciso com as necessidades do negócio e dos usuários finais. 
+Este documento constitui a documentação oficial da atividade de Product Backlog Building (PBB), orientada pelo Prof. Dr. George Marsicano. 
+
 A atividade se baseia em um estudo de caso focado na "HealthNet", uma extensa rede de clínicas e hospitais enfrentando desafios significativos em sua operação diária. Ao longo desta atividade, foram explorados os desafios enfrentados pelas diversas personas da "HealthNet", assim como suas expectativas e necessidades. Essas informações foram empregadas para definir e priorizar os itens do backlog, visando o desenvolvimento de uma visão holística do produto, compreendendo tanto o panorama técnico quanto as nuances humanas por trás dele.
 
-## Nome do Produto: HealthNet
 
-## Problemas: 
+![Alt text](assets/pbb.png)
 
-- Sistemas isolados que não "conversam" entre si  
-- Processos manuais e papelada, propensas a erros  
-- Falta regulamentações sobre proteção de dados de saúde  
-- Falta de uma estrutura unificada e integrada para a gestão de dados dos pacientes  
-- Informações incompletas e desatualizadas  
-- Sistemas desatualizados  
-- Atraso de processos  
-- Demora do tempos de espera  
-- Aumento de riscos de erros médicos devido à falta de informações cruciais  
-- Aumentando os custos para o hospital e para o paciente  
-- Frustração tanto para os pacientes quanto para os profissionais de saúde  
-- Falta de rastreamento de medicamentos preescritos  
+Devido a dificuldade de visualização, abaixo segue os fragmentos do Product Backlog BuilDing
+![Alt text](assets/problemas.png)
 
-## Expectativas:
-- Integração de sistemas entre unidades para compartilhamento de informações de pacientes
-- Redução da dependência de processos manuais
-- Garantia de conformidade com as regulamentações de proteção de dados de saúde
-- Atualização dos sistemas de saúde para torná-los modernos e eficientes
-- Implementação de uma estrutura integrada de gestão de dados dos pacientes
-- Manutenção de registros médicos centralizados e atualizados para todos os pacientes
-- Otimização dos processos para eliminar atrasos e ineficiências
-- Redução dos tempos de espera para consultas e procedimentos médicos
-- Alertas automáticos sobre informações médicas críticas e interações medicamentosas
-- Redução de custos operacionais e melhoria da eficiência para hospitais e pacientes
-- Melhoria da experiência do paciente e da eficácia no atendimento médico para evitar frustrações
-- Sistema de rastreamento de medicamentos prescritos e verificação de interações medicamentosas
+![Alt text](assets/peersonasFeatures.png)
 
-## Personas:
+![Alt text](assets/expectativas.png)
 
-**O que faz (O que a persona faz hoje):** Gerenciamento Pacientes
-**Persona: Maria - A Recepcionista**
-**O que espera (Algo que a persona quer fazer com o produto.):** Acesso  a informações de pacientes de outras unidades / Atualizar informações sem atrasos  
-
-**O que faz (O que a persona faz hoje):** Atende pacientes  
-**Persona:** **Dr. João - O Médico Clínico Geral**  
-**O que espera (Algo que a persona quer fazer com o produto.):** Acesso a histórico / Acesso a alertas  
-
-**O que faz (O que a persona faz hoje):** Dispensa medicamentos conforme prescrições  
-**Persona:** **Lívia - A Farmacêutica**  
-**O que espera (Algo que a persona quer fazer com o produto.):** Automação da dispensa / Detalhamento de Prescrições  
-
-**O que faz (O que a persona faz hoje):** Agenda consultas  
-**Persona:** **Rafael - O Coordenador de Agendamento**  
-**O que espera (Algo que a persona quer fazer com o produto.):** Visualização disponibilidade médicos / Automatização de Notificações   
-
-**O que faz (O que a persona faz hoje):** Faz consultas  
-**Persona:** **Sra. Clara - A Paciente**  
-**O que espera (Algo que a persona quer fazer com o produto.):** Acesso a histórico / Agendamento online / Visualiza Exames  
-
-**O que faz (O que a persona faz hoje):** Supervisiona TI  
-**Persona:** **Sr. Roberto - Diretor de Tecnologia**  
-**O que espera (Algo que a persona quer fazer com o produto.):** Suporte Técnico / Relatórios de Desempenho / Monitoramento de Segurança
+![Alt text](assets/pbi.png)
 
 
-## Features: 
-
-Maria - A Recepcionista
-Problemas: Sistema lento e Desatualizado  / Frustação pacientes  
-Funcionalidade: Gerenciamento Pacientes  
-Beneficios: Acesso rápido as informações / Integralização de sistema  
-
-Dr. João - O Médico Clínico Geral
-Problemas: Falta de acesso rápido e preciso ao histórico médico, prescrições e exames.  
-Funcionalidade: Atende pacientes  
-Beneficios: Acessar informações completas de um paciente  / Capacidade de inserir notas e prescrições de forma eficiente  
-
-Lívia - A Farmacêutica
-Problemas: Inserção Manual / Erros de interações medicamentosas  
-Funcionalidade: Dispensa medicamentos  
-Beneficios: Registro de medicamentos dispensados / Visualização das prescrições / Verificação automática  
-
-Rafael - O Coordenador de Agendamento
-Problemas: Conflitos e reagendamentos / Falta de visão unificada das agendas  
-Funcionalidade: Agenda consultas  
-Beneficios: Evita conflitos e melhora o agendamento / Notificações automáticas que facilitam o acompanhamento  
-
-Sra. Clara - A Paciente
-Problemas: Acesso limitado a informações pessoais / Processos manuais e falta de informações centralizadas  
-Funcionalidade: Faz consultas e Recebe tratamento  
-Beneficios: Maior envolvimento com informações acessíveis / Facilita agendamento e acesso a resultados  
-
-Sr. Roberto - Diretor de Tecnologia
-Problemas: Dificuldade em monitorar o desempenho e conformidade / Falta de ferramentas eficazes de relatório  
-Funcionalidade: Supervisiona TI  
-Beneficios: Eficiência com monitoramento contínuo / Facilita relatórios para conformidade 
 
 ## PBI
-
-Maria - A Recepcionista
-- Registrar um novo pacientes  
-- Atualizar as informações dos Pacientes
-
-Dr. João - O Médico Clínico Geral
-- Acessar o histórico  dos pacientes, incluindo consultas e tratamentos anteriores em outra unidade.  
-- Inserir notas e prescrições  
-- Receber alertas automáticos sobre interações medicamentosas  
-
-Lívia - A Farmacêutica
-- Acessar as informações  sobre cada medicamento  
-- Dispensar medicamentos conforme as prescrições  
-- Receber alertas automáticos sobre interações medicamentosas  
-
-Rafael - O Coordenador de Agendamento
-- Agendar consultas com especialistas em uma tela  
-- Receber alertas de conflitos de horário  
-- Enviar notificações de agendamento para pacientes  
-
-Sra. Clara - A Paciente
-- Visualizar histórico médico e resultados de exames  
-- Agendar consultas  
-- Receber lembretes de consultas e resultados  
-
-Sr. Roberto - Diretor de Tecnologia
-- Desenvolver e implementar uma solução escalável, segura e em conformidade com as regulamentações para a infraestrutura tecnológica da "HealthNet".  
-- Criar e integrar ferramentas de monitoramento e relatório para avaliar e manter o desempenho eficiente do sistem  
-- Estabelecer um processo para realizar atualizações e melhorias no sistema da "HealthNet" sem interrupções significativas, garantindo a continuidade operacional durante as implementações. 
-
-## [Link do MIRO](https://miro.com/app/board/uXjVMmS3Ge8=/)
-
-<iframe width="768" height="432" src="https://miro.com/app/board/uXjVMmS3Ge8=/?moveToWidget=3458764569098248326&cot=14" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
-
 
 ## User Stories e Critérios de Aceitação
 | User Story | Critérios de Aceitação | Cenário BDD |
@@ -165,4 +56,5 @@ Sr. Roberto - Diretor de Tecnologia
 | Data       | Versão | Modificação                                                           | Autor                                                              |
 | :--------- | :----- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- |
 | 22/11/2023 | 1.0    | Criação do documento                                                  | Breno e Maria Luisa |
+
 
