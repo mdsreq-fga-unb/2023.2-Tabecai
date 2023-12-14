@@ -35,4 +35,37 @@ Exclusão da Feature de Dados De Produto
 ### Critérios de Aceitação
 
 #### FE01 - Gestão de Dados de funcionários
-![Alt text](image-1.png)
+![image-20231214005617984](assets/image-20231214005617984.png)
+
+#### **FE02 - Cobrança de compra**
+
+![image-20231214005441827](assets/image-20231214005441827.png)
+
+#### FE03 - Gestão de Dados de administradores
+
+![image-20231214010202125](assets/image-20231214010202125.png)
+
+#### FE05 - Gestão de Dados de clientes
+
+![image-20231214010247701](assets/image-20231214010247701.png)
+
+#### FE06 - Gerar Relatório do Cliente
+
+![image-20231214010323968](assets/image-20231214010323968.png)
+
+#### FE07 - Atribuição de compra
+
+![image-20231214010405060](assets/image-20231214010405060.png)
+
+#### FE08 - Gestão de Dados de compra
+
+![image-20231214010446505](assets/image-20231214010446505.png)
+
+#### FE09 - Gestão de caixa
+
+![image-20231214010548895](assets/image-20231214010548895.png)
+
+#### FE10 - Relatórios de caixa
+
+![image-20231214010630276](assets/image-20231214010630276.png)
+
