@@ -3,7 +3,7 @@ Repositório de projeto da disciplina de REQ-T4.
 
 Usuario Funcionario
 email: funcionario@funcioonario.com
-senha: funcionarioo1
+senha: funcionario1
 
 Usuario ADM
 email: bruno@medo.com
