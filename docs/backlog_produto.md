@@ -32,3 +32,7 @@ Exclusão da Feature de Dados De Produto
 | RNF05  | Interface      | A aplicação deve manter um estilo de design consistente em toda a interface, incluindo fontes, cores e ícones.          |     |
 | RNF06  | Interface      | A interface deve ser responsiva, adaptando-se a diferentes tamanhos de tela e dispositivos, como smartphones e tablets. |     |
 
+### Critérios de Aceitação
+
+#### FE01 - Gestão de Dados de funcionários
+![Alt text](image-1.png)
