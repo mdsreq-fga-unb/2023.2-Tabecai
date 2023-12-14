@@ -72,7 +72,7 @@ export default function Financeiro() {
     const summary: any = {};
 
     compras.forEach((compra) => {
-      const date = new Date(compra.createdAt).toLocaleDateString();
+      const date = new Date(compra.createdAt).toLocaleDateString('pt-BR');
 
       if (!summary[date]) {
         summary[date] = { date, PENDENTE: 0, CANCELADO: 0, PAGO: 0 };

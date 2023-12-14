@@ -35,14 +35,26 @@ export const Clientes = () => {
       const response = await api.get('/compra/clientes-devendo');
       const todosClientes = await api.get('/cliente/all');
 
-      setDevedores([
-        ...response.data.filter((cliente: IDevedor) => cliente.devendo !== 0),
-        ...todosClientes.data
-          .map((cliente: ICliente) => {
-            return { devendo: 0, devendoAmount: 0, cliente };
-          })
-          .filter((cliente: IDevedor) => cliente.devendo === 0),
-      ]);
+      const clientesMap = new Map();
+
+      response.data.forEach((cliente: IDevedor) => {
+        if (cliente.devendo !== 0) {
+          clientesMap.set(cliente.cliente.id, cliente);
+        }
+      });
+
+      todosClientes.data.forEach((cliente: ICliente) => {
+        if (!clientesMap.has(cliente.id)) {
+          clientesMap.set(cliente.id, {
+            devendo: 0,
+            devendoAmount: 0,
+            cliente,
+          });
+        }
+      });
+
+      const clientesUnicos = Array.from(clientesMap.values());
+      setDevedores(clientesUnicos);
     } catch (error) {
       console.log(error);
     }

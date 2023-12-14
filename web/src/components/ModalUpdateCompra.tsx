@@ -37,8 +37,6 @@ export const ModalUpdateCompras = ({
   const [modalWidth, setModalWidth] = useState('50%');
 
   useEffect(() => {
-    console.log(compra);
-
     const handleResize = () => {
       if (window.innerWidth < 728) {
         setModalWidth('95%');
@@ -82,9 +80,8 @@ export const ModalUpdateCompras = ({
         price: value,
         method: paymentMethod.toUpperCase(),
         status: status,
-        createdAt: `${date}`,
+        createdAt: date.includes('T') ? date : `${date}T04:00:00.000Z`,
       };
-      console.log(data);
 
       await api.patch(`/compra/${compra.id}`, data);
 
