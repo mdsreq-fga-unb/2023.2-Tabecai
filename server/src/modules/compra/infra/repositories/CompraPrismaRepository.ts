@@ -88,6 +88,9 @@ export class CompraPrismaRepository implements ICompraRepository {
       _count: {
         status: true
       },
+      _sum: {
+        price: true
+      }
     })
 
     const clientes = []
@@ -102,6 +105,7 @@ export class CompraPrismaRepository implements ICompraRepository {
 
         clientes.push({
           devendo: compras[i]._count.status,
+          devendoAmount: compras[i]._sum.price,
           cliente
         })
       }

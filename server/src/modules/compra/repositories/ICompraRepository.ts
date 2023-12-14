@@ -2,6 +2,7 @@ import { Cliente, Compra, Prisma } from "@prisma/client";
 
 export interface ICounter {
   devendo: number
+  devendoAmount: number
   cliente: Cliente
 }
 

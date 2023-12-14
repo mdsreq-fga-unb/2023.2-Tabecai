@@ -69,7 +69,7 @@ export const HeaderPage = ({ type, title }: HeaderPageProps) => {
           <DownloadCloud size={24} />
         </button>
       </div>
-      <div className="flex flex-row justify-between mx-10">
+      {/* <div className="flex flex-row justify-between mx-10">
         <div className="flex flex-row space-x-4 items-end">
           <div className="flex flex-row items-center p-4 text-indigo-600 border-2 border-indigo-600  rounded-lg">
             <Search size={24} />
@@ -106,7 +106,7 @@ export const HeaderPage = ({ type, title }: HeaderPageProps) => {
             <MoreVertical size={24} />
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* MODAL AQUI DE TESTE */}
       <ModalComponent
