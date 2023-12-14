@@ -1,7 +1,15 @@
-'use client';
-import { ArrowRightCircle, Play } from 'lucide-react';
-import { api } from '@/services/api';
-import { useEffect, useState } from 'react';
+"use client";
+import { ArrowRightCircle, Play } from "lucide-react";
+import { api } from "@/services/api";
+import { useEffect, useState } from "react";
+
+interface ICompra {
+  id: string;
+  name: string;
+  status: string;
+  price: string;
+  createdAt: string;
+}
 
 interface ICliente {
   id: string;
@@ -9,6 +17,7 @@ interface ICliente {
   cellphone: string;
   cpf: string;
   createdAt: string;
+  compras: ICompra[];
 }
 
 export const Clientes = () => {
@@ -17,8 +26,10 @@ export const Clientes = () => {
 
   async function getClientes() {
     try {
-      const response = await api.get('/cliente/all');
-      setClientes(response.data);
+      const response = await api.get("/compra/all");
+      const clientesAndComprasPendentes = await response.data.map(
+        (compra: ICompra) => {}
+      );
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +55,7 @@ export const Clientes = () => {
           <button
             key={cliente.id}
             onClick={() => handleOpenModal()}
-            className={`flex items-center gap-6 rounded-xl px-6 py-4 h-26 bg-[#5C83E6]`}
+            className={`flex items-center gap-6 rounded-xl px-6 py-4 h-26 bg-[#5C83E6] justify-between`}
           >
             <div className="flex flex-col items-center gap-4">
               <div className="text-left">
@@ -61,9 +72,7 @@ export const Clientes = () => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <p className="text-white font-semi  bold text-lg">
-                Compras a pagar : 2
-              </p>
+              <p className="text-white font-semi  bold text-lg"></p>
               <ArrowRightCircle
                 size={30}
                 color="#FFE145"
