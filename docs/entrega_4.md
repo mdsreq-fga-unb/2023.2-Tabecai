@@ -29,7 +29,7 @@
     2.2. Fluxo Alternativo
         Não se aplica
 
-    2.3. Fluxo Alternativo
+    2.3. Fluxo De Excessão
        2.3.1 [FE01] Não existir avaliação pendente
             No Passo 2.1.1 o sistema é responsável por listar todos os serviços com pendência de Avaliação, caso nenhuma pendência exista é exibido a mensagem “Não existem avaliações pendentes”. O sistema Avança para o passo 2.1.6
 
@@ -78,7 +78,7 @@
     2.2. Fluxo Alternativo
         Não se aplica
 
-    2.3. Fluxo Alternativo
+    2.3. Fluxo De Excessão
        2.3.1 [FE01] Não existir viagens futuras
             No Passo 2.1.1 o sistema é responsável por listar todos viagens futuras do viajante, caso nenhuma viagem exista é exibido a mensagem “Não existem viagens futuras". O sistema Avança para o passo 2.1.6
 
@@ -103,5 +103,54 @@
     Não se Aplica.
 
 
+#### Reservar Acomodação da Viagem
 
+##### 1. Reservar Acomodação da Viagem
+     1.1. Breve Descrição	
+        Nesse caso de uso é permitido ao viajante reservar uma nova acomodação para a sua viajem, abrangindo desde a seleção da locação desejada, vizualização de informações até a expecificação de reserva, podendo estabelecer mais detalhes com o Serviço Contrato.
+    1.2. Ator   
+        - Viajante
+
+##### 2. FLUXO BÁSICO	
+    2.1. Fluxo Principal	
+        Este caso de uso é iniciado quando o viajante Selecina Encontrar acomodações, dada uma região pesquisada.
+            2.1.1. O Sistema solicita a data desejada do viajante para se acomodar. 
+            2.1.2. O Sistema lista acomodaçõoes dado os filtros [RN01] [FE01]
+            2.1.3. O Viajante escolha a acomodação de interresse
+            2.1.4. O Sistema retorna detalhes da acomodação [RN02] [FA01]
+            2.1.5. Caso o Viajante não tenha interresse, pode-se voltar ao tópico 2.1.2.
+            2.1.6. O viajante seleciona reservar a acomodação da hospedagem. 
+            2.1.7. O sistema exibe formulário de reserva. [RN03]
+            2.1.8. O viajante preenche dados de reserva [FE02]
+            2.1.9. O caso de uso é encerrado.	
+
+    2.2. Fluxo Alternativo
+       [FA01] Definir Mais Detalhes do Serviço
+       2.2.1. O viajante seleciona conversar por chat diretamente com o Serviço Contratado
+       2.2.2. O viajante retira dúvidas e volta ao fluxo 2.1.5.
+
+
+    2.3. Fluxo De Excessão
+      2.3.1 [FE01] Não existir acomodaçõs dispóniveis
+            No Passo 2.1.2 o sistema é responsável por listar todas acomodações disponíveis dado o filtro passado pelo viajante, caso nenhuma acomodação esteja disponivel é exibido a mensagem “Não existem acomodaçõoes disponiveis". O sistema Avança para o passo 2.1.9.
+
+##### 3.	REQUISITOS ESPECIAIS
+    Não se aplica
+
+##### 4.	REGRAS DE NEGÓCIO
+    4.1 [RN01] A listagem deve ser apresentada da Seguinte forma:
+        4.1.1 Cada item da lista deve conter 1 imagem da acomodação, nota dada por outros usuarios, preço e especificações de quantidade de quartos e banheiros.
+        4.1.2 A lista deve ser ordenada, de maneira que os mais bem avaliados estejam mais acima.
+    4.2 [RN02] Em detalhes da Acomodação é possivel ver carrossel de imagens do local, vizualização por Google maps, especificações de lugares próximos vantajosos(museus, praias, restaurantes), comentários de outros usuários do local, preço e especificações de quantidade de quartos e banheiros.
+    4.3 [RN03] Exibe-se um form solicitando dados do viajante (Nome, sobrenome cpf, telefone, cep), dado de compra (boleto, pix, cartão) e dados de hospedagem (caso mais pessoas possam tambem usufruir da acomodação).
+
+
+##### 5.	PRECONDIÇÃO
+    5.1. Login
+        O viajante deve estar autenticado no sistema antes de acessar a funcionalidade de Planejar Itinário da experiência de viagem..
+
+##### 6.	PÓS-CONDIÇÃO
+    Não se Aplica.
+##### 7. PONTOS DE EXTENSÃO E INCLUSÃO
+    Não se Aplica.
 
