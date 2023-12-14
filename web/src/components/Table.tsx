@@ -29,7 +29,12 @@ const columns = [
   'Apagar',
 ];
 
-export const Table = () => {
+interface ITableProps {
+  filterInput: string;
+  setFilterInput: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const Table = ({ filterInput, setFilterInput }: ITableProps) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [compras, setCompras] = useState<ICompra[]>([]);
   const [selectedCompra, setSelectedCompra] = useState<ICompra>({} as ICompra);

@@ -89,8 +89,7 @@ export const ModalCreateFuncionario = ({
       try {
         const response = await api.post('/admin', data);
 
-        const caixaResponse = await api.post(`/caixa/${response.data.id}`);
-        localStorage.setItem('caixaId', caixaResponse.data.id);
+        await api.post(`/caixa/${response.data.id}`);
 
         alert('Administrador cadastrado com sucesso!');
         onCloseModal();
@@ -104,8 +103,7 @@ export const ModalCreateFuncionario = ({
           cpf,
         });
 
-        const caixaResponse = await api.post(`/caixa/${response.data.id}`);
-        localStorage.setItem('caixaId', caixaResponse.data.id);
+        await api.post(`/caixa/${response.data.id}`);
 
         alert('Funcionario cadastrado com sucesso!');
         onCloseModal();

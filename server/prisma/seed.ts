@@ -12,6 +12,22 @@ async function main() {
       cellphone: "1234567890",
     },
   });
+
+  const funcionario = await prisma.funcionario.create({
+    data: {
+      name: "Funcionario",
+      email: "funcionario@funcionario.com",
+      password: await hash("funcionario1", 12),
+      cellphone: "1234567890",
+      cpf: "12345678901",
+    },
+  });
+
+  await prisma.caixa.create({
+    data: {
+      funcionarioId: funcionario.id,
+    },
+  });
 }
 
 main()

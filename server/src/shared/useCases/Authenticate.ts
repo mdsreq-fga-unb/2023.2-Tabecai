@@ -10,25 +10,49 @@ interface IRequest {
 interface IResponse {
   admin: Admin | null;
   funcionario: Funcionario | null;
+  caixaId: string | null;
 }
 
 export class Authenticate {
   constructor(private sharedRepository: ISharedRepository) { }
 
   async execute({ email, password }: IRequest): Promise<IResponse> {
-    const employee = await this.sharedRepository.findByEmail(email);
-    if (!employee) {
-      throw new Error("Employee not found");
+    const admin = await this.sharedRepository.findAdminByEmail(email);
+
+    if (admin) {
+      const passwordMatch = await compare(password, admin.password);
+
+      if (passwordMatch) {
+        const caixaId = await this.sharedRepository.findCaixaByFuncionarioId(admin.id);
+
+        return {
+          admin,
+          funcionario: null,
+          caixaId,
+        };
+      }
     }
 
-    const passwordMatches = await compare(password, employee.password);
-    if (!passwordMatches) {
-      throw new Error("Employee not found");
+    const funcionario = await this.sharedRepository.findFuncionarioByEmail(email);
+
+    if (funcionario) {
+      const passwordMatch = await compare(password, funcionario.password);
+
+      if (passwordMatch) {
+        const caixaId = await this.sharedRepository.findCaixaByFuncionarioId(funcionario.id);
+
+        return {
+          admin: null,
+          funcionario,
+          caixaId,
+        };
+      }
     }
 
-    const admin = employee as Admin;
-    const funcionario = employee as Funcionario;
-
-    return { admin, funcionario };
+    return {
+      admin: null,
+      funcionario: null,
+      caixaId: null,
+    };
   }
 }

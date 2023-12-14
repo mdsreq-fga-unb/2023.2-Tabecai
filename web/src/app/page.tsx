@@ -15,6 +15,7 @@ export default function Home() {
   const router = useRouter();
   const [modalCreateIsOpen, setCreateIsOpen] = useState(false);
   const [clientes, setClientes] = useState([]);
+  const [filterInput, setFilterInput] = useState('');
 
   function onCloseCreateModal() {
     setCreateIsOpen(false);
@@ -80,20 +81,25 @@ export default function Home() {
                     })}
                 </div> */}
         <div className="flex flex-row space-x-4 items-end">
-          <div className="flex flex-row space-x-2 items-center p-4 text-indigo-600 border-2 border-indigo-600  rounded-lg">
+          {/* <div className="flex flex-row space-x-2 items-center p-4 text-indigo-600 border-2 border-indigo-600  rounded-lg">
             <Search size={24} />
-            <input type="text" className="hidden xl:block"></input>
-          </div>
-          <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg">
+            <input
+              type="text"
+              className="hidden xl:block"
+              onChange={(e) => setFilterInput(e.target.value)}
+              value={filterInput}
+            ></input>
+          </div> */}
+          {/* <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg">
             <strong className="text-indigo-600">Filtro</strong>
             <Filter size={24} />
           </button>
           <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-zinc-300 bg-indigo-100 rounded-lg ">
             <MoreVertical size={24} />
-          </button>
+          </button> */}
         </div>
       </div>
-      <Table />
+      <Table filterInput={filterInput} setFilterInput={setFilterInput} />
     </div>
   );
 }

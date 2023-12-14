@@ -4,6 +4,7 @@ import { DeleteCompraController } from './DeleteCompra'
 import { ReadCompraController } from './ReadCompra'
 import { UpdateCompraController } from './UpdateCompra'
 import { ReadByCaixaController } from './ReadByCaixa'
+import { ReadByClienteController } from './ReadByCliente'
 
 export async function compraRoutes(fastify: FastifyInstance) {
   fastify.post('/', CreateCompraController)
@@ -11,4 +12,5 @@ export async function compraRoutes(fastify: FastifyInstance) {
   fastify.patch('/:id', UpdateCompraController)
   fastify.delete('/:id', DeleteCompraController)
   fastify.get('/:caixaId', ReadByCaixaController)
+  fastify.get('/clientes-devendo', ReadByClienteController)
 }

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Logo from '../assets/logo.svg';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useRouter } from 'next/navigation';
 
 const telas = [
   {
@@ -14,10 +15,6 @@ const telas = [
     nome: 'Clientes',
     http: '/clientes',
   },
-  // {
-  //     nome: "Produto",
-  //     http: "/",
-  // },
   {
     nome: 'Painel Financeiro',
     http: '/financeiro',
@@ -31,11 +28,19 @@ const telas = [
 const filtros = ['Tudo', 'Efetuado', 'Em Processo', 'Transação Com Erro'];
 
 export const Header = () => {
+  const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const isMobile = useMediaQuery({ minWidth: 1280 });
 
+  function LogoutButton() {
+    localStorage.removeItem('id');
+    localStorage.removeItem('user');
+    localStorage.removeItem('caixaId');
+    router.push('/login');
+  }
+
   return (
-    <header className="flex flex-row items-center p-6 border-b-2 border-gray-200 w-full">
+    <header className="flex flex-row items-center p-6 border-b-2 border-gray-200 w-full justify-between">
       <div className="flex flex-row items-center">
         <strong className="text-xl xl:text-4xl text-[#422F8A] justify-center font-bold mr-3">
           Tabeçai
@@ -53,6 +58,12 @@ export const Header = () => {
           );
         })}
       </div>
+      <button
+        className="p-4 text-red-600 rounded-lg font-bold shadow-sm"
+        onClick={() => LogoutButton()}
+      >
+        <p>Logout</p>
+      </button>
     </header>
   );
 };
