@@ -5,22 +5,23 @@ Este documento constitui a documentação oficial da atividade de Product Backlo
 A atividade se baseia em um estudo de caso focado na "HealthNet", uma extensa rede de clínicas e hospitais enfrentando desafios significativos em sua operação diária. Ao longo desta atividade, foram explorados os desafios enfrentados pelas diversas personas da "HealthNet", assim como suas expectativas e necessidades. Essas informações foram empregadas para definir e priorizar os itens do backlog, visando o desenvolvimento de uma visão holística do produto, compreendendo tanto o panorama técnico quanto as nuances humanas por trás dele.
 
 
-![Alt text](assets/pbb.png)
+![Alt text](assets/pbb_atualizado.jpeg)
 
 Devido a dificuldade de visualização, abaixo segue os fragmentos do Product Backlog BuilDing
+
 ![Alt text](assets/problemas.png)
 
-![Alt text](assets/peersonasFeatures.png)
+![Alt text](assets/pbb_feat.jpeg)
 
-![Alt text](assets/expectativas.png)
+![Alt text](assets/pbb_expectativa.jpeg)
 
-![Alt text](assets/pbi.png)
+![Alt text](assets/pbb_pbi.jpeg)
 
 
 
 ## PBI
 
-## User Stories e Critérios de Aceitação
+## User Stories, Critérios de Aceitação e BDD
 | User Story | Critérios de Aceitação | Cenário BDD |
 |------------|------------------------| ----------- |
 | US01 - Eu, como recepcionista, quero registrar um novo paciente, para que eu possa manter um registro do mesmo. | 1 - Quando o usuário (recepcionista) acessar a interface de registro de pacientes, deve haver um formulário para inserir as informações necessárias. <br> 2 - O formulário de registro deve incluir campos obrigatórios para informações essenciais, como nome completo, data de nascimento, sexo, endereço, número de telefone e e-mail do paciente. <br> 3 - O sistema deve realizar validações adequadas para garantir a integridade dos dados inseridos. Mensagens de erro claras devem ser exibidas se informações obrigatórias estiverem ausentes ou se o formato dos dados estiver incorreto. <br> 4 - Cada paciente registrado deve ser atribuído a um número de registro único para facilitar a identificação e referência futura. <br> 5 - A funcionalidade de registro de pacientes deve ser acessível apenas para usuários autorizados, neste caso, os recepcionistas. <br> 6 - Após o registro bem-sucedido, o sistema deve exibir uma confirmação visual para o recepcionista, indicando que o paciente foi registrado com sucesso. | Registro de Novo Paciente: <br> Dado que um novo paciente chega à clínica. <br> Quando o recepcionista cadastra as informações de registro no formulário. <br> Então, o sistema gera um número de identificação único e confirma o registro do paciente. |
@@ -56,5 +57,6 @@ Devido a dificuldade de visualização, abaixo segue os fragmentos do Product Ba
 | Data       | Versão | Modificação                                                           | Autor                                                              |
 | :--------- | :----- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- |
 | 22/11/2023 | 1.0    | Criação do documento                                                  | Breno e Maria Luisa |
+| 13/12/2023 | 2.0 | Atualização de imagens do PBB refatorado | Breno | 
 
 
