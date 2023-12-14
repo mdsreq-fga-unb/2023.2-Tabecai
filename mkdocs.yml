@@ -17,12 +17,12 @@ nav:
       - Processo: 'processo.md' #ok
       - BackLog do Produto: 'backlog_produto.md' #ok
       - MVPS`s: 'mvp.md' #ok
-      - Caso de Uso _____ : 'casoUso.md'
-            # terminar no miro !!!!!    
+      - Soluções de Software : 'processoSoftware.md'
 
       - PBB e BDD HealthNet: 'pbb_heatnet.md'
       - USM ComunEventos : 'usm_comuneventos.md'
-      - Soluções de Software : 'processoSoftware.md'
+      - Caso de Uso _____ : 'casoUso.md'
+            # terminar no miro !!!!!    
   - Entregas:
       - Unidade 1: 'entrega_1.md'
       - Unidade 2: 'entrega_2.md'
