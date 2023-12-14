@@ -1,0 +1,1540 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Este repositório é dedicado ao projeto da Turma 4 da disciplina de Requisitos de Software, ministrada pelo professor George Marsicano, no segundo semestre de 2023 na Universidade de Brasília. Nosso grupo, chamado 'Tabeça Team', foca na resolução do problema de Gestão do Fluxo de Caixa em lojas de uma empresa de açaí. Atualmente, esse processo é manual, realizado no Excel pelo departamento financeiro. Nosso objetivo é eliminar essa dependência de processos manuais e desenvolver uma solução eficaz para o registro de pagamentos a prazo. Neste repositório, você encontrará nossa documentação e progresso no desenvolvimento dessa solução.">
+      
+      
+      
+      
+        <link rel="prev" href="../entrega_3/">
+      
+      
+        <link rel="next" href="../lessons/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Unidade 4 - Tabeçaí</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apresentacao-entrega-4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tabeçaí" class="md-header__button md-logo" aria-label="Tabeçaí" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tabeçaí
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unidade 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mdsreq-fga-unb/2023.2-Tabecai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.2-Tabecai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tabeçaí" class="md-nav__button md-logo" aria-label="Tabeçaí" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Tabeçaí
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mdsreq-fga-unb/2023.2-Tabecai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.2-Tabecai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão de Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vis%C3%A3o-projeto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão de Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backlog_produto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BackLog do Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MVPS`s
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processoSoftware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Soluções de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbb_heatnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PBB e BDD HealthNet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usm_comuneventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USM ComunEventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casoUso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caso de Uso _____
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Entregas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Entregas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Unidade 4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apresentacao-entrega-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apresentação Entrega 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuniao-com-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reunião com Cliente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama UML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificacao-de-caso-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especificação de Caso de Uso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificação de Caso de Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avaliar-servico-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avaliar Serviço da Viagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Avaliar Serviço da Viagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-avaliar-servico-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Avaliar Serviço da Viagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluxo-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.    FLUXO BÁSICO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requisitos-especiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.    REQUISITOS ESPECIAIS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regras-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.    REGRAS DE NEGÓCIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-precondicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.    PRECONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pos-condicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.    PÓS-CONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pontos-de-extensao-e-inclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. PONTOS DE EXTENSÃO E INCLUSÃO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizar-itinerario-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizar Itinerário da viagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizar Itinerário da viagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-organizar-itinerario-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Organizar Itinerário da viagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluxo-basico_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.    FLUXO BÁSICO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requisitos-especiais_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.    REQUISITOS ESPECIAIS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regras-de-negocio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.    REGRAS DE NEGÓCIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-precondicao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.    PRECONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pos-condicao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.    PÓS-CONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pontos-de-extensao-e-inclusao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. PONTOS DE EXTENSÃO E INCLUSÃO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservar-acomodacao-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reservar Acomodação da Viagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reservar Acomodação da Viagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-reservar-acomodacao-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Reservar Acomodação da Viagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluxo-basico_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. FLUXO BÁSICO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requisitos-especiais_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.    REQUISITOS ESPECIAIS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regras-de-negocio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.    REGRAS DE NEGÓCIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-precondicao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.    PRECONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pos-condicao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.    PÓS-CONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pontos-de-extensao-e-inclusao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. PONTOS DE EXTENSÃO E INCLUSÃO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lições Aprendidas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lições Aprendidas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apresentacao-entrega-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apresentação Entrega 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuniao-com-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reunião com Cliente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama UML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificacao-de-caso-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especificação de Caso de Uso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificação de Caso de Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avaliar-servico-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avaliar Serviço da Viagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Avaliar Serviço da Viagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-avaliar-servico-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Avaliar Serviço da Viagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluxo-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.    FLUXO BÁSICO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requisitos-especiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.    REQUISITOS ESPECIAIS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regras-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.    REGRAS DE NEGÓCIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-precondicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.    PRECONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pos-condicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.    PÓS-CONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pontos-de-extensao-e-inclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. PONTOS DE EXTENSÃO E INCLUSÃO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizar-itinerario-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizar Itinerário da viagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizar Itinerário da viagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-organizar-itinerario-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Organizar Itinerário da viagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluxo-basico_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.    FLUXO BÁSICO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requisitos-especiais_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.    REQUISITOS ESPECIAIS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regras-de-negocio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.    REGRAS DE NEGÓCIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-precondicao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.    PRECONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pos-condicao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.    PÓS-CONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pontos-de-extensao-e-inclusao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. PONTOS DE EXTENSÃO E INCLUSÃO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservar-acomodacao-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reservar Acomodação da Viagem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reservar Acomodação da Viagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-reservar-acomodacao-da-viagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Reservar Acomodação da Viagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fluxo-basico_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. FLUXO BÁSICO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requisitos-especiais_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.    REQUISITOS ESPECIAIS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-regras-de-negocio_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.    REGRAS DE NEGÓCIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-precondicao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.    PRECONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pos-condicao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.    PÓS-CONDIÇÃO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pontos-de-extensao-e-inclusao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. PONTOS DE EXTENSÃO E INCLUSÃO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Unidade 4</h1>
+
+<h3 id="apresentacao-entrega-4">Apresentação Entrega 4</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zeSYAp2O0vY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h3 id="reuniao-com-cliente">Reunião com Cliente</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vuhkUjsRhJo?si=vMdI1vAzSrLb8rMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h3 id="diagrama-uml">Diagrama UML</h3>
+<p><img alt="Alt text" src="../assets/diagramaUML.png" /></p>
+<h3 id="especificacao-de-caso-de-uso">Especificação de Caso de Uso</h3>
+<h4 id="avaliar-servico-da-viagem">Avaliar Serviço da Viagem</h4>
+<h5 id="1-avaliar-servico-da-viagem">1. Avaliar Serviço da Viagem</h5>
+<pre><code> 1.1. Breve Descrição   
+    Neste caso de uso permite-se ao viajante avaliar uma determinada experiência de viagem, acomodação ou atividade, já realizada por ele, adquirida a partir da aplicação. O FeedBack é salvo e registrado, tornando-se público aos demais viajantes interessados. Possibilitando que outros usuários possam averiguar a qualidade do serviço em questão e que o sistema entenda o gosto do viajante para futuras ofertas oferecidas.
+1.2. Ator    
+    - Viajante
+</code></pre>
+<h5 id="2-fluxo-basico">2.    FLUXO BÁSICO</h5>
+<pre><code>2.1. fluxo Principal    
+    Este caso de uso é iniciado quando o viajante escolhe a opção "Avaliar Serviço da Viagem".
+        2.1.1. O sistema lista todos os serviços com pendência de Avaliação [RN01] [FE01]   
+        2.1.2. O Viajante seleciona o serviço que deseja avaliar 
+        2.1.3. O Sistema gera perguntas de avaliação com base no serviço de viagem do viajante. [RN02]  
+        2.1.4. O viajante, a partir das perguntas feitas, avalia o serviço. 
+        2.1.5. O Sistema registra a avaliação.  
+        2.1.6. O caso de uso é encerrado.
+
+2.2. Fluxo Alternativo
+    Não se aplica
+
+2.3. Fluxo De Excessão
+   2.3.1 [FE01] Não existir avaliação pendente
+        No Passo 2.1.1 o sistema é responsável por listar todos os serviços com pendência de Avaliação, caso nenhuma pendência exista é exibido a mensagem “Não existem avaliações pendentes”. O sistema Avança para o passo 2.1.6
+</code></pre>
+<h5 id="3-requisitos-especiais">3.    REQUISITOS ESPECIAIS</h5>
+<pre><code>Não se aplica
+</code></pre>
+<h5 id="4-regras-de-negocio">4.    REGRAS DE NEGÓCIO</h5>
+<pre><code>4.1 [RN01] A listagem deve ser apresentada da Seguinte forma:
+    4.1.1 Cada item da lista deve conter o tipo de serviço, nome, imagem associada a ele e a data de quando foi usufruído
+    4.1.2 A lista deve ser ordenada, de maneira que as mais recentes estejam mais acima
+
+
+4.2 [RN02] As perguntas de feedBack devem ser a:
+    4.2.1 Quantitativas devem solicitar valores em uma escala de 0 a 5
+    4.2.2 Textuais devem possuir limite de caracter, mas não são obrigatórias
+</code></pre>
+<h5 id="5-precondicao">5.    PRECONDIÇÃO</h5>
+<pre><code>5.1. Login
+    O viajante deve estar autenticado no sistema antes de acessar a funcionalidade de feedback da experiência de viagem.
+5.2.Uso de algum serviço
+    O viajante deve ter concluído uma experiência de viagem associada à qual o feedback será fornecido.
+</code></pre>
+<h5 id="6-pos-condicao">6.    PÓS-CONDIÇÃO</h5>
+<pre><code>Não se Aplica.
+</code></pre>
+<h5 id="7-pontos-de-extensao-e-inclusao">7. PONTOS DE EXTENSÃO E INCLUSÃO</h5>
+<pre><code>Não se Aplica.
+</code></pre>
+<h4 id="organizar-itinerario-da-viagem">Organizar Itinerário da viagem</h4>
+<h5 id="1-organizar-itinerario-da-viagem">1. Organizar Itinerário da viagem</h5>
+<pre><code> 1.1. Breve Descrição   
+    Neste caso de uso permite ao viajante, usuari do sistema, registrar o planejamento sua viajem (voos, aluguel de carros e outros planos) em uma lista de itens, de manira que o sistema vincule tais  atividades a seu caléndario calendário. Poossibilitando assim com que o viajante receba futuramente lembretes e atualizaçõs desse planejamento.
+1.2. Ator    
+    - Viajante
+</code></pre>
+<h5 id="2-fluxo-basico_1">2.    FLUXO BÁSICO</h5>
+<pre><code>2.1. fluxo Principal    
+    Este caso de uso é iniciado quando o viajante Selecina a opção "Planejar Itinerário".
+        2.1.1. O sistema lista todos as viagens futuras [RN01] [FE01]   
+        2.1.2. O Viajante seleciona o viajem que deseja planejar 
+        2.1.3. O Sistema solicita uma tarefas a ser adicionada ao itinerario [RN02]
+        2.1.4. O viajante preenche a tarefa
+        2.1.5. Caso o Viajante tenha mais atividades a ser adicionada, volta-se ao tópico 2.1.3.
+        2.1.6. O caso de uso é encerrado.
+
+2.2. Fluxo Alternativo
+    Não se aplica
+
+2.3. Fluxo De Excessão
+   2.3.1 [FE01] Não existir viagens futuras
+        No Passo 2.1.1 o sistema é responsável por listar todos viagens futuras do viajante, caso nenhuma viagem exista é exibido a mensagem “Não existem viagens futuras". O sistema Avança para o passo 2.1.6
+</code></pre>
+<h5 id="3-requisitos-especiais_1">3.    REQUISITOS ESPECIAIS</h5>
+<pre><code>Não se aplica
+</code></pre>
+<h5 id="4-regras-de-negocio_1">4.    REGRAS DE NEGÓCIO</h5>
+<pre><code>4.1 [RN01] A listagem deve ser apresentada da Seguinte forma:
+    4.1.1 Cada item da lista deve conter o indicadores do Pais e Estado do local que se vai viajar, alem da datae imagem associada ao local.
+    4.1.2 A lista deve ser ordenada, de maneira que as viajens mais próximas estejam mais acima.
+</code></pre>
+<h5 id="5-precondicao_1">5.    PRECONDIÇÃO</h5>
+<pre><code>5.1. Login
+    O viajante deve estar autenticado no sistema antes de acessar a funcionalidade de Planejar Itinário da experiência de viagem.
+5.2. O Viajante deve ter alguma viajem futura 
+    O viajante deve ter possuir alguma viagem futura para à qual irá planejar seu itinerário fornecido.
+</code></pre>
+<h5 id="6-pos-condicao_1">6.    PÓS-CONDIÇÃO</h5>
+<pre><code>Não se Aplica.
+</code></pre>
+<h5 id="7-pontos-de-extensao-e-inclusao_1">7. PONTOS DE EXTENSÃO E INCLUSÃO</h5>
+<pre><code>Não se Aplica.
+</code></pre>
+<h4 id="reservar-acomodacao-da-viagem">Reservar Acomodação da Viagem</h4>
+<h5 id="1-reservar-acomodacao-da-viagem">1. Reservar Acomodação da Viagem</h5>
+<pre><code> 1.1. Breve Descrição   
+    Nesse caso de uso é permitido ao viajante reservar uma nova acomodação para a sua viajem, abrangindo desde a seleção da locação desejada, vizualização de informações até a expecificação de reserva, podendo estabelecer mais detalhes com o Serviço Contrato.
+1.2. Ator   
+    - Viajante
+</code></pre>
+<h5 id="2-fluxo-basico_2">2. FLUXO BÁSICO</h5>
+<pre><code>2.1. Fluxo Principal    
+    Este caso de uso é iniciado quando o viajante Selecina Encontrar acomodações, dada uma região pesquisada.
+        2.1.1. O Sistema solicita a data desejada do viajante para se acomodar. 
+        2.1.2. O Sistema lista acomodaçõoes dado os filtros [RN01] [FE01]
+        2.1.3. O Viajante escolha a acomodação de interresse
+        2.1.4. O Sistema retorna detalhes da acomodação [RN02] [FA01]
+        2.1.5. Caso o Viajante não tenha interresse, pode-se voltar ao tópico 2.1.2.
+        2.1.6. O viajante seleciona reservar a acomodação da hospedagem. 
+        2.1.7. O sistema exibe formulário de reserva. [RN03]
+        2.1.8. O viajante preenche dados de reserva [FE02]
+        2.1.9. O caso de uso é encerrado.
+
+2.2. Fluxo Alternativo
+   [FA01] Definir Mais Detalhes do Serviço
+   2.2.1. O viajante seleciona conversar por chat diretamente com o Serviço Contratado
+   2.2.2. O viajante retira dúvidas e volta ao fluxo 2.1.5.
+
+
+2.3. Fluxo De Excessão
+  2.3.1 [FE01] Não existir acomodaçõs dispóniveis
+        No Passo 2.1.2 o sistema é responsável por listar todas acomodações disponíveis dado o filtro passado pelo viajante, caso nenhuma acomodação esteja disponivel é exibido a mensagem “Não existem acomodaçõoes disponiveis". O sistema Avança para o passo 2.1.9.
+</code></pre>
+<h5 id="3-requisitos-especiais_2">3.    REQUISITOS ESPECIAIS</h5>
+<pre><code>Não se aplica
+</code></pre>
+<h5 id="4-regras-de-negocio_2">4.    REGRAS DE NEGÓCIO</h5>
+<pre><code>4.1 [RN01] A listagem deve ser apresentada da Seguinte forma:
+    4.1.1 Cada item da lista deve conter 1 imagem da acomodação, nota dada por outros usuarios, preço e especificações de quantidade de quartos e banheiros.
+    4.1.2 A lista deve ser ordenada, de maneira que os mais bem avaliados estejam mais acima.
+4.2 [RN02] Em detalhes da Acomodação é possivel ver carrossel de imagens do local, vizualização por Google maps, especificações de lugares próximos vantajosos(museus, praias, restaurantes), comentários de outros usuários do local, preço e especificações de quantidade de quartos e banheiros.
+4.3 [RN03] Exibe-se um form solicitando dados do viajante (Nome, sobrenome cpf, telefone, cep), dado de compra (boleto, pix, cartão) e dados de hospedagem (caso mais pessoas possam tambem usufruir da acomodação).
+</code></pre>
+<h5 id="5-precondicao_2">5.    PRECONDIÇÃO</h5>
+<pre><code>5.1. Login
+    O viajante deve estar autenticado no sistema antes de acessar a funcionalidade de Planejar Itinário da experiência de viagem..
+</code></pre>
+<h5 id="6-pos-condicao_2">6.    PÓS-CONDIÇÃO</h5>
+<pre><code>Não se Aplica.
+</code></pre>
+<h5 id="7-pontos-de-extensao-e-inclusao_2">7. PONTOS DE EXTENSÃO E INCLUSÃO</h5>
+<pre><code>Não se Aplica.
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

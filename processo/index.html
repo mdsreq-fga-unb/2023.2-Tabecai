@@ -1,0 +1,1437 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Este repositório é dedicado ao projeto da Turma 4 da disciplina de Requisitos de Software, ministrada pelo professor George Marsicano, no segundo semestre de 2023 na Universidade de Brasília. Nosso grupo, chamado 'Tabeça Team', foca na resolução do problema de Gestão do Fluxo de Caixa em lojas de uma empresa de açaí. Atualmente, esse processo é manual, realizado no Excel pelo departamento financeiro. Nosso objetivo é eliminar essa dependência de processos manuais e desenvolver uma solução eficaz para o registro de pagamentos a prazo. Neste repositório, você encontrará nossa documentação e progresso no desenvolvimento dessa solução.">
+      
+      
+      
+      
+        <link rel="prev" href="../vis%C3%A3o-projeto/">
+      
+      
+        <link rel="next" href="../backlog_produto/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Processo - Tabeçaí</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metodologia-de-desenvolvimento" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tabeçaí" class="md-header__button md-logo" aria-label="Tabeçaí" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tabeçaí
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Processo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mdsreq-fga-unb/2023.2-Tabecai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.2-Tabecai
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tabeçaí" class="md-nav__button md-logo" aria-label="Tabeçaí" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Tabeçaí
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mdsreq-fga-unb/2023.2-Tabecai" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    2023.2-Tabecai
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão de Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vis%C3%A3o-projeto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão de Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Processo
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Processo
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia de Desenvolvimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metodologia de Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Requisitos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-equipe-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Equipe de Desenvolvimento:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Usuários:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tipo-de-projeto-e-risco-associado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Tipo de Projeto e Risco Associado:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-do-processo-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo do Processo de Desenvolvimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-rad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividade RAD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processos-e-procedimentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processos e Procedimentos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processos e Procedimentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-escolhas-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Escolhas do Processo de Engenharia de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Escolhas do Processo de Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-atividades-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Atividades do Processo de Engenharia de Requisitos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-e-planejamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos e Planejamento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backlog_produto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BackLog do Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MVPS`s
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processoSoftware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Soluções de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbb_heatnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PBB e BDD HealthNet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usm_comuneventos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USM ComunEventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casoUso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Caso de Uso _____
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Entregas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Entregas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lições Aprendidas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lições Aprendidas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lessons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia de Desenvolvimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metodologia de Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Requisitos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-equipe-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Equipe de Desenvolvimento:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Usuários:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tipo-de-projeto-e-risco-associado" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Tipo de Projeto e Risco Associado:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-do-processo-de-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo do Processo de Desenvolvimento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-rad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividade RAD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processos-e-procedimentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processos e Procedimentos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processos e Procedimentos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-escolhas-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Escolhas do Processo de Engenharia de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Escolhas do Processo de Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-atividades-do-processo-de-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Atividades do Processo de Engenharia de Requisitos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-e-planejamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos e Planejamento
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Processo</h1>
+
+<h2 id="metodologia-de-desenvolvimento">Metodologia de Desenvolvimento</h2>
+<p><strong>Baseado no Framework de Gupta (2019), respondemos um conjunto de questões sobre os tópicos abordados pelo Framework para definir o modelo de desenvolvimento que será utilizado no projeto.</strong></p>
+<h3 id="1-requisitos">1. Requisitos:</h3>
+<p><img alt="Alt text" src="../assets/gupta1.png" /></p>
+<p><center></p>
+<p>Figura 3 - Modelo Gupta para requisitos (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Os requisitos são fáceis de entender e definir?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Nós mudamos os requisitos com bastante frequência?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Nós podemos definir os requisitos ao início de cada ciclo?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Os requisitos estão indicando um sistema complexo para se construir?</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<p>Na conclusão do primeiro modelo de Gupta baseado nos requisitos, podemos perceber que o nosso projeto é complexo, porém, os requisitos são fáceis de entender e definir, e podemos definir os requisitos ao início de cada ciclo.</p>
+<h3 id="2-equipe-de-desenvolvimento">2. Equipe de Desenvolvimento:</h3>
+<p><img alt="Alt text" src="../assets/gupta2.png" /></p>
+<p><center></p>
+<p>Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pouca experienca em projetos similares</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Pouca experiência em tecnologias similares</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Pouca experiência com as ferramentas que serão usadas?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Disponibilidade para treinamento, se necessário</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<p>Na conclusão do segundo modelo de Gupta baseado na equipe de desenvolvimento, podemos perceber que temos uma boa experiência em projetos similares, porém, temos pouca experiência em tecnologias similares, mas temos disponibilidade para treinamento, se necessário.</p>
+<h3 id="3-usuarios">3. Usuários:</h3>
+<p><img alt="Alt text" src="../assets/gupta3.png" /></p>
+<p><center></p>
+<p>Figura 5 - Modelo Gupta para usuários (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Envolvimento dos usuários</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Participação limitada dos usuários</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Usuário não tem experiência anterior em participação em projetos similares?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Usuário são especialistas no domínio do problema?</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<p>Na conclusão do terceiro modelo de Gupta baseado nos usuários, podemos perceber que temos um bom envolvimento dos usuários, e que os usuários são especialistas no domínio do problema.</p>
+<h3 id="4-tipo-de-projeto-e-risco-associado">4. Tipo de Projeto e Risco Associado:</h3>
+<p><img alt="Alt text" src="../assets/gupta4.png" /></p>
+<p><center></p>
+<p>Figura 6 - Modelo Gupta para tipo de projeto e risco associado (fonte: Gupta, 2019)</p>
+<p></center></p>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Nossa resposta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O projeto é melhoria de um sistema existente?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>O financiamento está estável para o projeto?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Requisitos de alta confiabilidade?</td>
+<td>Não</td>
+</tr>
+<tr>
+<td>Cronograma do projeto é apertado?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Uso de componentes reutilizáveis?</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>Os recursos (Tempo, dinheiro, pessoas etc) estão escassos?</td>
+<td>Não</td>
+</tr>
+</tbody>
+</table>
+<p>Na conclusão do quarto modelo de Gupta baseado no tipo de projeto e risco associado, podemos perceber que o projeto é melhoria de um sistema existente, o financiamento está estável para o projeto, o cronograma do projeto é apertado e o uso de componentes reutilizáveis. </p>
+<p>Tendo em vista isso, a tabela abaixo apresenta o quadro de riscos assciado ao desenvolvimento do projeto.</p>
+<table>
+<thead>
+<tr>
+<th>Risco</th>
+<th>Resolução</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Falta de comunicação entre os membros da equipe</td>
+<td>Procurar saber o que está acontecendo com o membro envolvido, e estudar uma realocação de tarefas</td>
+</tr>
+<tr>
+<td>Falta de comunicação com o cliente</td>
+<td>Definir novos horários para as reuniões, ou até outras maneiras de se comunicar, como de forma assíncrona</td>
+</tr>
+<tr>
+<td>Alterações de serviços externos (APIs de Bancos, por exemplo)</td>
+<td>Adequar o produto o mais rápido possível de acordo com a nova documentação com as alterações realizadas</td>
+</tr>
+<tr>
+<td>Falta de capacitação de um membro da equipe em relação a tecnologia sendo utilizada</td>
+<td>O membro da equipe deve buscar ajuda de alguém que saiba, ou procurar por materiais e documentações para preencher a lacuna</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modelo-do-processo-de-desenvolvimento">Modelo do Processo de Desenvolvimento</h2>
+<p><img alt="Alt text" src="../assets/rad.png" /></p>
+<p><center></p>
+<p>Figura 7 - Procedimento do RAD ( Fonte: George Marsicano, 2023 )</p>
+<p></center></p>
+<p>Considerando todas as características do projeto, a equipe optou por utilizar o modelo RAD (Rapid Application Development), pois o projeto é de médio porte, com um prazo de entrega curto, a equipe tem experiência em projetos similares, e o projeto é uma melhoria de um sistema existente, o que facilita o desenvolvimento.A abordagem será hibrida com o modelo cascata para garantir a parte de levamento de requisitos e nas partes seguintes do desenvolvimento, o modelo RAD será utilizado.</p>
+<h2 id="ferramentas">Ferramentas</h2>
+<p>Abaixo irei citar algumas das ferramentas que nossa equipe irá utilizar para o desenvolvimento do projeto.</p>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Finalidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://discord.com/">Discord</a></td>
+<td>Comunicação entre os membros da equipe</td>
+</tr>
+<tr>
+<td><a href="https://www.figma.com/">Figma</a></td>
+<td>Prototipação</td>
+</tr>
+<tr>
+<td><a href="https://github.com/">GitHub</a></td>
+<td>Repositório de código</td>
+</tr>
+<tr>
+<td><a href="https://code.visualstudio.com/">VSCode</a></td>
+<td>Editor de código</td>
+</tr>
+<tr>
+<td><a href="https://whimsical.com/">Whimsical</a></td>
+<td>Fluxograma</td>
+</tr>
+</tbody>
+</table>
+<h2 id="atividade-rad">Atividade RAD</h2>
+<p>A abordagem conhecida em português como Desenvolvimento Rápido de Aplicações, ou RAD, é um método incremental que direciona as atividades conforme ilustrado na Figura 10. Esse método abrange a criação de módulos que passam pelas etapas de análise, design, codificação e teste. Cada um desses módulos é construído por equipes dedicadas, operando em paralelo, com base nos requisitos identificados e divididos durante o ciclo de elicitação. Para alcançar esse objetivo, empregamos diversas técnicas e ferramentas de desenvolvimento.</p>
+<p>O processo de desenvolvimento de software híbrido é uma abordagem que combina elementos de dois ou mais modelos, nossa abordagem vai combinar o modelo cascata com o modelo RAD onde o processo começa com uma fase de requisitos iniciais, que é realizada usando o modelo cascata. Nesta fase, os requisitos do software são coletados e documentados de forma completa e consistente.</p>
+<p>Uma pessoa do grupo será responsável por essa tarefa. Essa pessoa será responsável por usar uma abordagem de elicitação de requisitos para entender as necessidades do cliente. Ela também será responsável por garantir que os requisitos sejam completos, consistentes e realizáveis.</p>
+<p>Após a fase de requisitos iniciais, o processo muda para um modelo RAD. Nesta fase, o software é desenvolvido em ciclos iterativos e incrementais. Cada ciclo consiste em uma ou mais das etapas do processo de desenvolvimento de software, como análise, design, desenvolvimento, teste e entrega.</p>
+<p>Para o projeto de software com os 5 membros, sugerimos que o grupo pode ser dividido em três times, com uma pessoa apenas para requisitos. Cada time seria responsável pelo desenvolvimento de um módulo específico do software.</p>
+<p>O processo de desenvolvimento de software híbrido tem as seguintes vantagens:</p>
+<ul>
+<li>Flexibilidade: O modelo RAD permite que o software seja desenvolvido de forma iterativa e incremental, o que pode ser útil para projetos de software com requisitos mutáveis.</li>
+<li>Eficiência: O modelo cascata pode ser usado para garantir que os requisitos do software sejam completos e consistentes antes do desenvolvimento começar.</li>
+<li>Colaboração: A divisão do grupo em três times pode facilitar a colaboração e a comunicação.</li>
+</ul>
+<p><strong>Vantagens da inclusão da pessoa nos requisitos</strong></p>
+<p>A inclusão de uma pessoa responsável pelos requisitos no processo de desenvolvimento de software híbrido tem as seguintes vantagens:</p>
+<ul>
+<li>Garante que os requisitos sejam coletados e analisados com cuidado. A pessoa responsável pelos requisitos será capaz de se concentrar nessa tarefa e garantir que os requisitos sejam completos, consistentes e realizáveis.</li>
+<li>Aumenta a eficiência do processo. A pessoa responsável pelos requisitos pode trabalhar em paralelo com os outros times, o que pode ajudar a acelerar o desenvolvimento do software.</li>
+<li>Melhora a comunicação e a colaboração entre os times. A pessoa responsável pelos requisitos pode ser um ponto focal para a comunicação entre os times, o que pode ajudar a evitar erros e mal-entendidos.</li>
+</ul>
+<p>No geral, o processo de desenvolvimento de software híbrido é uma boa opção para projetos de software com requisitos mutáveis e que precisam ser desenvolvidos de forma eficiente e colaborativa.</p>
+<p>Aqui está uma explicação mais detalhada da imagem, com base no contexto fornecido:</p>
+<p><strong>Requisitos:</strong> Os requisitos do software são coletados e documentados usando o modelo cascata. Nesta fase, o grupo usa uma abordagem de elicitação de requisitos para entender as necessidades do cliente. Uma pessoa do grupo será responsável por essa tarefa.</p>
+<p><strong>Análise:</strong> Os requisitos são analisados para garantir que sejam completos, consistentes e realizáveis. Nesta fase, o grupo usa técnicas de análise de requisitos para identificar quaisquer problemas ou lacunas nos requisitos.</p>
+<p><strong>Design:</strong> O software é projetado usando o modelo RAD. Nesta fase, o grupo cria um modelo de arquitetura e especifica detalhes de implementação.</p>
+<p><strong>Desenvolvimento:</strong> O software é desenvolvido usando o modelo RAD. Nesta fase, o grupo divide o software em três módulos, com cada módulo sendo desenvolvido por um time.</p>
+<p><strong>Teste:</strong> O software é testado usando o modelo RAD. Nesta fase, o grupo testa cada módulo após ser desenvolvido.</p>
+<p><strong>Entrega:</strong> O software é entregue ao cliente.</p>
+<p>A divisão do grupo em três times, com uma pessoa apenas para requisitos, é uma maneira de garantir que os requisitos do software sejam coletados e analisados com cuidado. A pessoa responsável pelos requisitos será capaz de se concentrar nessa tarefa e garantir que os requisitos sejam completos, consistentes e realizáveis.</p>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Membros</th>
+<th>Módulo responsável</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Requisitos</strong></td>
+<td>Gustavo Kenzo</td>
+<td>Requisitos</td>
+</tr>
+<tr>
+<td><strong>Desenvolvimento 1</strong></td>
+<td>Maicon Rodrigues, Gustavo Henrique, Maria Luisa</td>
+<td>Módulo 1 (back-end)</td>
+</tr>
+<tr>
+<td><strong>Desenvolvimento 2</strong></td>
+<td>Bruno, Breno Yuri</td>
+<td>Módulo 2 (front-end)</td>
+</tr>
+</tbody>
+</table>
+<p>A divisão foi feita de forma a balancear as habilidades e experiências dos membros da equipe. O time de requisitos é responsável por coletar, documentar e analisar os requisitos do software. O time de desenvolvimento 1 é responsável pelo desenvolvimento do módulo 1, que é um módulo de back-end.</p>
+<p><strong>Justificativa da divisão</strong></p>
+<p><strong>Requisitos:</strong> Uma pessoa foi designada para liderar os esforços de elicitação de requisitos, Gustavo Kenzo. Ele terá a oportunidade de se concentrar nessa tarefa e garantir que os requisitos sejam completos, consistentes e realizáveis.
+<strong>Desenvolvimento 1:</strong> Maicon Rodrigues, Gustavo Henrique e Maria Luisa têm experiência em desenvolvimento de software. Eles serão responsáveis pelo desenvolvimento do módulo 1, que é um módulo de back-end.
+<strong>Desenvolvimento 2:</strong> Bruno e Breno Yuri têm experiência em desenvolvimento de front-end. Eles serão responsáveis pelo desenvolvimento do módulo 2, que é um módulo de front-end.</p>
+<p><img alt="Alt text" src="../assets/RAD-model.png" /></p>
+<p><center ></p>
+<p>Figura 8 - Modelo de trabalho do RAD (fonte: <em>Software Engineering | Rapid application development model</em>, 2023)</p>
+<p></center ></p>
+<h2 id="processos-e-procedimentos">Processos e Procedimentos</h2>
+<h3 id="1-escolhas-do-processo-de-engenharia-de-requisitos">1. Escolhas do Processo de Engenharia de Requisitos</h3>
+<p><img alt="Alt text" src="../assets/er_facetas.png" /></p>
+<p><center></p>
+<p>Figura 9 - Faceta da engenharia de requisitos (fonte: MARSICANO, 2023)</p>
+<p></center></p>
+<p>Tendo em vista os fundamentos nas Facetas do Procedimento de Engenharia de Requisitos (IREB, 2022), estabeleceu-se que se no presente projeto trataremos de um procedimento voltado para o cliente, haja vista que:</p>
+<ol>
+<li>Prooduto com enfâse ao cliente</li>
+<li>Processo exploratório ;</li>
+<li>Tempo interativo.</li>
+</ol>
+<h4 id="2-atividades-do-processo-de-engenharia-de-requisitos">2. Atividades do Processo de Engenharia de Requisitos</h4>
+<p>Como equipe de desenvolvimento de software, nos comprometemos a seguir as seguintes atividades no processo de engenharia de requisitos:</p>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Viabilidade</strong></td>
+<td>1. Realizar um estudo de viabilidade para avaliar a pertinência do sistema para a empresa.</td>
+</tr>
+<tr>
+<td><strong>Descoberta e Análise de Requisitos</strong></td>
+<td>2. Realizar entrevistas com os usuários a fim de identificar suas necessidades.<br>3. Conduzir reuniões com as partes interessadas para compreender as necessidades do negócio.<br>4. Analisar documentos para identificar os requisitos do sistema.</td>
+</tr>
+<tr>
+<td><strong>Especificação de Requisitos</strong></td>
+<td>5. Especificar os requisitos do sistema por meio de um modelo, diagrama ou documento escrito.</td>
+</tr>
+<tr>
+<td><strong>Validação de Requisitos</strong></td>
+<td>6. Obter feedback dos usuários em relação aos requisitos do sistema.<br>7. Realizar testes para validar os requisitos do sistema.</td>
+</tr>
+</tbody>
+</table>
+<p>As atividades do processo de engenharia de requisitos serão repetidas várias vezes à medida que o sistema é desenvolvido. </p>
+<h2 id="requisitos-e-planejamento">Requisitos e Planejamento</h2>
+<table>
+<thead>
+<tr>
+<th>Atividade</th>
+<th>Técnica</th>
+<th>Entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elicitação e Descorberta</td>
+<td>Diagrama de Ishikawa</td>
+<td>Backlog de requisitos</td>
+</tr>
+<tr>
+<td>Análise e Consenso</td>
+<td>Análise de Viabilidade</td>
+<td>Backlog de requisitos</td>
+</tr>
+<tr>
+<td>Declaração</td>
+<td>User Stories, Temas, Casos de Uso</td>
+<td>User Stories</td>
+</tr>
+<tr>
+<td>Representação</td>
+<td>Prototipagem</td>
+<td>Protótipos</td>
+</tr>
+<tr>
+<td>Verificação e Validação</td>
+<td>Feedback</td>
+<td>Retorno de Feedback</td>
+</tr>
+<tr>
+<td>Organização e Atualização</td>
+<td>MoSCoW</td>
+<td>Definição de  prioridades</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
