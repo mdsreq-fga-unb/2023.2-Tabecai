@@ -4,7 +4,6 @@ import { ModalCreateFuncionario } from './ModalCreateFuncionario';
 import { useState } from 'react';
 import { ModalCreateProduto } from './ModalCreateProduto';
 import { ModalCreateCliente } from './ModalCreateCliente';
-const filtros = ['Filtro1', 'Filtro2', 'Filtro3', 'Filtro4'];
 
 type HeaderPageProps = {
   type:
@@ -71,15 +70,6 @@ export const HeaderPage = ({ type, title }: HeaderPageProps) => {
         </button>
       </div>
       <div className="flex flex-row justify-between mx-10">
-        <div className="flex flex-row  items-end">
-          {filtros.map((filtro) => {
-            return (
-              <div className="items-center justify-between mr-3" key={filtro}>
-                <p className="text-base text-zinc-500"> {filtro} </p>
-              </div>
-            );
-          })}
-        </div>
         <div className="flex flex-row space-x-4 items-end">
           <div className="flex flex-row items-center p-4 text-indigo-600 border-2 border-indigo-600  rounded-lg">
             <Search size={24} />

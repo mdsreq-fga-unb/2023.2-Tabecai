@@ -66,8 +66,8 @@ export default function Login() {
 
     try {
       const response = await api.post('/shared/login', {
-        email,
-        password,
+        email: email.trim(),
+        password: password.trim(),
       });
       if (response.status === 200) {
         if (response.data.admin) {

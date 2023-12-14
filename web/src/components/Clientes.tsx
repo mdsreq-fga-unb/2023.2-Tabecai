@@ -32,7 +32,16 @@ export const Clientes = () => {
   async function getClientes() {
     try {
       const response = await api.get('/compra/clientes-devendo');
-      setDevedores(response.data);
+      const todosClientes = await api.get('/cliente/all');
+
+      setDevedores([
+        ...response.data.filter((cliente: IDevedor) => cliente.devendo !== 0),
+        ...todosClientes.data
+          .map((cliente: ICliente) => {
+            return { devendo: 0, cliente };
+          })
+          .filter((cliente: IDevedor) => cliente.devendo === 0),
+      ]);
     } catch (error) {
       console.log(error);
     }
