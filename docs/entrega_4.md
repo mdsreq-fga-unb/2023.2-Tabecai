@@ -1,5 +1,5 @@
 ### Reunião com Cliente
-<iframe width="768" height="432" src="https://www.youtube.com/watch?v=vuhkUjsRhJo" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vuhkUjsRhJo?si=vMdI1vAzSrLb8rMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ### Diagrama UML  
