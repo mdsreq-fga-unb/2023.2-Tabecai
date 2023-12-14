@@ -49,10 +49,10 @@
 | A implementação é consistente com a arquitetura?             | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            | ✅                                                            | ❌                                                            | ✅                                                            |
 
 
-## Review da entrega do MVP 1
+### Review  MVP 1
 ![Alt text](assets/reviewMVP1.png)
 
-## Retrospectiva da entrega do MVP 1
+### Retrospectiva MVP 1
 
 ![Alt text](assets/retrospectiva.png)
 
