@@ -1,20 +1,16 @@
-import { Method, Status } from "@prisma/client";
+import { Cliente, Method, Status } from "@prisma/client";
 import { ICompraRepository } from "../repositories/ICompraRepository";
 
 interface IResponse {
-  id: string;
-  price: number;
-  method: Method;
-  status: Status;
-  createdAt: Date;
-  updatedAt: Date;
+  devendo: number
+  cliente: Cliente
 }
 
 export class ReadByCliente {
   constructor(private compraRepository: ICompraRepository) { }
 
-  async execute(clienteId: string): Promise<IResponse[]> {
-    const compras = await this.compraRepository.listByCliente(clienteId);
+  async execute(): Promise<IResponse[] | null> {
+    const compras = await this.compraRepository.comprasPendentesCountForEachCliente()
 
     return compras;
   }

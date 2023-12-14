@@ -1,5 +1,5 @@
 import { Compra, Prisma, PrismaClient } from "@prisma/client";
-import { ICompraRepository } from "../../repositories/ICompraRepository";
+import { ICompraRepository, ICounter } from "../../repositories/ICompraRepository";
 
 export class CompraPrismaRepository implements ICompraRepository {
   private prisma: PrismaClient
@@ -77,5 +77,36 @@ export class CompraPrismaRepository implements ICompraRepository {
     const compra = await this.prisma.compra.delete({ where: { id } })
 
     return compra
+  }
+
+  public async comprasPendentesCountForEachCliente(): Promise<ICounter[] | null> {
+    const compras = await this.prisma.compra.groupBy({
+      by: ['clienteId'],
+      where: {
+        status: 'PENDENTE'
+      },
+      _count: {
+        status: true
+      },
+    })
+
+    const clientes = []
+
+    for (let i = 0; i < compras.length; i++) {
+      if (compras[i].clienteId) {
+        const cliente = await this.prisma.cliente.findUnique({
+          where: {
+            id: compras[i].clienteId as string
+          }
+        })
+
+        clientes.push({
+          devendo: compras[i]._count.status,
+          cliente
+        })
+      }
+    }
+
+    return clientes as ICounter[]
   }
 }

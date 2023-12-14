@@ -12,5 +12,5 @@ export async function compraRoutes(fastify: FastifyInstance) {
   fastify.patch('/:id', UpdateCompraController)
   fastify.delete('/:id', DeleteCompraController)
   fastify.get('/:caixaId', ReadByCaixaController)
-  fastify.get('/cliente/:clienteId', ReadByClienteController)
+  fastify.get('/clientes-devendo', ReadByClienteController)
 }

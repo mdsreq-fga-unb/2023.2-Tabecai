@@ -1,35 +1,31 @@
-"use client";
-import { ChevronDown, Moon, MoonIcon, Search } from "lucide-react";
-import Image from "next/image";
-import Logo from "../assets/logo.svg";
-import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
-import { useRouter } from "next/navigation";
+'use client';
+import { ChevronDown, Moon, MoonIcon, Search } from 'lucide-react';
+import Image from 'next/image';
+import Logo from '../assets/logo.svg';
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { useRouter } from 'next/navigation';
 
 const telas = [
   {
-    nome: "Caixa",
-    http: "/",
+    nome: 'Caixa',
+    http: '/',
   },
   {
-    nome: "Clientes",
-    http: "/clientes",
-  },
-  // {
-  //     nome: "Produto",
-  //     http: "/",
-  // },
-  {
-    nome: "Painel Financeiro",
-    http: "/financeiro",
+    nome: 'Clientes',
+    http: '/clientes',
   },
   {
-    nome: "Funcionario",
-    http: "/funcionarios",
+    nome: 'Painel Financeiro',
+    http: '/financeiro',
+  },
+  {
+    nome: 'Funcionario',
+    http: '/funcionarios',
   },
 ];
 
-const filtros = ["Tudo", "Efetuado", "Em Processo", "Transação Com Erro"];
+const filtros = ['Tudo', 'Efetuado', 'Em Processo', 'Transação Com Erro'];
 
 export const Header = () => {
   const router = useRouter();
@@ -37,10 +33,10 @@ export const Header = () => {
   const isMobile = useMediaQuery({ minWidth: 1280 });
 
   function LogoutButton() {
-    localStorage.removeItem("id");
-    localStorage.removeItem("user");
-    localStorage.removeItem("caixaId");
-    router.push("/login");
+    localStorage.removeItem('id');
+    localStorage.removeItem('user');
+    localStorage.removeItem('caixaId');
+    router.push('/login');
   }
 
   return (

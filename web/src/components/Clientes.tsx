@@ -1,7 +1,7 @@
-"use client";
-import { ArrowRightCircle, Play } from "lucide-react";
-import { api } from "@/services/api";
-import { useEffect, useState } from "react";
+'use client';
+import { ArrowRightCircle, Play } from 'lucide-react';
+import { api } from '@/services/api';
+import { useEffect, useState } from 'react';
 
 interface ICompra {
   id: string;
@@ -20,16 +20,19 @@ interface ICliente {
   compras: ICompra[];
 }
 
+interface IDevedor {
+  devendo: number;
+  cliente: ICliente;
+}
+
 export const Clientes = () => {
-  const [clientes, setClientes] = useState<ICliente[]>([]);
+  const [devedores, setDevedores] = useState<IDevedor[]>([]);
   const [openModal, setOpenModal] = useState(false);
 
   async function getClientes() {
     try {
-      const response = await api.get("/compra/all");
-      const clientesAndComprasPendentes = await response.data.map(
-        (compra: ICompra) => {}
-      );
+      const response = await api.get('/compra/clientes-devendo');
+      setDevedores(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -50,29 +53,31 @@ export const Clientes = () => {
 
   return (
     <div className="grid lg:grid-cols-3 gap-4 sm:grid-cols-2 grid-cols-1">
-      {clientes.map((cliente: ICliente) => {
+      {devedores.map((devedor: IDevedor) => {
         return (
           <button
-            key={cliente.id}
+            key={devedor.cliente.id}
             onClick={() => handleOpenModal()}
             className={`flex items-center gap-6 rounded-xl px-6 py-4 h-26 bg-[#5C83E6] justify-between`}
           >
             <div className="flex flex-col items-center gap-4">
               <div className="text-left">
                 <p className="text-white font-bold text-lg lg:text-md xl:text-lg text-ellipsis">
-                  {cliente.name}
+                  {devedor.cliente.name}
                 </p>
                 <p className="text-white text-xs lg:text-md xl:text-lg font-light">
-                  {cliente.cellphone}
+                  {devedor.cliente.cellphone}
                 </p>
                 <p className="text-white text-xs lg:text-md xl:text-lg font-light">
-                  {cliente.cpf}
+                  {devedor.cliente.cpf}
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <p className="text-white font-semi  bold text-lg"></p>
+              <p className="text-white font-semi  bold text-lg">
+                Compras pendentes: {devedor.devendo}
+              </p>
               <ArrowRightCircle
                 size={30}
                 color="#FFE145"

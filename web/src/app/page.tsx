@@ -1,20 +1,21 @@
-"use client";
-import { DownloadCloud, Filter, MoreVertical, Search } from "lucide-react";
-import Image from "next/image";
-import Logo from "../../assets/logo.svg";
-import { Header } from "@/components/Header";
-import { Table } from "@/components/Table";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { ModalCreateCompra } from "@/components/ModalCreateCompra";
-import { api } from "@/services/api";
+'use client';
+import { DownloadCloud, Filter, MoreVertical, Search } from 'lucide-react';
+import Image from 'next/image';
+import Logo from '../../assets/logo.svg';
+import { Header } from '@/components/Header';
+import { Table } from '@/components/Table';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { ModalCreateCompra } from '@/components/ModalCreateCompra';
+import { api } from '@/services/api';
 
-const filtros = ["Tudo", "Efetuado", "Em Processo", "Transação Com Erro"];
+const filtros = ['Tudo', 'Efetuado', 'Em Processo', 'Transação Com Erro'];
 
 export default function Home() {
   const router = useRouter();
   const [modalCreateIsOpen, setCreateIsOpen] = useState(false);
   const [clientes, setClientes] = useState([]);
+  const [filterInput, setFilterInput] = useState('');
 
   function onCloseCreateModal() {
     setCreateIsOpen(false);
@@ -23,16 +24,16 @@ export default function Home() {
 
   useEffect(() => {
     function userIsLogged() {
-      const token = localStorage.getItem("user");
+      const token = localStorage.getItem('user');
 
       if (!token) {
-        router.push("/login");
+        router.push('/login');
       }
     }
 
     async function getClientes() {
       try {
-        const response = await api.get("/cliente/all");
+        const response = await api.get('/cliente/all');
         setClientes(response.data);
       } catch (error) {
         console.log(error);
@@ -82,7 +83,12 @@ export default function Home() {
         <div className="flex flex-row space-x-4 items-end">
           <div className="flex flex-row space-x-2 items-center p-4 text-indigo-600 border-2 border-indigo-600  rounded-lg">
             <Search size={24} />
-            <input type="text" className="hidden xl:block"></input>
+            <input
+              type="text"
+              className="hidden xl:block"
+              onChange={(e) => setFilterInput(e.target.value)}
+              value={filterInput}
+            ></input>
           </div>
           <button className="flex flex-row space-x-2 p-4 text-indigo-600 border-2 border-indigo-600 bg-indigo-100 rounded-lg">
             <strong className="text-indigo-600">Filtro</strong>
@@ -93,7 +99,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Table />
+      <Table filterInput={filterInput} setFilterInput={setFilterInput} />
     </div>
   );
 }
